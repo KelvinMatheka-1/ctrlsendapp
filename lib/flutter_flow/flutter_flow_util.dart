@@ -57,9 +57,9 @@ String dateTimeFormat(String format, DateTime? dateTime, {String? locale}) {
 }
 
 Future launchURL(String url) async {
-  var uri = Uri.parse(url).toString();
+  var uri = Uri.parse(url);
   try {
-    await launch(uri);
+    await launchUrl(uri);
   } catch (e) {
     throw 'Could not launch $uri: $e';
   }
@@ -371,5 +371,18 @@ void fixStatusBarOniOS16AndBelow(BuildContext context) {
         systemStatusBarContrastEnforced: true,
       ),
     );
+  }
+}
+
+extension ListUniqueExt<T> on Iterable<T> {
+  List<T> unique(dynamic Function(T) getKey) {
+    var distinctSet = <T>{};
+    var distinctList = <T>[];
+    for (var item in this) {
+      if (distinctSet.add(getKey(item))) {
+        distinctList.add(getKey(item));
+      }
+    }
+    return distinctList;
   }
 }

@@ -11,4 +11,4 @@ PRODUCT_NAME = ctrlsend
 PRODUCT_BUNDLE_IDENTIFIER = com.flutterflow.finwallet
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2022 ctrlsend. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2024 ctrlsend. All rights reserved.

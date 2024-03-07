@@ -97,9 +97,11 @@ class _MyAppState extends State<MyApp> {
       ],
       theme: ThemeData(
         brightness: Brightness.light,
+        useMaterial3: false,
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
+        useMaterial3: false,
       ),
       themeMode: _themeMode,
       routerConfig: _router,
@@ -146,9 +148,9 @@ class _NavBarPageState extends State<NavBarPage> {
           _currentPage = null;
           _currentPageName = tabs.keys.toList()[i];
         }),
-        backgroundColor: FlutterFlowTheme.of(context).darkBackground,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         selectedItemColor: Color(0xFF15DC4F),
-        unselectedItemColor: FlutterFlowTheme.of(context).grayLight,
+        unselectedItemColor: FlutterFlowTheme.of(context).primaryText,
         showSelectedLabels: true,
         showUnselectedLabels: false,
         type: BottomNavigationBarType.fixed,
@@ -159,7 +161,7 @@ class _NavBarPageState extends State<NavBarPage> {
               size: 24.0,
             ),
             label: FFLocalizations.of(context).getText(
-              'u8nuv2z1' /* __ */,
+              'u8nuv2z1' /* ___ */,
             ),
             tooltip: '',
           ),
@@ -169,7 +171,7 @@ class _NavBarPageState extends State<NavBarPage> {
               size: 20.0,
             ),
             label: FFLocalizations.of(context).getText(
-              'bb3lphy2' /* __ */,
+              'bb3lphy2' /* ___ */,
             ),
             tooltip: '',
           ),
@@ -183,7 +185,7 @@ class _NavBarPageState extends State<NavBarPage> {
               size: 24.0,
             ),
             label: FFLocalizations.of(context).getText(
-              '8srr2k0j' /* __ */,
+              '8srr2k0j' /* ___ */,
             ),
             tooltip: '',
           )

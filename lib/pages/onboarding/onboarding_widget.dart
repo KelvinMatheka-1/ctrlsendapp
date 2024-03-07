@@ -37,8 +37,6 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -105,13 +103,25 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 20.0),
-                                          child: Image.asset(
-                                            'assets/images/fin_onboarding_1@2x.png',
-                                            width: MediaQuery.sizeOf(context)
-                                                    .width *
-                                                0.7,
-                                            height: 300.0,
-                                            fit: BoxFit.fitWidth,
+                                          child: ClipRRect(
+                                            borderRadius: BorderRadius.only(
+                                              bottomLeft: Radius.circular(15.0),
+                                              bottomRight:
+                                                  Radius.circular(15.0),
+                                              topLeft: Radius.circular(15.0),
+                                              topRight: Radius.circular(15.0),
+                                            ),
+                                            child: Image.asset(
+                                              Theme.of(context).brightness ==
+                                                      Brightness.dark
+                                                  ? 'assets/images/Add_dark.gif'
+                                                  : 'assets/images/Add_light.gif',
+                                              width: MediaQuery.sizeOf(context)
+                                                      .width *
+                                                  0.825,
+                                              height: 300.0,
+                                              fit: BoxFit.fitWidth,
+                                            ),
                                           ),
                                         ),
                                       ],
@@ -178,11 +188,18 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 20.0),
-                                          child: Image.asset(
-                                            'assets/images/fin_onboarding_2@2x.png',
-                                            width: 300.0,
-                                            height: 300.0,
-                                            fit: BoxFit.fitHeight,
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(15.0),
+                                            child: Image.asset(
+                                              Theme.of(context).brightness ==
+                                                      Brightness.dark
+                                                  ? 'assets/images/Okdark.gif'
+                                                  : 'assets/images/Oklight.gif',
+                                              width: 300.0,
+                                              height: 300.0,
+                                              fit: BoxFit.fitHeight,
+                                            ),
                                           ),
                                         ),
                                       ],
@@ -248,11 +265,14 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 30.0, 0.0, 30.0),
+                                                  0.0, 0.0, 0.0, 30.0),
                                           child: Image.asset(
-                                            'assets/images/fin_onboarding_3@2x.png',
+                                            Theme.of(context).brightness ==
+                                                    Brightness.dark
+                                                ? 'assets/images/TrackDark.gif'
+                                                : 'assets/images/TrackLight.gif',
                                             width: 300.0,
-                                            height: 250.0,
+                                            height: 277.0,
                                             fit: BoxFit.fitWidth,
                                           ),
                                         ),

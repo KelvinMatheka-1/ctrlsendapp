@@ -44,8 +44,6 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -120,7 +118,7 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                                           Icons.login_rounded,
                                           color: FlutterFlowTheme.of(context)
                                               .textColor,
-                                          size: 24.0,
+                                          size: 25.0,
                                         ),
                                         onPressed: () async {
                                           GoRouter.of(context)
@@ -285,7 +283,7 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                                 icon: Icon(
                                   Icons.chevron_right_rounded,
                                   color: Color(0xFF95A1AC),
-                                  size: 20.0,
+                                  size: 25.0,
                                 ),
                                 onPressed: () {
                                   print('IconButton pressed ...');
@@ -351,7 +349,73 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                                 icon: Icon(
                                   Icons.chevron_right_rounded,
                                   color: Color(0xFF95A1AC),
-                                  size: 20.0,
+                                  size: 25.0,
+                                ),
+                                onPressed: () {
+                                  print('IconButton pressed ...');
+                                },
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () async {
+                      context.pushNamed('onboarding');
+                    },
+                    child: Material(
+                      color: Colors.transparent,
+                      elevation: 0.0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      child: Container(
+                        width: MediaQuery.sizeOf(context).width * 0.9,
+                        height: 60.0,
+                        decoration: BoxDecoration(
+                          color: FlutterFlowTheme.of(context).primaryBackground,
+                          borderRadius: BorderRadius.circular(8.0),
+                          border: Border.all(
+                            color: FlutterFlowTheme.of(context).alternate,
+                            width: 2.0,
+                          ),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              16.0, 0.0, 4.0, 0.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                FFLocalizations.of(context).getText(
+                                  'sxl44uxw' /* Onboarding */,
+                                ),
+                                style: FlutterFlowTheme.of(context).bodyMedium,
+                              ),
+                              FlutterFlowIconButton(
+                                borderColor: Colors.transparent,
+                                borderRadius: 30.0,
+                                buttonSize: 46.0,
+                                icon: Icon(
+                                  Icons.chevron_right_rounded,
+                                  color: Color(0xFF95A1AC),
+                                  size: 25.0,
                                 ),
                                 onPressed: () {
                                   print('IconButton pressed ...');

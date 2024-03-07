@@ -226,8 +226,6 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return FutureBuilder<List<AllowancesRow>>(
       future: AllowancesTable().querySingleRow(
         queryFn: (q) => q.eq(
@@ -326,7 +324,7 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                           icon: Icon(
                             Icons.close_rounded,
                             color: FlutterFlowTheme.of(context).secondaryText,
-                            size: 30.0,
+                            size: 25.0,
                           ),
                           onPressed: () async {
                             Navigator.pop(context);

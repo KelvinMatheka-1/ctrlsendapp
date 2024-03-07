@@ -315,7 +315,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'hxtwax0y': {
       'en':
-          'Now with  the ability to control how your money is spent after by adding someone to your wallet',
+          'Now with  the ability to control how your money is spent after,  by adding someone to your wallet',
       'ar':
           'قم بإنشاء ميزانيات يمكنك ربط المعاملات بها أيضًا من أجل التتبع السهل.',
       'de':
@@ -395,6 +395,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Benachrichtigungseinstellungen',
       'es': 'Configuración de las notificaciones',
     },
+    'sxl44uxw': {
+      'en': 'Onboarding',
+      'ar': 'إعدادات الإشعار',
+      'de': 'Benachrichtigungseinstellungen',
+      'es': 'Configuración de las notificaciones',
+    },
     '2ll42t1u': {
       'en': 'Dark Mode',
       'ar': '',
@@ -408,7 +414,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
     '8srr2k0j': {
-      'en': '__',
+      'en': '___',
       'ar': '•',
       'de': '•',
       'es': '•',
@@ -673,7 +679,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Transferir',
     },
     'u8nuv2z1': {
-      'en': '__',
+      'en': '___',
       'ar': '•',
       'de': '•',
       'es': '•',
@@ -754,7 +760,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
     'bb3lphy2': {
-      'en': '__',
+      'en': '___',
       'ar': '',
       'de': '',
       'es': '',
