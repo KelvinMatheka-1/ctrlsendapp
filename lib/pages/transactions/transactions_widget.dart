@@ -649,7 +649,7 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                   valueOrDefault<
                                                                       String>(
                                                                     columnTransactionsRow
-                                                                        .recipientEmail,
+                                                                        .senderEmail,
                                                                     'recipient',
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
