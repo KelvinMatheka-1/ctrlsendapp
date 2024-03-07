@@ -17,12 +17,12 @@ class UsersRow extends SupabaseDataRow {
   String get id => getField<String>('id')!;
   set id(String value) => setField<String>('id', value);
 
+  DateTime get createdAt => getField<DateTime>('created_at')!;
+  set createdAt(DateTime value) => setField<DateTime>('created_at', value);
+
   String? get userName => getField<String>('user_name');
   set userName(String? value) => setField<String>('user_name', value);
 
   String? get userEmail => getField<String>('user_email');
   set userEmail(String? value) => setField<String>('user_email', value);
-
-  DateTime get createdAt => getField<DateTime>('created_at')!;
-  set createdAt(DateTime value) => setField<DateTime>('created_at', value);
 }

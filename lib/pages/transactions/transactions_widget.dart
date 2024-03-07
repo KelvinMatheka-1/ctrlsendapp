@@ -259,103 +259,88 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           3.0, 10.0, 1.0, 0.0),
-                                                  child: Container(
-                                                    height: 61.0,
-                                                    decoration: BoxDecoration(
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .primaryBackground,
-                                                      boxShadow: [
-                                                        BoxShadow(
-                                                          blurRadius: 4.0,
-                                                          color:
-                                                              Color(0x33000000),
-                                                          offset:
-                                                              Offset(0.0, 2.0),
-                                                        )
-                                                      ],
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              10.0),
-                                                      shape: BoxShape.rectangle,
-                                                    ),
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      5.0,
-                                                                      10.0,
-                                                                      0.0,
-                                                                      5.0),
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            children: [
-                                                              Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'n314hcg5' /* You sent  */,
-                                                                ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Plus Jakarta Sans',
-                                                                      fontSize:
-                                                                          14.0,
-                                                                    ),
-                                                              ),
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
-                                                                child: Text(
-                                                                  formatNumber(
-                                                                    columnTransactionsRow
-                                                                        .amount!,
-                                                                    formatType:
-                                                                        FormatType
-                                                                            .custom,
-                                                                    currency:
-                                                                        'ksh',
-                                                                    format: '',
-                                                                    locale: '',
-                                                                  ),
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Plus Jakarta Sans',
-                                                                        fontSize:
-                                                                            14.0,
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
-                                                                child: Text(
+                                                  child: InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onDoubleTap: () async {
+                                                      await TransactionsTable()
+                                                          .delete(
+                                                        matchingRows: (rows) =>
+                                                            rows.eq(
+                                                          'id',
+                                                          columnTransactionsRow
+                                                              .id,
+                                                        ),
+                                                      );
+                                                      ScaffoldMessenger.of(
+                                                              context)
+                                                          .showSnackBar(
+                                                        SnackBar(
+                                                          content: Text(
+                                                            'deleted successfully',
+                                                            style: TextStyle(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryText,
+                                                            ),
+                                                          ),
+                                                          duration: Duration(
+                                                              milliseconds:
+                                                                  4000),
+                                                          backgroundColor:
+                                                              Color(0xFFD0FF62),
+                                                        ),
+                                                      );
+                                                    },
+                                                    child: Container(
+                                                      height: 61.0,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                        boxShadow: [
+                                                          BoxShadow(
+                                                            blurRadius: 4.0,
+                                                            color: Color(
+                                                                0x33000000),
+                                                            offset: Offset(
+                                                                0.0, 2.0),
+                                                          )
+                                                        ],
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(10.0),
+                                                        shape:
+                                                            BoxShape.rectangle,
+                                                      ),
+                                                      child: Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        5.0,
+                                                                        10.0,
+                                                                        0.0,
+                                                                        5.0),
+                                                            child: Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              children: [
+                                                                Text(
                                                                   FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                    '2fdjakof' /* to */,
+                                                                    'n314hcg5' /* You sent  */,
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
@@ -367,75 +352,129 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                             14.0,
                                                                       ),
                                                                 ),
-                                                              ),
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
-                                                                child: Text(
-                                                                  valueOrDefault<
-                                                                      String>(
-                                                                    columnTransactionsRow
-                                                                        .recipientEmail,
-                                                                    'recipient',
-                                                                  ),
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Plus Jakarta Sans',
-                                                                        fontSize:
-                                                                            14.0,
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      5.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            children: [
-                                                              Text(
-                                                                dateTimeFormat(
-                                                                  'd/M h:mm a',
-                                                                  columnTransactionsRow
-                                                                      .createdAt,
-                                                                  locale: FFLocalizations.of(
-                                                                          context)
-                                                                      .languageCode,
-                                                                ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Lexend',
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryText,
-                                                                      fontSize:
-                                                                          14.0,
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    formatNumber(
+                                                                      columnTransactionsRow
+                                                                          .amount!,
+                                                                      formatType:
+                                                                          FormatType
+                                                                              .custom,
+                                                                      currency:
+                                                                          'ksh',
+                                                                      format:
+                                                                          '',
+                                                                      locale:
+                                                                          '',
                                                                     ),
-                                                              ),
-                                                            ],
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Plus Jakarta Sans',
+                                                                          fontSize:
+                                                                              14.0,
+                                                                        ),
+                                                                  ),
+                                                                ),
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      '2fdjakof' /* to */,
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Plus Jakarta Sans',
+                                                                          fontSize:
+                                                                              14.0,
+                                                                        ),
+                                                                  ),
+                                                                ),
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      columnTransactionsRow
+                                                                          .recipientEmail,
+                                                                      'recipient',
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Plus Jakarta Sans',
+                                                                          fontSize:
+                                                                              14.0,
+                                                                        ),
+                                                                  ),
+                                                                ),
+                                                              ],
+                                                            ),
                                                           ),
-                                                        ),
-                                                      ],
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        5.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child: Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              children: [
+                                                                Text(
+                                                                  dateTimeFormat(
+                                                                    'd/M h:mm a',
+                                                                    columnTransactionsRow
+                                                                        .createdAt,
+                                                                    locale: FFLocalizations.of(
+                                                                            context)
+                                                                        .languageCode,
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Lexend',
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryText,
+                                                                        fontSize:
+                                                                            14.0,
+                                                                      ),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
                                                     ),
                                                   ),
                                                 );
@@ -538,91 +577,229 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           3.0, 10.0, 1.0, 0.0),
-                                                  child: Container(
-                                                    width: 337.0,
-                                                    height: 72.0,
-                                                    decoration: BoxDecoration(
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .primaryBackground,
-                                                      boxShadow: [
-                                                        BoxShadow(
-                                                          blurRadius: 4.0,
-                                                          color:
-                                                              Color(0x33000000),
-                                                          offset:
-                                                              Offset(0.0, 2.0),
-                                                        )
-                                                      ],
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              10.0),
-                                                      shape: BoxShape.rectangle,
-                                                    ),
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      8.0,
-                                                                      0.0,
-                                                                      8.0),
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .start,
-                                                            children: [
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
-                                                                child: Text(
-                                                                  formatNumber(
+                                                  child: InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onDoubleTap: () async {
+                                                      await TransactionsTable()
+                                                          .delete(
+                                                        matchingRows: (rows) =>
+                                                            rows.eq(
+                                                          'id',
+                                                          columnTransactionsRow
+                                                              .id,
+                                                        ),
+                                                      );
+                                                      ScaffoldMessenger.of(
+                                                              context)
+                                                          .showSnackBar(
+                                                        SnackBar(
+                                                          content: Text(
+                                                            'deleted successfully',
+                                                            style: TextStyle(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryText,
+                                                            ),
+                                                          ),
+                                                          duration: Duration(
+                                                              milliseconds:
+                                                                  4000),
+                                                          backgroundColor:
+                                                              Color(0xFFD0FF62),
+                                                        ),
+                                                      );
+                                                    },
+                                                    child: Container(
+                                                      width: 337.0,
+                                                      height: 72.0,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                        boxShadow: [
+                                                          BoxShadow(
+                                                            blurRadius: 4.0,
+                                                            color: Color(
+                                                                0x33000000),
+                                                            offset: Offset(
+                                                                0.0, 2.0),
+                                                          )
+                                                        ],
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(10.0),
+                                                        shape:
+                                                            BoxShape.rectangle,
+                                                      ),
+                                                      child: Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        8.0,
+                                                                        0.0,
+                                                                        8.0),
+                                                            child: Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .start,
+                                                              children: [
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    formatNumber(
+                                                                      columnTransactionsRow
+                                                                          .amount!,
+                                                                      formatType:
+                                                                          FormatType
+                                                                              .custom,
+                                                                      currency:
+                                                                          'ksh',
+                                                                      format:
+                                                                          '',
+                                                                      locale:
+                                                                          '',
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Plus Jakarta Sans',
+                                                                          fontSize:
+                                                                              14.0,
+                                                                        ),
+                                                                  ),
+                                                                ),
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      '9mfgpqij' /* recieved from */,
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Plus Jakarta Sans',
+                                                                          fontSize:
+                                                                              14.0,
+                                                                        ),
+                                                                  ),
+                                                                ),
+                                                                if (columnTransactionsRow
+                                                                            .grantedEmail ==
+                                                                        null ||
                                                                     columnTransactionsRow
-                                                                        .amount!,
-                                                                    formatType:
-                                                                        FormatType
-                                                                            .custom,
-                                                                    currency:
-                                                                        'ksh',
-                                                                    format: '',
-                                                                    locale: '',
-                                                                  ),
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Plus Jakarta Sans',
-                                                                        fontSize:
-                                                                            14.0,
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
+                                                                            .grantedEmail ==
+                                                                        '')
+                                                                  Padding(
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             5.0,
                                                                             0.0),
-                                                                child: Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    '9mfgpqij' /* recieved from */,
+                                                                    child: Text(
+                                                                      valueOrDefault<
+                                                                          String>(
+                                                                        columnTransactionsRow
+                                                                            .senderEmail,
+                                                                        'recipient',
+                                                                      ),
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Plus Jakarta Sans',
+                                                                            fontSize:
+                                                                                14.0,
+                                                                          ),
+                                                                    ),
+                                                                  ),
+                                                                if (columnTransactionsRow
+                                                                            .grantedEmail !=
+                                                                        null &&
+                                                                    columnTransactionsRow
+                                                                            .grantedEmail !=
+                                                                        '')
+                                                                  Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0),
+                                                                    child: Text(
+                                                                      valueOrDefault<
+                                                                          String>(
+                                                                        columnTransactionsRow
+                                                                            .grantedEmail,
+                                                                        'recipient',
+                                                                      ),
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Plus Jakarta Sans',
+                                                                            fontSize:
+                                                                                14.0,
+                                                                          ),
+                                                                    ),
+                                                                  ),
+                                                              ],
+                                                            ),
+                                                          ),
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        5.0,
+                                                                        5.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child: Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              children: [
+                                                                Text(
+                                                                  dateTimeFormat(
+                                                                    'd/M h:mm a',
+                                                                    columnTransactionsRow
+                                                                        .createdAt,
+                                                                    locale: FFLocalizations.of(
+                                                                            context)
+                                                                        .languageCode,
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
@@ -630,112 +807,15 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                       .override(
                                                                         fontFamily:
                                                                             'Plus Jakarta Sans',
-                                                                        fontSize:
-                                                                            14.0,
+                                                                        color: Color(
+                                                                            0xFF97D200),
                                                                       ),
                                                                 ),
-                                                              ),
-                                                              if (columnTransactionsRow
-                                                                          .grantedEmail ==
-                                                                      null ||
-                                                                  columnTransactionsRow
-                                                                          .grantedEmail ==
-                                                                      '')
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          5.0,
-                                                                          0.0),
-                                                                  child: Text(
-                                                                    valueOrDefault<
-                                                                        String>(
-                                                                      columnTransactionsRow
-                                                                          .senderEmail,
-                                                                      'recipient',
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Plus Jakarta Sans',
-                                                                          fontSize:
-                                                                              14.0,
-                                                                        ),
-                                                                  ),
-                                                                ),
-                                                              if (columnTransactionsRow
-                                                                          .grantedEmail !=
-                                                                      null &&
-                                                                  columnTransactionsRow
-                                                                          .grantedEmail !=
-                                                                      '')
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          5.0,
-                                                                          0.0),
-                                                                  child: Text(
-                                                                    valueOrDefault<
-                                                                        String>(
-                                                                      columnTransactionsRow
-                                                                          .grantedEmail,
-                                                                      'recipient',
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Plus Jakarta Sans',
-                                                                          fontSize:
-                                                                              14.0,
-                                                                        ),
-                                                                  ),
-                                                                ),
-                                                            ],
+                                                              ],
+                                                            ),
                                                           ),
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      5.0,
-                                                                      5.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            children: [
-                                                              Text(
-                                                                dateTimeFormat(
-                                                                  'd/M h:mm a',
-                                                                  columnTransactionsRow
-                                                                      .createdAt,
-                                                                  locale: FFLocalizations.of(
-                                                                          context)
-                                                                      .languageCode,
-                                                                ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Plus Jakarta Sans',
-                                                                      color: Color(
-                                                                          0xFF97D200),
-                                                                    ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                        ),
-                                                      ],
+                                                        ],
+                                                      ),
                                                     ),
                                                   ),
                                                 );
@@ -1149,7 +1229,7 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                             0.0,
                                                                             0.0),
                                                                     color: Color(
-                                                                        0xFF8B8B8B),
+                                                                        0xFF97D200),
                                                                     textStyle: FlutterFlowTheme.of(
                                                                             context)
                                                                         .titleSmall
@@ -1243,7 +1323,7 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                             0.0,
                                                                             0.0),
                                                                     color: Color(
-                                                                        0xFFFFA88C),
+                                                                        0xFF8F8F8F),
                                                                     textStyle: FlutterFlowTheme.of(
                                                                             context)
                                                                         .titleSmall
@@ -1380,325 +1460,361 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           3.0, 10.0, 1.0, 0.0),
-                                                  child: Container(
-                                                    width: 337.0,
-                                                    height: 114.0,
-                                                    decoration: BoxDecoration(
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .primaryBackground,
-                                                      boxShadow: [
-                                                        BoxShadow(
-                                                          blurRadius: 4.0,
-                                                          color:
-                                                              Color(0x33000000),
-                                                          offset:
-                                                              Offset(0.0, 2.0),
-                                                        )
-                                                      ],
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              10.0),
-                                                      shape: BoxShape.rectangle,
-                                                    ),
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      8.0,
-                                                                      0.0,
-                                                                      8.0),
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            children: [
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            5.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
-                                                                child: Text(
-                                                                  valueOrDefault<
-                                                                      String>(
-                                                                    columnTransactionsRow
-                                                                        .grantedEmail,
-                                                                    'allowed',
-                                                                  ),
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Plus Jakarta Sans',
-                                                                        fontSize:
-                                                                            14.0,
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
-                                                                child: Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    '2jd18hoh' /* sent */,
-                                                                  ),
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Plus Jakarta Sans',
-                                                                        fontSize:
-                                                                            14.0,
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
-                                                                child: Text(
-                                                                  formatNumber(
-                                                                    columnTransactionsRow
-                                                                        .amount!,
-                                                                    formatType:
-                                                                        FormatType
-                                                                            .custom,
-                                                                    currency:
-                                                                        'ksh',
-                                                                    format: '',
-                                                                    locale: '',
-                                                                  ),
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Plus Jakarta Sans',
-                                                                        fontSize:
-                                                                            14.0,
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                              Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'pd69fphh' /* to */,
-                                                                ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Plus Jakarta Sans',
-                                                                      fontSize:
-                                                                          14.0,
-                                                                    ),
-                                                              ),
-                                                            ],
-                                                          ),
+                                                  child: InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onDoubleTap: () async {
+                                                      await TransactionsTable()
+                                                          .delete(
+                                                        matchingRows: (rows) =>
+                                                            rows.eq(
+                                                          'id',
+                                                          columnTransactionsRow
+                                                              .id,
                                                         ),
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      5.0,
-                                                                      5.0,
-                                                                      0.0,
-                                                                      10.0),
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            children: [
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
-                                                                child: Text(
-                                                                  valueOrDefault<
-                                                                      String>(
-                                                                    columnTransactionsRow
-                                                                        .recipientEmail,
-                                                                    'recipient',
-                                                                  ),
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Plus Jakarta Sans',
-                                                                        fontSize:
-                                                                            14.0,
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
-                                                                child: Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'ghqf2xlh' /* from */,
-                                                                  ),
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Plus Jakarta Sans',
-                                                                        fontSize:
-                                                                            14.0,
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                              Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'x7vqfz9l' /* your wallet */,
-                                                                ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Plus Jakarta Sans',
-                                                                      fontSize:
-                                                                          14.0,
-                                                                    ),
-                                                              ),
-                                                            ],
+                                                      );
+                                                      ScaffoldMessenger.of(
+                                                              context)
+                                                          .showSnackBar(
+                                                        SnackBar(
+                                                          content: Text(
+                                                            'deleted successfully',
+                                                            style: TextStyle(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryText,
+                                                            ),
                                                           ),
+                                                          duration: Duration(
+                                                              milliseconds:
+                                                                  4000),
+                                                          backgroundColor:
+                                                              Color(0xFFD0FF62),
                                                         ),
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      5.0,
-                                                                      5.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            children: [
-                                                              Text(
-                                                                dateTimeFormat(
-                                                                  'd/M h:mm a',
-                                                                  columnTransactionsRow
-                                                                      .createdAt,
-                                                                  locale: FFLocalizations.of(
-                                                                          context)
-                                                                      .languageCode,
-                                                                ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Plus Jakarta Sans',
-                                                                      color: Color(
-                                                                          0xFF97D200),
-                                                                    ),
-                                                              ),
-                                                              Padding(
-                                                                padding: EdgeInsetsDirectional
+                                                      );
+                                                    },
+                                                    child: Container(
+                                                      width: 337.0,
+                                                      height: 114.0,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                        boxShadow: [
+                                                          BoxShadow(
+                                                            blurRadius: 4.0,
+                                                            color: Color(
+                                                                0x33000000),
+                                                            offset: Offset(
+                                                                0.0, 2.0),
+                                                          )
+                                                        ],
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(10.0),
+                                                        shape:
+                                                            BoxShape.rectangle,
+                                                      ),
+                                                      child: Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        115.0,
                                                                         0.0,
+                                                                        8.0,
                                                                         0.0,
-                                                                        0.0),
-                                                                child:
-                                                                    FFButtonWidget(
-                                                                  onPressed:
-                                                                      () {
-                                                                    print(
-                                                                        'Button pressed ...');
-                                                                  },
-                                                                  text: FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'tzs4s9v8' /* Approved */,
-                                                                  ),
-                                                                  options:
-                                                                      FFButtonOptions(
-                                                                    height:
-                                                                        28.0,
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            24.0,
-                                                                            0.0,
-                                                                            24.0,
-                                                                            0.0),
-                                                                    iconPadding:
-                                                                        EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                    color: Color(
-                                                                        0xFF97D200),
-                                                                    textStyle: FlutterFlowTheme.of(
+                                                                        8.0),
+                                                            child: Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              children: [
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          5.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      columnTransactionsRow
+                                                                          .grantedEmail,
+                                                                      'allowed',
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .titleSmall
+                                                                        .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Lexend',
-                                                                          color:
-                                                                              Colors.white,
+                                                                              'Plus Jakarta Sans',
+                                                                          fontSize:
+                                                                              14.0,
                                                                         ),
-                                                                    elevation:
-                                                                        3.0,
-                                                                    borderSide:
-                                                                        BorderSide(
-                                                                      color: Colors
-                                                                          .transparent,
-                                                                      width:
-                                                                          1.0,
-                                                                    ),
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            8.0),
                                                                   ),
                                                                 ),
-                                                              ),
-                                                            ],
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      '2jd18hoh' /* sent */,
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Plus Jakarta Sans',
+                                                                          fontSize:
+                                                                              14.0,
+                                                                        ),
+                                                                  ),
+                                                                ),
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    formatNumber(
+                                                                      columnTransactionsRow
+                                                                          .amount!,
+                                                                      formatType:
+                                                                          FormatType
+                                                                              .custom,
+                                                                      currency:
+                                                                          'ksh',
+                                                                      format:
+                                                                          '',
+                                                                      locale:
+                                                                          '',
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Plus Jakarta Sans',
+                                                                          fontSize:
+                                                                              14.0,
+                                                                        ),
+                                                                  ),
+                                                                ),
+                                                                Text(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'pd69fphh' /* to */,
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Plus Jakarta Sans',
+                                                                        fontSize:
+                                                                            14.0,
+                                                                      ),
+                                                                ),
+                                                              ],
+                                                            ),
                                                           ),
-                                                        ),
-                                                      ],
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        5.0,
+                                                                        5.0,
+                                                                        0.0,
+                                                                        10.0),
+                                                            child: Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              children: [
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      columnTransactionsRow
+                                                                          .recipientEmail,
+                                                                      'recipient',
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Plus Jakarta Sans',
+                                                                          fontSize:
+                                                                              14.0,
+                                                                        ),
+                                                                  ),
+                                                                ),
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'ghqf2xlh' /* from */,
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Plus Jakarta Sans',
+                                                                          fontSize:
+                                                                              14.0,
+                                                                        ),
+                                                                  ),
+                                                                ),
+                                                                Text(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'x7vqfz9l' /* your wallet */,
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Plus Jakarta Sans',
+                                                                        fontSize:
+                                                                            14.0,
+                                                                      ),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          ),
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        5.0,
+                                                                        5.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child: Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              children: [
+                                                                Text(
+                                                                  dateTimeFormat(
+                                                                    'd/M h:mm a',
+                                                                    columnTransactionsRow
+                                                                        .createdAt,
+                                                                    locale: FFLocalizations.of(
+                                                                            context)
+                                                                        .languageCode,
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Plus Jakarta Sans',
+                                                                        color: Color(
+                                                                            0xFF97D200),
+                                                                      ),
+                                                                ),
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          115.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child:
+                                                                      FFButtonWidget(
+                                                                    onPressed:
+                                                                        () {
+                                                                      print(
+                                                                          'Button pressed ...');
+                                                                    },
+                                                                    text: FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'tzs4s9v8' /* Approved */,
+                                                                    ),
+                                                                    options:
+                                                                        FFButtonOptions(
+                                                                      height:
+                                                                          28.0,
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          24.0,
+                                                                          0.0,
+                                                                          24.0,
+                                                                          0.0),
+                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                      color: Color(
+                                                                          0xFF97D200),
+                                                                      textStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmall
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Lexend',
+                                                                            color:
+                                                                                Colors.white,
+                                                                          ),
+                                                                      elevation:
+                                                                          3.0,
+                                                                      borderSide:
+                                                                          BorderSide(
+                                                                        color: Colors
+                                                                            .transparent,
+                                                                        width:
+                                                                            1.0,
+                                                                      ),
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              8.0),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
                                                     ),
                                                   ),
                                                 );
