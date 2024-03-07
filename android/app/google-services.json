@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "51742710343",
+    "firebase_url": "https://ctrlsend-af9fd-default-rtdb.firebaseio.com",
+    "project_id": "ctrlsend-af9fd",
+    "storage_bucket": "ctrlsend-af9fd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:51742710343:android:1298d78a4cbf6f06276f62",
+        "android_client_info": {
+          "package_name": "com.flutterflow.finwallet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "51742710343-e82menqamae07v701gha2l1jkh9tv81h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDk9K66KBnkITIgki5z3cZ6mi2dUshLaYU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "51742710343-e82menqamae07v701gha2l1jkh9tv81h.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "51742710343-873852qsvpaqefhvbrqgjp3mbf3cu930.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.flutterflow.finwallet"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
