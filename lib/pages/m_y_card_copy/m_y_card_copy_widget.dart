@@ -163,8 +163,8 @@ class _MYCardCopyWidgetState extends State<MYCardCopyWidget>
                                         GoRouter.of(context)
                                             .clearRedirectLocation();
 
-                                        context.goNamedAuth(
-                                            'registerAccount', context.mounted);
+                                        context.pushNamedAuth(
+                                            'loginPage', context.mounted);
                                       },
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.only(

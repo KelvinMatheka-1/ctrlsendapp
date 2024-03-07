@@ -637,32 +637,68 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                       ),
                                                                 ),
                                                               ),
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
-                                                                child: Text(
-                                                                  valueOrDefault<
-                                                                      String>(
-                                                                    columnTransactionsRow
-                                                                        .senderEmail,
-                                                                    'recipient',
+                                                              if (columnTransactionsRow
+                                                                          .grantedEmail ==
+                                                                      null ||
+                                                                  columnTransactionsRow
+                                                                          .grantedEmail ==
+                                                                      '')
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      columnTransactionsRow
+                                                                          .senderEmail,
+                                                                      'recipient',
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Plus Jakarta Sans',
+                                                                          fontSize:
+                                                                              14.0,
+                                                                        ),
                                                                   ),
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Plus Jakarta Sans',
-                                                                        fontSize:
-                                                                            14.0,
-                                                                      ),
                                                                 ),
-                                                              ),
+                                                              if (columnTransactionsRow
+                                                                          .grantedEmail !=
+                                                                      null &&
+                                                                  columnTransactionsRow
+                                                                          .grantedEmail !=
+                                                                      '')
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      columnTransactionsRow
+                                                                          .grantedEmail,
+                                                                      'recipient',
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Plus Jakarta Sans',
+                                                                          fontSize:
+                                                                              14.0,
+                                                                        ),
+                                                                  ),
+                                                                ),
                                                             ],
                                                           ),
                                                         ),
