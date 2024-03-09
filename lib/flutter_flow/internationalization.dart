@@ -699,20 +699,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
     },
-    'r0vq1cln': {
+    'np83u3bs': {
       'en': 'Allowed:',
       'ar': '',
       'de': '',
       'es': '',
     },
-    'byc2t00f': {
-      'en': '\$4.50',
-      'ar': '',
-      'de': '',
-      'es': '',
-    },
-    'wietkyme': {
-      'en': 'Recieve Funds',
+    '97kh0zns': {
+      'en': 'Allowed:',
       'ar': '',
       'de': '',
       'es': '',
@@ -1161,7 +1155,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
     },
-    '6nnossbv': {
+    'r5w4k98v': {
       'en': 'Email',
       'ar': '',
       'de': '',

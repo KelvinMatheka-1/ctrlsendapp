@@ -14,9 +14,6 @@ class AllowancesRow extends SupabaseDataRow {
   @override
   SupabaseTable get table => AllowancesTable();
 
-  int get id => getField<int>('id')!;
-  set id(int value) => setField<int>('id', value);
-
   DateTime get createdAt => getField<DateTime>('created_at')!;
   set createdAt(DateTime value) => setField<DateTime>('created_at', value);
 
@@ -35,4 +32,7 @@ class AllowancesRow extends SupabaseDataRow {
 
   double? get amountUsed => getField<double>('amount_used');
   set amountUsed(double? value) => setField<double>('amount_used', value);
+
+  String get id => getField<String>('id')!;
+  set id(String value) => setField<String>('id', value);
 }

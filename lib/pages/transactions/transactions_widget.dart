@@ -294,7 +294,7 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                               milliseconds:
                                                                   4000),
                                                           backgroundColor:
-                                                              Color(0xFFD0FF62),
+                                                              Color(0xFF88FD65),
                                                         ),
                                                       );
                                                     },
@@ -612,7 +612,7 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                               milliseconds:
                                                                   4000),
                                                           backgroundColor:
-                                                              Color(0xFFD0FF62),
+                                                              Color(0xFF88FD65),
                                                         ),
                                                       );
                                                     },
@@ -1495,7 +1495,7 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                               milliseconds:
                                                                   4000),
                                                           backgroundColor:
-                                                              Color(0xFFD0FF62),
+                                                              Color(0xFF88FD65),
                                                         ),
                                                       );
                                                     },

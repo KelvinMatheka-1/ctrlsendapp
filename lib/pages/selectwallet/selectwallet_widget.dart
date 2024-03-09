@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -228,215 +229,204 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                       ),
                     ),
                   ),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              10.0, 0.0, 16.0, 0.0),
-                          child: FutureBuilder<List<AllowancesRow>>(
-                            future: AllowancesTable().queryRows(
-                              queryFn: (q) => q.eq(
-                                'granted_email',
-                                currentUserEmail,
-                              ),
+                  FutureBuilder<List<AllowancesRow>>(
+                    future: AllowancesTable().queryRows(
+                      queryFn: (q) => q.eq(
+                        'granted_email',
+                        currentUserEmail,
+                      ),
+                    ),
+                    builder: (context, snapshot) {
+                      // Customize what your widget looks like when it's loading.
+                      if (!snapshot.hasData) {
+                        return Center(
+                          child: SizedBox(
+                            width: 40.0,
+                            height: 40.0,
+                            child: SpinKitRing(
+                              color: Color(0xFF88FD65),
+                              size: 40.0,
                             ),
-                            builder: (context, snapshot) {
-                              // Customize what your widget looks like when it's loading.
-                              if (!snapshot.hasData) {
-                                return Center(
-                                  child: SizedBox(
-                                    width: 40.0,
-                                    height: 40.0,
-                                    child: SpinKitRing(
-                                      color: Color(0xFF88FD65),
-                                      size: 40.0,
-                                    ),
+                          ),
+                        );
+                      }
+                      List<AllowancesRow> carouselAllowancesRowList =
+                          snapshot.data!;
+                      return Container(
+                        width: double.infinity,
+                        height: 150.0,
+                        child: CarouselSlider.builder(
+                          itemCount: carouselAllowancesRowList.length,
+                          itemBuilder: (context, carouselIndex, _) {
+                            final carouselAllowancesRow =
+                                carouselAllowancesRowList[carouselIndex];
+                            return Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 8.0, 0.0, 8.0),
+                              child: Container(
+                                width: 159.0,
+                                height: 120.0,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  borderRadius: BorderRadius.circular(12.0),
+                                  border: Border.all(
+                                    color:
+                                        FlutterFlowTheme.of(context).alternate,
+                                    width: 2.0,
                                   ),
-                                );
-                              }
-                              List<AllowancesRow> rowAllowancesRowList =
-                                  snapshot.data!;
-                              return Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: List.generate(
-                                    rowAllowancesRowList.length, (rowIndex) {
-                                  final rowAllowancesRow =
-                                      rowAllowancesRowList[rowIndex];
-                                  return Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 8.0, 0.0, 8.0),
-                                    child: InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        await showModalBottomSheet(
-                                          isScrollControlled: true,
-                                          backgroundColor: Colors.transparent,
-                                          enableDrag: false,
-                                          context: context,
-                                          builder: (context) {
-                                            return GestureDetector(
-                                              onTap: () => _model.unfocusNode
-                                                      .canRequestFocus
-                                                  ? FocusScope.of(context)
-                                                      .requestFocus(
-                                                          _model.unfocusNode)
-                                                  : FocusScope.of(context)
-                                                      .unfocus(),
-                                              child: Padding(
-                                                padding:
-                                                    MediaQuery.viewInsetsOf(
-                                                        context),
-                                                child: Container(
-                                                  height: 550.0,
-                                                  child:
-                                                      MakepaymentCopyWidget(),
-                                                ),
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      8.0, 0.0, 8.0, 8.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      await showModalBottomSheet(
+                                        isScrollControlled: true,
+                                        backgroundColor: Colors.transparent,
+                                        context: context,
+                                        builder: (context) {
+                                          return GestureDetector(
+                                            onTap: () => _model
+                                                    .unfocusNode.canRequestFocus
+                                                ? FocusScope.of(context)
+                                                    .requestFocus(
+                                                        _model.unfocusNode)
+                                                : FocusScope.of(context)
+                                                    .unfocus(),
+                                            child: Padding(
+                                              padding: MediaQuery.viewInsetsOf(
+                                                  context),
+                                              child: Container(
+                                                height: 550.0,
+                                                child: MakepaymentCopyWidget(),
                                               ),
-                                            );
-                                          },
-                                        ).then((value) => safeSetState(() {}));
-                                      },
-                                      child: Container(
-                                        width: 159.0,
-                                        height: 120.0,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                          border: Border.all(
-                                            color: FlutterFlowTheme.of(context)
-                                                .alternate,
-                                            width: 2.0,
-                                          ),
-                                        ),
-                                        child: Padding(
+                                            ),
+                                          );
+                                        },
+                                      ).then((value) => safeSetState(() {}));
+                                    },
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  8.0, 0.0, 8.0, 8.0),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 0.0, 2.0),
-                                                child: FlutterFlowIconButton(
-                                                  borderRadius: 20.0,
-                                                  borderWidth: 1.0,
-                                                  buttonSize: 30.0,
-                                                  icon: FaIcon(
-                                                    FontAwesomeIcons
-                                                        .moneyCheckAlt,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryText,
-                                                    size: 24.0,
-                                                  ),
-                                                  onPressed: () {
-                                                    print(
-                                                        'IconButton pressed ...');
-                                                  },
+                                                  0.0, 0.0, 0.0, 2.0),
+                                          child: FlutterFlowIconButton(
+                                            borderColor: Colors.transparent,
+                                            borderRadius: 20.0,
+                                            borderWidth: 1.0,
+                                            buttonSize: 30.0,
+                                            icon: FaIcon(
+                                              FontAwesomeIcons.moneyCheckAlt,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              size: 24.0,
+                                            ),
+                                            onPressed: () {
+                                              print('IconButton pressed ...');
+                                            },
+                                          ),
+                                        ),
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 8.0, 0.0, 2.0),
+                                              child: Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'np83u3bs' /* Allowed: */,
                                                 ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium,
                                               ),
-                                              Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 8.0,
-                                                                0.0, 2.0),
-                                                    child: Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'r0vq1cln' /* Allowed: */,
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium,
-                                                    ),
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 8.0,
-                                                                0.0, 2.0),
-                                                    child: Text(
-                                                      formatNumber(
-                                                        rowAllowancesRow
-                                                            .amountLimit!,
-                                                        formatType:
-                                                            FormatType.custom,
-                                                        currency: 'ksh',
-                                                        format: '',
-                                                        locale: '',
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium,
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                              Text(
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 8.0, 0.0, 2.0),
+                                              child: Text(
                                                 formatNumber(
-                                                  rowAllowancesRow.amountUsed!,
+                                                  carouselAllowancesRow
+                                                      .amountLimit!,
                                                   formatType: FormatType.custom,
-                                                  currency: 'used:ksh',
+                                                  currency: 'ksh',
                                                   format: '',
                                                   locale: '',
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Lexend',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                        ),
+                                                        .bodyMedium,
                                               ),
-                                              Text(
-                                                valueOrDefault<String>(
-                                                  rowAllowancesRow.ownerEmail,
-                                                  'owner',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelSmall
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color:
-                                                              Color(0xFF88FD65),
-                                                        ),
-                                              ),
-                                            ],
-                                          ),
+                                            ),
+                                          ],
                                         ),
-                                      ),
+                                        Text(
+                                          formatNumber(
+                                            carouselAllowancesRow.amountUsed!,
+                                            formatType: FormatType.custom,
+                                            currency: 'used:ksh',
+                                            format: '',
+                                            locale: '',
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Lexend',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                              ),
+                                        ),
+                                        Text(
+                                          valueOrDefault<String>(
+                                            carouselAllowancesRow.ownerEmail,
+                                            'owner',
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelSmall
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color: Color(0xFF88FD65),
+                                              ),
+                                        ),
+                                      ],
                                     ),
-                                  );
-                                }).divide(SizedBox(width: 12.0)),
-                              );
-                            },
+                                  ),
+                                ),
+                              ),
+                            );
+                          },
+                          carouselController: _model.carouselController ??=
+                              CarouselController(),
+                          options: CarouselOptions(
+                            initialPage:
+                                min(1, carouselAllowancesRowList.length - 1),
+                            viewportFraction: 0.5,
+                            disableCenter: true,
+                            enlargeCenterPage: true,
+                            enlargeFactor: 0.25,
+                            enableInfiniteScroll: false,
+                            scrollDirection: Axis.horizontal,
+                            autoPlay: false,
+                            onPageChanged: (index, _) =>
+                                _model.carouselCurrentIndex = index,
                           ),
                         ),
-                      ].divide(SizedBox(width: 8.0)),
-                    ),
+                      );
+                    },
                   ),
                   Align(
                     alignment: AlignmentDirectional(-1.0, 0.0),
@@ -542,7 +532,7 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                                               duration:
                                                   Duration(milliseconds: 4000),
                                               backgroundColor:
-                                                  Color(0xFFD0FF62),
+                                                  Color(0xFF88FD65),
                                             ),
                                           );
                                         },
