@@ -1,4 +1,6 @@
-import '/auth/supabase_auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -14,18 +16,17 @@ class GiveaccessModel extends FlutterFlowModel<GiveaccessWidget> {
 
   // State field(s) for recipientemail widget.
   FocusNode? recipientemailFocusNode;
-  TextEditingController? recipientemailController;
-  String? Function(BuildContext, String?)? recipientemailControllerValidator;
+  TextEditingController? recipientemailTextController;
+  String? Function(BuildContext, String?)?
+      recipientemailTextControllerValidator;
   // State field(s) for walletid widget.
   FocusNode? walletidFocusNode;
-  TextEditingController? walletidController;
-  String? Function(BuildContext, String?)? walletidControllerValidator;
+  TextEditingController? walletidTextController;
+  String? Function(BuildContext, String?)? walletidTextControllerValidator;
   // State field(s) for amount widget.
   FocusNode? amountFocusNode;
-  TextEditingController? amountController;
-  String? Function(BuildContext, String?)? amountControllerValidator;
-
-  /// Initialization and disposal methods.
+  TextEditingController? amountTextController;
+  String? Function(BuildContext, String?)? amountTextControllerValidator;
 
   @override
   void initState(BuildContext context) {}
@@ -33,16 +34,12 @@ class GiveaccessModel extends FlutterFlowModel<GiveaccessWidget> {
   @override
   void dispose() {
     recipientemailFocusNode?.dispose();
-    recipientemailController?.dispose();
+    recipientemailTextController?.dispose();
 
     walletidFocusNode?.dispose();
-    walletidController?.dispose();
+    walletidTextController?.dispose();
 
     amountFocusNode?.dispose();
-    amountController?.dispose();
+    amountTextController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

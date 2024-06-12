@@ -6,6 +6,8 @@ export 'row.dart';
 export 'table.dart';
 
 export 'tables/transactions.dart';
+export 'tables/notifications.dart';
+export 'tables/profiles.dart';
 export 'tables/wallets.dart';
 export 'tables/allowances.dart';
 export 'tables/users.dart';

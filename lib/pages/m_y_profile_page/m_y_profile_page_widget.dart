@@ -1,4 +1,4 @@
-import '/auth/supabase_auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -62,7 +62,10 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                     BoxShadow(
                       blurRadius: 4.0,
                       color: Color(0x33000000),
-                      offset: Offset(0.0, 2.0),
+                      offset: Offset(
+                        0.0,
+                        2.0,
+                      ),
                     )
                   ],
                   borderRadius: BorderRadius.circular(0.0),
@@ -90,6 +93,7 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                                       fontFamily: 'Lexend',
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
+                                      letterSpacing: 0.0,
                                     ),
                               ),
                             ),
@@ -155,6 +159,7 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                                     fontFamily: 'Lexend',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                             ),
@@ -198,6 +203,7 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                                       .override(
                                         fontFamily: 'Lexend',
                                         color: Color(0xFF88FD65),
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
                                       ),
                                 );
@@ -222,6 +228,7 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                                     fontFamily: 'Lexend',
                                     color:
                                         FlutterFlowTheme.of(context).grayDark,
+                                    letterSpacing: 0.0,
                                   ),
                             ),
                           ],
@@ -274,7 +281,12 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                                 FFLocalizations.of(context).getText(
                                   '03k0vw86' /* Change Password */,
                                 ),
-                                style: FlutterFlowTheme.of(context).bodyMedium,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Lexend',
+                                      letterSpacing: 0.0,
+                                    ),
                               ),
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
@@ -340,7 +352,12 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                                 FFLocalizations.of(context).getText(
                                   '6w6wv95p' /* Notification Settings */,
                                 ),
-                                style: FlutterFlowTheme.of(context).bodyMedium,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Lexend',
+                                      letterSpacing: 0.0,
+                                    ),
                               ),
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
@@ -406,7 +423,12 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                                 FFLocalizations.of(context).getText(
                                   'sxl44uxw' /* Onboarding */,
                                 ),
-                                style: FlutterFlowTheme.of(context).bodyMedium,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Lexend',
+                                      letterSpacing: 0.0,
+                                    ),
                               ),
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
@@ -450,6 +472,7 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Lexend',
                           color: Colors.white,
+                          letterSpacing: 0.0,
                         ),
                     elevation: 2.0,
                     borderSide: BorderSide(
@@ -480,6 +503,7 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Lexend',
                           color: Colors.white,
+                          letterSpacing: 0.0,
                         ),
                     elevation: 2.0,
                     borderSide: BorderSide(

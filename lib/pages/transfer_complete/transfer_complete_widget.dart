@@ -66,6 +66,7 @@ class _TransferCompleteWidgetState extends State<TransferCompleteWidget> {
                 style: FlutterFlowTheme.of(context).displaySmall.override(
                       fontFamily: 'Lexend',
                       color: Color(0xFF15DC4F),
+                      letterSpacing: 0.0,
                     ),
               ),
             ),
@@ -85,6 +86,7 @@ class _TransferCompleteWidgetState extends State<TransferCompleteWidget> {
                             fontFamily: 'Lexend',
                             color: Color(0xB3FFFFFF),
                             fontSize: 17.0,
+                            letterSpacing: 0.0,
                           ),
                     ),
                   ),
@@ -119,6 +121,7 @@ class _TransferCompleteWidgetState extends State<TransferCompleteWidget> {
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Lexend',
                         color: Colors.white,
+                        letterSpacing: 0.0,
                       ),
                   elevation: 2.0,
                   borderSide: BorderSide(

@@ -29,13 +29,13 @@ class _MakepaymentWidgetState extends State<MakepaymentWidget> {
     super.initState();
     _model = createModel(context, () => MakepaymentModel());
 
-    _model.emailAddressController1 ??= TextEditingController();
+    _model.emailAddressTextController1 ??= TextEditingController();
     _model.emailAddressFocusNode1 ??= FocusNode();
 
-    _model.emailAddressController2 ??= TextEditingController();
+    _model.emailAddressTextController2 ??= TextEditingController();
     _model.emailAddressFocusNode2 ??= FocusNode();
 
-    _model.emailAddressController3 ??= TextEditingController();
+    _model.emailAddressTextController3 ??= TextEditingController();
     _model.emailAddressFocusNode3 ??= FocusNode();
   }
 
@@ -68,7 +68,10 @@ class _MakepaymentWidgetState extends State<MakepaymentWidget> {
                     BoxShadow(
                       blurRadius: 4.0,
                       color: Color(0x33000000),
-                      offset: Offset(0.0, 2.0),
+                      offset: Offset(
+                        0.0,
+                        2.0,
+                      ),
                     )
                   ],
                   borderRadius: BorderRadius.circular(12.0),
@@ -94,6 +97,7 @@ class _MakepaymentWidgetState extends State<MakepaymentWidget> {
                               .displaySmall
                               .override(
                                 fontFamily: 'Roboto',
+                                letterSpacing: 0.0,
                                 fontWeight: FontWeight.w500,
                               ),
                         ),
@@ -105,7 +109,12 @@ class _MakepaymentWidgetState extends State<MakepaymentWidget> {
                               '3fjbrki3' /* Enter payment details */,
                             ),
                             textAlign: TextAlign.start,
-                            style: FlutterFlowTheme.of(context).labelLarge,
+                            style: FlutterFlowTheme.of(context)
+                                .labelLarge
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  letterSpacing: 0.0,
+                                ),
                           ),
                         ),
                         Padding(
@@ -114,7 +123,7 @@ class _MakepaymentWidgetState extends State<MakepaymentWidget> {
                           child: Container(
                             width: double.infinity,
                             child: TextFormField(
-                              controller: _model.emailAddressController1,
+                              controller: _model.emailAddressTextController1,
                               focusNode: _model.emailAddressFocusNode1,
                               autofocus: true,
                               autofillHints: [AutofillHints.email],
@@ -123,8 +132,12 @@ class _MakepaymentWidgetState extends State<MakepaymentWidget> {
                                 labelText: FFLocalizations.of(context).getText(
                                   'p3m6te90' /* Paybill */,
                                 ),
-                                labelStyle:
-                                    FlutterFlowTheme.of(context).labelLarge,
+                                labelStyle: FlutterFlowTheme.of(context)
+                                    .labelLarge
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      letterSpacing: 0.0,
+                                    ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color:
@@ -159,9 +172,15 @@ class _MakepaymentWidgetState extends State<MakepaymentWidget> {
                                     .secondaryBackground,
                                 contentPadding: EdgeInsets.all(24.0),
                               ),
-                              style: FlutterFlowTheme.of(context).bodyLarge,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyLarge
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    letterSpacing: 0.0,
+                                  ),
                               keyboardType: TextInputType.emailAddress,
-                              validator: _model.emailAddressController1Validator
+                              validator: _model
+                                  .emailAddressTextController1Validator
                                   .asValidator(context),
                             ),
                           ),
@@ -172,7 +191,7 @@ class _MakepaymentWidgetState extends State<MakepaymentWidget> {
                           child: Container(
                             width: double.infinity,
                             child: TextFormField(
-                              controller: _model.emailAddressController2,
+                              controller: _model.emailAddressTextController2,
                               focusNode: _model.emailAddressFocusNode2,
                               autofocus: true,
                               autofillHints: [AutofillHints.email],
@@ -181,8 +200,12 @@ class _MakepaymentWidgetState extends State<MakepaymentWidget> {
                                 labelText: FFLocalizations.of(context).getText(
                                   'bjr18yee' /* Acc No. */,
                                 ),
-                                labelStyle:
-                                    FlutterFlowTheme.of(context).labelLarge,
+                                labelStyle: FlutterFlowTheme.of(context)
+                                    .labelLarge
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      letterSpacing: 0.0,
+                                    ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color:
@@ -217,9 +240,15 @@ class _MakepaymentWidgetState extends State<MakepaymentWidget> {
                                     .secondaryBackground,
                                 contentPadding: EdgeInsets.all(24.0),
                               ),
-                              style: FlutterFlowTheme.of(context).bodyLarge,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyLarge
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    letterSpacing: 0.0,
+                                  ),
                               keyboardType: TextInputType.emailAddress,
-                              validator: _model.emailAddressController2Validator
+                              validator: _model
+                                  .emailAddressTextController2Validator
                                   .asValidator(context),
                             ),
                           ),
@@ -230,7 +259,7 @@ class _MakepaymentWidgetState extends State<MakepaymentWidget> {
                           child: Container(
                             width: double.infinity,
                             child: TextFormField(
-                              controller: _model.emailAddressController3,
+                              controller: _model.emailAddressTextController3,
                               focusNode: _model.emailAddressFocusNode3,
                               autofocus: true,
                               autofillHints: [AutofillHints.email],
@@ -239,8 +268,12 @@ class _MakepaymentWidgetState extends State<MakepaymentWidget> {
                                 labelText: FFLocalizations.of(context).getText(
                                   'jr8dascu' /* Amount */,
                                 ),
-                                labelStyle:
-                                    FlutterFlowTheme.of(context).labelLarge,
+                                labelStyle: FlutterFlowTheme.of(context)
+                                    .labelLarge
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      letterSpacing: 0.0,
+                                    ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color:
@@ -275,9 +308,15 @@ class _MakepaymentWidgetState extends State<MakepaymentWidget> {
                                     .secondaryBackground,
                                 contentPadding: EdgeInsets.all(24.0),
                               ),
-                              style: FlutterFlowTheme.of(context).bodyLarge,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyLarge
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    letterSpacing: 0.0,
+                                  ),
                               keyboardType: TextInputType.emailAddress,
-                              validator: _model.emailAddressController3Validator
+                              validator: _model
+                                  .emailAddressTextController3Validator
                                   .asValidator(context),
                             ),
                           ),
@@ -307,6 +346,7 @@ class _MakepaymentWidgetState extends State<MakepaymentWidget> {
                                     .override(
                                       fontFamily: 'Lexend',
                                       color: Colors.white,
+                                      letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
                                 borderSide: BorderSide(

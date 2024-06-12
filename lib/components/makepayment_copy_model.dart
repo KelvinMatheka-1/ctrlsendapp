@@ -1,4 +1,6 @@
-import '/auth/supabase_auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -19,22 +21,20 @@ class MakepaymentCopyModel extends FlutterFlowModel<MakepaymentCopyWidget> {
   FormFieldController<String>? dropDownValueController;
   // State field(s) for emailAddress widget.
   FocusNode? emailAddressFocusNode1;
-  TextEditingController? emailAddressController1;
-  String? Function(BuildContext, String?)? emailAddressController1Validator;
+  TextEditingController? emailAddressTextController1;
+  String? Function(BuildContext, String?)? emailAddressTextController1Validator;
   // State field(s) for emailAddress widget.
   FocusNode? emailAddressFocusNode2;
-  TextEditingController? emailAddressController2;
-  String? Function(BuildContext, String?)? emailAddressController2Validator;
+  TextEditingController? emailAddressTextController2;
+  String? Function(BuildContext, String?)? emailAddressTextController2Validator;
   // State field(s) for emailAddress widget.
   FocusNode? emailAddressFocusNode3;
-  TextEditingController? emailAddressController3;
-  String? Function(BuildContext, String?)? emailAddressController3Validator;
+  TextEditingController? emailAddressTextController3;
+  String? Function(BuildContext, String?)? emailAddressTextController3Validator;
   // State field(s) for emailAddress widget.
   FocusNode? emailAddressFocusNode4;
-  TextEditingController? emailAddressController4;
-  String? Function(BuildContext, String?)? emailAddressController4Validator;
-
-  /// Initialization and disposal methods.
+  TextEditingController? emailAddressTextController4;
+  String? Function(BuildContext, String?)? emailAddressTextController4Validator;
 
   @override
   void initState(BuildContext context) {}
@@ -42,19 +42,15 @@ class MakepaymentCopyModel extends FlutterFlowModel<MakepaymentCopyWidget> {
   @override
   void dispose() {
     emailAddressFocusNode1?.dispose();
-    emailAddressController1?.dispose();
+    emailAddressTextController1?.dispose();
 
     emailAddressFocusNode2?.dispose();
-    emailAddressController2?.dispose();
+    emailAddressTextController2?.dispose();
 
     emailAddressFocusNode3?.dispose();
-    emailAddressController3?.dispose();
+    emailAddressTextController3?.dispose();
 
     emailAddressFocusNode4?.dispose();
-    emailAddressController4?.dispose();
+    emailAddressTextController4?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

@@ -1,4 +1,4 @@
-import '/auth/supabase_auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -27,164 +28,7 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
     with TickerProviderStateMixin {
   late AccessCopyModel _model;
 
-  final animationsMap = {
-    'containerOnPageLoadAnimation': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 450.ms,
-          duration: 1620.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 450.ms,
-          duration: 1620.ms,
-          begin: Offset(0.0, 30.0),
-          end: Offset(0.0, 0.0),
-        ),
-        ScaleEffect(
-          curve: Curves.easeInOut,
-          delay: 450.ms,
-          duration: 1620.ms,
-          begin: Offset(0.4, 0.0),
-          end: Offset(1.0, 1.0),
-        ),
-      ],
-    ),
-    'dropDownOnPageLoadAnimation': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 100.ms,
-          duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 100.ms,
-          duration: 600.ms,
-          begin: Offset(0.0, 60.0),
-          end: Offset(0.0, 0.0),
-        ),
-        ScaleEffect(
-          curve: Curves.easeInOut,
-          delay: 100.ms,
-          duration: 600.ms,
-          begin: Offset(1.0, 0.0),
-          end: Offset(1.0, 1.0),
-        ),
-      ],
-    ),
-    'textFieldOnPageLoadAnimation1': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 170.ms,
-          duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 170.ms,
-          duration: 600.ms,
-          begin: Offset(0.0, 80.0),
-          end: Offset(0.0, 0.0),
-        ),
-        ScaleEffect(
-          curve: Curves.easeInOut,
-          delay: 170.ms,
-          duration: 600.ms,
-          begin: Offset(1.0, 0.0),
-          end: Offset(1.0, 1.0),
-        ),
-      ],
-    ),
-    'textFieldOnPageLoadAnimation2': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 170.ms,
-          duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 170.ms,
-          duration: 600.ms,
-          begin: Offset(0.0, 80.0),
-          end: Offset(0.0, 0.0),
-        ),
-        ScaleEffect(
-          curve: Curves.easeInOut,
-          delay: 170.ms,
-          duration: 600.ms,
-          begin: Offset(1.0, 0.0),
-          end: Offset(1.0, 1.0),
-        ),
-      ],
-    ),
-    'textFieldOnPageLoadAnimation3': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 170.ms,
-          duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 170.ms,
-          duration: 600.ms,
-          begin: Offset(0.0, 80.0),
-          end: Offset(0.0, 0.0),
-        ),
-        ScaleEffect(
-          curve: Curves.easeInOut,
-          delay: 170.ms,
-          duration: 600.ms,
-          begin: Offset(1.0, 0.0),
-          end: Offset(1.0, 1.0),
-        ),
-      ],
-    ),
-    'textFieldOnPageLoadAnimation4': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 170.ms,
-          duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 170.ms,
-          duration: 600.ms,
-          begin: Offset(0.0, 80.0),
-          end: Offset(0.0, 0.0),
-        ),
-        ScaleEffect(
-          curve: Curves.easeInOut,
-          delay: 170.ms,
-          duration: 600.ms,
-          begin: Offset(1.0, 0.0),
-          end: Offset(1.0, 1.0),
-        ),
-      ],
-    ),
-  };
+  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void setState(VoidCallback callback) {
@@ -197,18 +41,176 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
     super.initState();
     _model = createModel(context, () => AccessCopyModel());
 
-    _model.emailController1 ??= TextEditingController();
+    _model.emailTextController1 ??= TextEditingController();
     _model.emailFocusNode1 ??= FocusNode();
 
-    _model.emailController2 ??= TextEditingController();
+    _model.emailTextController2 ??= TextEditingController();
     _model.emailFocusNode2 ??= FocusNode();
 
-    _model.emailController3 ??= TextEditingController();
+    _model.emailTextController3 ??= TextEditingController();
     _model.emailFocusNode3 ??= FocusNode();
 
     _model.textController4 ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
 
+    animationsMap.addAll({
+      'containerOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 450.0.ms,
+            duration: 1620.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 450.0.ms,
+            duration: 1620.0.ms,
+            begin: Offset(0.0, 30.0),
+            end: Offset(0.0, 0.0),
+          ),
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 450.0.ms,
+            duration: 1620.0.ms,
+            begin: Offset(0.4, 0.0),
+            end: Offset(1.0, 1.0),
+          ),
+        ],
+      ),
+      'dropDownOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 100.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 100.0.ms,
+            duration: 600.0.ms,
+            begin: Offset(0.0, 60.0),
+            end: Offset(0.0, 0.0),
+          ),
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 100.0.ms,
+            duration: 600.0.ms,
+            begin: Offset(1.0, 0.0),
+            end: Offset(1.0, 1.0),
+          ),
+        ],
+      ),
+      'textFieldOnPageLoadAnimation1': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 170.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 170.0.ms,
+            duration: 600.0.ms,
+            begin: Offset(0.0, 80.0),
+            end: Offset(0.0, 0.0),
+          ),
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 170.0.ms,
+            duration: 600.0.ms,
+            begin: Offset(1.0, 0.0),
+            end: Offset(1.0, 1.0),
+          ),
+        ],
+      ),
+      'textFieldOnPageLoadAnimation2': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 170.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 170.0.ms,
+            duration: 600.0.ms,
+            begin: Offset(0.0, 80.0),
+            end: Offset(0.0, 0.0),
+          ),
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 170.0.ms,
+            duration: 600.0.ms,
+            begin: Offset(1.0, 0.0),
+            end: Offset(1.0, 1.0),
+          ),
+        ],
+      ),
+      'textFieldOnPageLoadAnimation3': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 170.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 170.0.ms,
+            duration: 600.0.ms,
+            begin: Offset(0.0, 80.0),
+            end: Offset(0.0, 0.0),
+          ),
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 170.0.ms,
+            duration: 600.0.ms,
+            begin: Offset(1.0, 0.0),
+            end: Offset(1.0, 1.0),
+          ),
+        ],
+      ),
+      'textFieldOnPageLoadAnimation4': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 170.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 170.0.ms,
+            duration: 600.0.ms,
+            begin: Offset(0.0, 80.0),
+            end: Offset(0.0, 0.0),
+          ),
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 170.0.ms,
+            duration: 600.0.ms,
+            begin: Offset(1.0, 0.0),
+            end: Offset(1.0, 1.0),
+          ),
+        ],
+      ),
+    });
     setupAnimations(
       animationsMap.values.where((anim) =>
           anim.trigger == AnimationTrigger.onActionTrigger ||
@@ -297,6 +299,7 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                               .override(
                                 fontFamily: 'Lexend',
                                 fontSize: 30.0,
+                                letterSpacing: 0.0,
                               ),
                         ),
                       if (_model.dropDownValue == 'sending')
@@ -309,6 +312,7 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                               .override(
                                 fontFamily: 'Lexend',
                                 fontSize: 30.0,
+                                letterSpacing: 0.0,
                               ),
                         ),
                       Card(
@@ -343,7 +347,10 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                           BoxShadow(
                             blurRadius: 6.0,
                             color: Color(0x4B1A1F24),
-                            offset: Offset(0.0, 2.0),
+                            offset: Offset(
+                              0.0,
+                              2.0,
+                            ),
                           )
                         ],
                         gradient: LinearGradient(
@@ -383,7 +390,11 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                           setState(() => _model.dropDownValue = val),
                       width: MediaQuery.sizeOf(context).width * 0.9,
                       height: 60.0,
-                      textStyle: FlutterFlowTheme.of(context).bodyMedium,
+                      textStyle:
+                          FlutterFlowTheme.of(context).bodyMedium.override(
+                                fontFamily: 'Lexend',
+                                letterSpacing: 0.0,
+                              ),
                       hintText: FFLocalizations.of(context).getText(
                         'j4ah5enl' /* Choose option */,
                       ),
@@ -411,7 +422,7 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: TextFormField(
-                        controller: _model.emailController1,
+                        controller: _model.emailTextController1,
                         focusNode: _model.emailFocusNode1,
                         autofillHints: [AutofillHints.email],
                         obscureText: false,
@@ -426,6 +437,7 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
                                 fontSize: 18.0,
+                                letterSpacing: 0.0,
                                 fontWeight: FontWeight.w300,
                               ),
                           enabledBorder: OutlineInputBorder(
@@ -463,11 +475,12 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                             FlutterFlowTheme.of(context).displaySmall.override(
                                   fontFamily: 'Lexend',
                                   fontSize: 20.0,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w300,
                                 ),
                         maxLines: null,
                         keyboardType: TextInputType.emailAddress,
-                        validator: _model.emailController1Validator
+                        validator: _model.emailTextController1Validator
                             .asValidator(context),
                       ).animateOnPageLoad(
                           animationsMap['textFieldOnPageLoadAnimation1']!),
@@ -477,7 +490,7 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: TextFormField(
-                        controller: _model.emailController2,
+                        controller: _model.emailTextController2,
                         focusNode: _model.emailFocusNode2,
                         autofillHints: [AutofillHints.email],
                         obscureText: false,
@@ -492,6 +505,7 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
                                 fontSize: 18.0,
+                                letterSpacing: 0.0,
                                 fontWeight: FontWeight.w300,
                               ),
                           enabledBorder: OutlineInputBorder(
@@ -529,11 +543,12 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                             FlutterFlowTheme.of(context).displaySmall.override(
                                   fontFamily: 'Lexend',
                                   fontSize: 20.0,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w300,
                                 ),
                         maxLines: null,
                         keyboardType: TextInputType.number,
-                        validator: _model.emailController2Validator
+                        validator: _model.emailTextController2Validator
                             .asValidator(context),
                       ).animateOnPageLoad(
                           animationsMap['textFieldOnPageLoadAnimation2']!),
@@ -543,7 +558,7 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: TextFormField(
-                        controller: _model.emailController3,
+                        controller: _model.emailTextController3,
                         focusNode: _model.emailFocusNode3,
                         autofillHints: [AutofillHints.email],
                         obscureText: false,
@@ -558,6 +573,7 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
                                 fontSize: 18.0,
+                                letterSpacing: 0.0,
                                 fontWeight: FontWeight.w300,
                               ),
                           enabledBorder: OutlineInputBorder(
@@ -595,11 +611,12 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                             FlutterFlowTheme.of(context).displaySmall.override(
                                   fontFamily: 'Lexend',
                                   fontSize: 20.0,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w300,
                                 ),
                         maxLines: null,
                         keyboardType: TextInputType.emailAddress,
-                        validator: _model.emailController3Validator
+                        validator: _model.emailTextController3Validator
                             .asValidator(context),
                       ).animateOnPageLoad(
                           animationsMap['textFieldOnPageLoadAnimation3']!),
@@ -610,6 +627,7 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                     child: TextFormField(
                       controller: _model.textController4,
                       focusNode: _model.textFieldFocusNode,
+                      autofocus: false,
                       obscureText: false,
                       decoration: InputDecoration(
                         labelText: FFLocalizations.of(context).getText(
@@ -621,6 +639,7 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                               fontFamily: 'Lexend',
                               color: FlutterFlowTheme.of(context).secondaryText,
                               fontSize: 18.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.w300,
                             ),
                         enabledBorder: OutlineInputBorder(
@@ -657,6 +676,7 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                       style: FlutterFlowTheme.of(context).displaySmall.override(
                             fontFamily: 'Lexend',
                             fontSize: 20.0,
+                            letterSpacing: 0.0,
                             fontWeight: FontWeight.w300,
                           ),
                       keyboardType: TextInputType.number,
@@ -688,7 +708,7 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                                     'amount': double.tryParse(
                                         _model.textController4.text),
                                     'recipient_email':
-                                        _model.emailController1.text,
+                                        _model.emailTextController1.text,
                                     'sender_email':
                                         containerAllowancesRow?.ownerEmail,
                                     'status': 'pending',
@@ -714,6 +734,7 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                         fontSize: 25.0,
+                                        letterSpacing: 0.0,
                                       ),
                                   elevation: 5.0,
                                   borderSide: BorderSide(
@@ -748,6 +769,7 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                         fontSize: 25.0,
+                                        letterSpacing: 0.0,
                                       ),
                                   elevation: 5.0,
                                   borderSide: BorderSide(

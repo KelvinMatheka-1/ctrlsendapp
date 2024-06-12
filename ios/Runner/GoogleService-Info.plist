@@ -2,22 +2,18 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CLIENT_ID</key>
-	<string>51742710343-873852qsvpaqefhvbrqgjp3mbf3cu930.apps.googleusercontent.com</string>
-	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.51742710343-873852qsvpaqefhvbrqgjp3mbf3cu930</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDoCMl35w9fO4h3aXocTrrxOhqzZ6QOhcc</string>
+	<string>AIzaSyA4pCnWtnVwdjC-n3fAik-oU7uWiL4gDrg</string>
 	<key>GCM_SENDER_ID</key>
-	<string>51742710343</string>
+	<string>546089946220</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.flutterflow.finwallet</string>
 	<key>PROJECT_ID</key>
-	<string>ctrlsend-af9fd</string>
+	<string>ctrlsend</string>
 	<key>STORAGE_BUCKET</key>
-	<string>ctrlsend-af9fd.appspot.com</string>
+	<string>ctrlsend.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:51742710343:ios:7015587a668c7603276f62</string>
-	<key>DATABASE_URL</key>
-	<string>https://ctrlsend-af9fd-default-rtdb.firebaseio.com</string>
+	<string>1:546089946220:ios:ccddd860112ec73dbadc49</string>
 </dict>
 </plist>

@@ -61,7 +61,10 @@ class _NotificationsSettingsWidgetState
           FFLocalizations.of(context).getText(
             'sc4ff4ce' /* Notifications */,
           ),
-          style: FlutterFlowTheme.of(context).headlineSmall,
+          style: FlutterFlowTheme.of(context).headlineSmall.override(
+                fontFamily: 'Lexend',
+                letterSpacing: 0.0,
+              ),
         ),
         actions: [],
         centerTitle: false,
@@ -84,7 +87,10 @@ class _NotificationsSettingsWidgetState
                       FFLocalizations.of(context).getText(
                         'r72zvrv5' /* Choose what notifcations you w... */,
                       ),
-                      style: FlutterFlowTheme.of(context).bodySmall,
+                      style: FlutterFlowTheme.of(context).bodySmall.override(
+                            fontFamily: 'Lexend',
+                            letterSpacing: 0.0,
+                          ),
                     ),
                   ),
                 ],
@@ -101,13 +107,19 @@ class _NotificationsSettingsWidgetState
                   FFLocalizations.of(context).getText(
                     'gjygkr0n' /* Push Notifications */,
                   ),
-                  style: FlutterFlowTheme.of(context).headlineSmall,
+                  style: FlutterFlowTheme.of(context).headlineSmall.override(
+                        fontFamily: 'Lexend',
+                        letterSpacing: 0.0,
+                      ),
                 ),
                 subtitle: Text(
                   FFLocalizations.of(context).getText(
                     '3y3yhxbk' /* Receive Push notifications fro... */,
                   ),
-                  style: FlutterFlowTheme.of(context).bodySmall,
+                  style: FlutterFlowTheme.of(context).bodySmall.override(
+                        fontFamily: 'Lexend',
+                        letterSpacing: 0.0,
+                      ),
                 ),
                 tileColor: FlutterFlowTheme.of(context).secondaryBackground,
                 activeColor: Color(0xFF15DC4F),
@@ -127,13 +139,19 @@ class _NotificationsSettingsWidgetState
                 FFLocalizations.of(context).getText(
                   '1ytebj35' /* Email Notifications */,
                 ),
-                style: FlutterFlowTheme.of(context).headlineSmall,
+                style: FlutterFlowTheme.of(context).headlineSmall.override(
+                      fontFamily: 'Lexend',
+                      letterSpacing: 0.0,
+                    ),
               ),
               subtitle: Text(
                 FFLocalizations.of(context).getText(
                   '9lvh5nst' /* Receive email notifications fr... */,
                 ),
-                style: FlutterFlowTheme.of(context).bodySmall,
+                style: FlutterFlowTheme.of(context).bodySmall.override(
+                      fontFamily: 'Lexend',
+                      letterSpacing: 0.0,
+                    ),
               ),
               tileColor: FlutterFlowTheme.of(context).secondaryBackground,
               activeColor: Color(0xFF15DC4F),
@@ -152,13 +170,19 @@ class _NotificationsSettingsWidgetState
                 FFLocalizations.of(context).getText(
                   '69d2j74u' /* Location Services */,
                 ),
-                style: FlutterFlowTheme.of(context).headlineSmall,
+                style: FlutterFlowTheme.of(context).headlineSmall.override(
+                      fontFamily: 'Lexend',
+                      letterSpacing: 0.0,
+                    ),
               ),
               subtitle: Text(
                 FFLocalizations.of(context).getText(
                   '3k8cuv0d' /* Allow us to track your locatio... */,
                 ),
-                style: FlutterFlowTheme.of(context).bodySmall,
+                style: FlutterFlowTheme.of(context).bodySmall.override(
+                      fontFamily: 'Lexend',
+                      letterSpacing: 0.0,
+                    ),
               ),
               tileColor: FlutterFlowTheme.of(context).secondaryBackground,
               activeColor: Color(0xFF15DC4F),
@@ -187,6 +211,7 @@ class _NotificationsSettingsWidgetState
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Lexend',
                         color: FlutterFlowTheme.of(context).textColor,
+                        letterSpacing: 0.0,
                       ),
                   elevation: 3.0,
                   borderSide: BorderSide(

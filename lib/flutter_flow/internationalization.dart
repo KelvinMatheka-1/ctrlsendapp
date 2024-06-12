@@ -345,7 +345,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'q30ina4f': {
       'en':
-          'Now you are able to see what or who your money is being spent on. Now thats transparency!',
+          'Ability to see what or who your money is being spent on. Now that\'s transparency!',
       'ar': 'تعرف على مكان ميزانياتك وكيف يمكن تعديلها.',
       'de': 'Wissen, wo Ihre Budgets sind und wie sie angepasst werden können.',
       'es': 'Sepa dónde están sus presupuestos y cómo se pueden ajustar.',
@@ -1182,6 +1182,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Miscellaneous
   {
+    'rh7y92uo': {
+      'en': 'Allow Notifications',
+      'ar': '',
+      'de': '',
+      'es': '',
+    },
     'efvtwj7k': {
       'en': '',
       'ar': '',
@@ -1231,6 +1237,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
     'mlu0r6rn': {
+      'en': '',
+      'ar': '',
+      'de': '',
+      'es': '',
+    },
+    'gkynybk8': {
+      'en': '',
+      'ar': '',
+      'de': '',
+      'es': '',
+    },
+    'e2cd2fx0': {
       'en': '',
       'ar': '',
       'de': '',

@@ -1,4 +1,6 @@
-import '/auth/supabase_auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -33,16 +35,16 @@ class _MakepaymentCopyWidgetState extends State<MakepaymentCopyWidget> {
     super.initState();
     _model = createModel(context, () => MakepaymentCopyModel());
 
-    _model.emailAddressController1 ??= TextEditingController();
+    _model.emailAddressTextController1 ??= TextEditingController();
     _model.emailAddressFocusNode1 ??= FocusNode();
 
-    _model.emailAddressController2 ??= TextEditingController();
+    _model.emailAddressTextController2 ??= TextEditingController();
     _model.emailAddressFocusNode2 ??= FocusNode();
 
-    _model.emailAddressController3 ??= TextEditingController();
+    _model.emailAddressTextController3 ??= TextEditingController();
     _model.emailAddressFocusNode3 ??= FocusNode();
 
-    _model.emailAddressController4 ??= TextEditingController();
+    _model.emailAddressTextController4 ??= TextEditingController();
     _model.emailAddressFocusNode4 ??= FocusNode();
   }
 
@@ -102,7 +104,10 @@ class _MakepaymentCopyWidgetState extends State<MakepaymentCopyWidget> {
                         BoxShadow(
                           blurRadius: 4.0,
                           color: Color(0x33000000),
-                          offset: Offset(0.0, 2.0),
+                          offset: Offset(
+                            0.0,
+                            2.0,
+                          ),
                         )
                       ],
                       borderRadius: BorderRadius.circular(12.0),
@@ -156,6 +161,7 @@ class _MakepaymentCopyWidgetState extends State<MakepaymentCopyWidget> {
                                         .displaySmall
                                         .override(
                                           fontFamily: 'Roboto',
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
                                         ),
                                   ),
@@ -169,6 +175,7 @@ class _MakepaymentCopyWidgetState extends State<MakepaymentCopyWidget> {
                                         .displaySmall
                                         .override(
                                           fontFamily: 'Roboto',
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
                                         ),
                                   ),
@@ -180,8 +187,12 @@ class _MakepaymentCopyWidgetState extends State<MakepaymentCopyWidget> {
                                       'be4a72a0' /* Enter details */,
                                     ),
                                     textAlign: TextAlign.start,
-                                    style:
-                                        FlutterFlowTheme.of(context).labelLarge,
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          letterSpacing: 0.0,
+                                        ),
                                   ),
                                 ),
                                 Padding(
@@ -208,8 +219,12 @@ class _MakepaymentCopyWidgetState extends State<MakepaymentCopyWidget> {
                                         () => _model.dropDownValue = val),
                                     width: 348.0,
                                     height: 64.0,
-                                    textStyle:
-                                        FlutterFlowTheme.of(context).labelLarge,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          letterSpacing: 0.0,
+                                        ),
                                     hintText:
                                         FFLocalizations.of(context).getText(
                                       'ms27y2y9' /* Please select... */,
@@ -243,7 +258,7 @@ class _MakepaymentCopyWidgetState extends State<MakepaymentCopyWidget> {
                                       width: double.infinity,
                                       child: TextFormField(
                                         controller:
-                                            _model.emailAddressController1,
+                                            _model.emailAddressTextController1,
                                         focusNode:
                                             _model.emailAddressFocusNode1,
                                         autofocus: true,
@@ -256,7 +271,11 @@ class _MakepaymentCopyWidgetState extends State<MakepaymentCopyWidget> {
                                           ),
                                           labelStyle:
                                               FlutterFlowTheme.of(context)
-                                                  .labelLarge,
+                                                  .labelLarge
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    letterSpacing: 0.0,
+                                                  ),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color:
@@ -303,10 +322,14 @@ class _MakepaymentCopyWidgetState extends State<MakepaymentCopyWidget> {
                                           contentPadding: EdgeInsets.all(24.0),
                                         ),
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyLarge,
+                                            .bodyLarge
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
+                                            ),
                                         keyboardType: TextInputType.number,
                                         validator: _model
-                                            .emailAddressController1Validator
+                                            .emailAddressTextController1Validator
                                             .asValidator(context),
                                       ),
                                     ),
@@ -319,7 +342,7 @@ class _MakepaymentCopyWidgetState extends State<MakepaymentCopyWidget> {
                                       width: double.infinity,
                                       child: TextFormField(
                                         controller:
-                                            _model.emailAddressController2,
+                                            _model.emailAddressTextController2,
                                         focusNode:
                                             _model.emailAddressFocusNode2,
                                         autofocus: true,
@@ -332,7 +355,11 @@ class _MakepaymentCopyWidgetState extends State<MakepaymentCopyWidget> {
                                           ),
                                           labelStyle:
                                               FlutterFlowTheme.of(context)
-                                                  .labelLarge,
+                                                  .labelLarge
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    letterSpacing: 0.0,
+                                                  ),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color:
@@ -379,11 +406,15 @@ class _MakepaymentCopyWidgetState extends State<MakepaymentCopyWidget> {
                                           contentPadding: EdgeInsets.all(24.0),
                                         ),
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyLarge,
+                                            .bodyLarge
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
+                                            ),
                                         keyboardType:
                                             TextInputType.emailAddress,
                                         validator: _model
-                                            .emailAddressController2Validator
+                                            .emailAddressTextController2Validator
                                             .asValidator(context),
                                       ),
                                     ),
@@ -396,7 +427,7 @@ class _MakepaymentCopyWidgetState extends State<MakepaymentCopyWidget> {
                                       width: double.infinity,
                                       child: TextFormField(
                                         controller:
-                                            _model.emailAddressController3,
+                                            _model.emailAddressTextController3,
                                         focusNode:
                                             _model.emailAddressFocusNode3,
                                         autofocus: true,
@@ -409,7 +440,11 @@ class _MakepaymentCopyWidgetState extends State<MakepaymentCopyWidget> {
                                           ),
                                           labelStyle:
                                               FlutterFlowTheme.of(context)
-                                                  .labelLarge,
+                                                  .labelLarge
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    letterSpacing: 0.0,
+                                                  ),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color:
@@ -456,11 +491,15 @@ class _MakepaymentCopyWidgetState extends State<MakepaymentCopyWidget> {
                                           contentPadding: EdgeInsets.all(24.0),
                                         ),
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyLarge,
+                                            .bodyLarge
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
+                                            ),
                                         keyboardType:
                                             TextInputType.emailAddress,
                                         validator: _model
-                                            .emailAddressController3Validator
+                                            .emailAddressTextController3Validator
                                             .asValidator(context),
                                       ),
                                     ),
@@ -472,7 +511,7 @@ class _MakepaymentCopyWidgetState extends State<MakepaymentCopyWidget> {
                                     width: double.infinity,
                                     child: TextFormField(
                                       controller:
-                                          _model.emailAddressController4,
+                                          _model.emailAddressTextController4,
                                       focusNode: _model.emailAddressFocusNode4,
                                       autofocus: true,
                                       autofillHints: [AutofillHints.email],
@@ -483,7 +522,11 @@ class _MakepaymentCopyWidgetState extends State<MakepaymentCopyWidget> {
                                           'anjla1xw' /* Amount */,
                                         ),
                                         labelStyle: FlutterFlowTheme.of(context)
-                                            .labelLarge,
+                                            .labelLarge
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
+                                            ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
@@ -525,10 +568,14 @@ class _MakepaymentCopyWidgetState extends State<MakepaymentCopyWidget> {
                                         contentPadding: EdgeInsets.all(24.0),
                                       ),
                                       style: FlutterFlowTheme.of(context)
-                                          .bodyLarge,
+                                          .bodyLarge
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
                                       keyboardType: TextInputType.number,
                                       validator: _model
-                                          .emailAddressController4Validator
+                                          .emailAddressTextController4Validator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -557,6 +604,7 @@ class _MakepaymentCopyWidgetState extends State<MakepaymentCopyWidget> {
                                             .override(
                                               fontFamily: 'Lexend',
                                               color: Colors.white,
+                                              letterSpacing: 0.0,
                                             ),
                                         elevation: 3.0,
                                         borderSide: BorderSide(
@@ -574,54 +622,126 @@ class _MakepaymentCopyWidgetState extends State<MakepaymentCopyWidget> {
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 16.0),
-                                      child: FFButtonWidget(
-                                        onPressed: () async {
-                                          await TransactionsTable().insert({
-                                            'sender_email':
-                                                containerAllowancesRow
-                                                    ?.ownerEmail,
-                                            'recipient_email': _model
-                                                .emailAddressController3.text,
-                                            'created_at':
-                                                supaSerialize<DateTime>(
-                                                    getCurrentTimestamp),
-                                            'amount': double.tryParse(_model
-                                                .emailAddressController4.text),
-                                            'status': 'pending',
-                                            'granted_email': currentUserEmail,
-                                          });
-
-                                          context.pushNamed('MY_CardCopy');
-                                        },
-                                        text:
-                                            FFLocalizations.of(context).getText(
-                                          't7yhj95z' /* send */,
-                                        ),
-                                        options: FFButtonOptions(
-                                          width: 230.0,
-                                          height: 52.0,
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                          iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                          color: Color(0xFF9FDA00),
-                                          textStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmall
-                                                  .override(
-                                                    fontFamily: 'Lexend',
-                                                    color: Colors.white,
-                                                  ),
-                                          elevation: 3.0,
-                                          borderSide: BorderSide(
-                                            color: Colors.transparent,
-                                            width: 1.0,
+                                      child:
+                                          StreamBuilder<List<UserListRecord>>(
+                                        stream: queryUserListRecord(
+                                          queryBuilder: (userListRecord) =>
+                                              userListRecord.where(
+                                            'email',
+                                            isEqualTo: containerAllowancesRow
+                                                ?.ownerEmail,
                                           ),
-                                          borderRadius:
-                                              BorderRadius.circular(40.0),
+                                          singleRecord: true,
                                         ),
+                                        builder: (context, snapshot) {
+                                          // Customize what your widget looks like when it's loading.
+                                          if (!snapshot.hasData) {
+                                            return Center(
+                                              child: SizedBox(
+                                                width: 40.0,
+                                                height: 40.0,
+                                                child: SpinKitRing(
+                                                  color: Color(0xFF88FD65),
+                                                  size: 40.0,
+                                                ),
+                                              ),
+                                            );
+                                          }
+                                          List<UserListRecord>
+                                              buttonUserListRecordList =
+                                              snapshot.data!;
+                                          // Return an empty Container when the item does not exist.
+                                          if (snapshot.data!.isEmpty) {
+                                            return Container();
+                                          }
+                                          final buttonUserListRecord =
+                                              buttonUserListRecordList
+                                                      .isNotEmpty
+                                                  ? buttonUserListRecordList
+                                                      .first
+                                                  : null;
+                                          return FFButtonWidget(
+                                            onPressed: () async {
+                                              await TransactionsTable().insert({
+                                                'sender_email':
+                                                    containerAllowancesRow
+                                                        ?.ownerEmail,
+                                                'recipient_email': _model
+                                                    .emailAddressTextController3
+                                                    .text,
+                                                'created_at':
+                                                    supaSerialize<DateTime>(
+                                                        getCurrentTimestamp),
+                                                'amount': double.tryParse(_model
+                                                    .emailAddressTextController4
+                                                    .text),
+                                                'status': 'pending',
+                                                'granted_email':
+                                                    currentUserEmail,
+                                              });
+                                              triggerPushNotification(
+                                                notificationTitle: 'Usage',
+                                                notificationText:
+                                                    '${currentUserEmail}wants to use ksh${_model.emailAddressTextController4.text} from your wallet.',
+                                                notificationSound: 'default',
+                                                userRefs: [
+                                                  buttonUserListRecord!
+                                                      .reference
+                                                ],
+                                                initialPageName: 'transactions',
+                                                parameterData: {},
+                                              );
+                                              await showDialog(
+                                                context: context,
+                                                builder: (alertDialogContext) {
+                                                  return AlertDialog(
+                                                    title: Text('Request sent'),
+                                                    content: Text(
+                                                        'An approval request has been sent to the wallet owner.'),
+                                                    actions: [
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext),
+                                                        child: Text('Ok'),
+                                                      ),
+                                                    ],
+                                                  );
+                                                },
+                                              );
+
+                                              context.pushNamed('MY_CardCopy');
+                                            },
+                                            text: FFLocalizations.of(context)
+                                                .getText(
+                                              't7yhj95z' /* send */,
+                                            ),
+                                            options: FFButtonOptions(
+                                              width: 230.0,
+                                              height: 52.0,
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              iconPadding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              color: Color(0xFF9FDA00),
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily: 'Lexend',
+                                                        color: Colors.white,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                              elevation: 3.0,
+                                              borderSide: BorderSide(
+                                                color: Colors.transparent,
+                                                width: 1.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(40.0),
+                                            ),
+                                          );
+                                        },
                                       ),
                                     ),
                                   ),

@@ -1,8 +1,11 @@
-import '/auth/supabase_auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -11,7 +14,12 @@ import 'sending_model.dart';
 export 'sending_model.dart';
 
 class SendingWidget extends StatefulWidget {
-  const SendingWidget({super.key});
+  const SendingWidget({
+    super.key,
+    this.user,
+  });
+
+  final DocumentReference? user;
 
   @override
   State<SendingWidget> createState() => _SendingWidgetState();
@@ -31,10 +39,10 @@ class _SendingWidgetState extends State<SendingWidget> {
     super.initState();
     _model = createModel(context, () => SendingModel());
 
-    _model.emailAddressController1 ??= TextEditingController();
+    _model.emailAddressTextController1 ??= TextEditingController();
     _model.emailAddressFocusNode1 ??= FocusNode();
 
-    _model.emailAddressController2 ??= TextEditingController();
+    _model.emailAddressTextController2 ??= TextEditingController();
     _model.emailAddressFocusNode2 ??= FocusNode();
   }
 
@@ -67,7 +75,10 @@ class _SendingWidgetState extends State<SendingWidget> {
                     BoxShadow(
                       blurRadius: 4.0,
                       color: Color(0x33000000),
-                      offset: Offset(0.0, 2.0),
+                      offset: Offset(
+                        0.0,
+                        2.0,
+                      ),
                     )
                   ],
                   borderRadius: BorderRadius.circular(12.0),
@@ -93,6 +104,7 @@ class _SendingWidgetState extends State<SendingWidget> {
                               .displaySmall
                               .override(
                                 fontFamily: 'Roboto',
+                                letterSpacing: 0.0,
                                 fontWeight: FontWeight.w500,
                               ),
                         ),
@@ -104,7 +116,12 @@ class _SendingWidgetState extends State<SendingWidget> {
                               '5vu805tq' /* Enter recipient details */,
                             ),
                             textAlign: TextAlign.start,
-                            style: FlutterFlowTheme.of(context).labelLarge,
+                            style: FlutterFlowTheme.of(context)
+                                .labelLarge
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  letterSpacing: 0.0,
+                                ),
                           ),
                         ),
                         Padding(
@@ -113,7 +130,7 @@ class _SendingWidgetState extends State<SendingWidget> {
                           child: Container(
                             width: double.infinity,
                             child: TextFormField(
-                              controller: _model.emailAddressController1,
+                              controller: _model.emailAddressTextController1,
                               focusNode: _model.emailAddressFocusNode1,
                               autofocus: true,
                               autofillHints: [AutofillHints.email],
@@ -122,8 +139,12 @@ class _SendingWidgetState extends State<SendingWidget> {
                                 labelText: FFLocalizations.of(context).getText(
                                   'dnyb875c' /* Email */,
                                 ),
-                                labelStyle:
-                                    FlutterFlowTheme.of(context).labelLarge,
+                                labelStyle: FlutterFlowTheme.of(context)
+                                    .labelLarge
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      letterSpacing: 0.0,
+                                    ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color:
@@ -158,9 +179,15 @@ class _SendingWidgetState extends State<SendingWidget> {
                                     .secondaryBackground,
                                 contentPadding: EdgeInsets.all(24.0),
                               ),
-                              style: FlutterFlowTheme.of(context).bodyLarge,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyLarge
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    letterSpacing: 0.0,
+                                  ),
                               keyboardType: TextInputType.emailAddress,
-                              validator: _model.emailAddressController1Validator
+                              validator: _model
+                                  .emailAddressTextController1Validator
                                   .asValidator(context),
                             ),
                           ),
@@ -171,7 +198,7 @@ class _SendingWidgetState extends State<SendingWidget> {
                           child: Container(
                             width: double.infinity,
                             child: TextFormField(
-                              controller: _model.emailAddressController2,
+                              controller: _model.emailAddressTextController2,
                               focusNode: _model.emailAddressFocusNode2,
                               autofocus: true,
                               autofillHints: [AutofillHints.email],
@@ -180,8 +207,12 @@ class _SendingWidgetState extends State<SendingWidget> {
                                 labelText: FFLocalizations.of(context).getText(
                                   '7bw74xhp' /* Amount */,
                                 ),
-                                labelStyle:
-                                    FlutterFlowTheme.of(context).labelLarge,
+                                labelStyle: FlutterFlowTheme.of(context)
+                                    .labelLarge
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      letterSpacing: 0.0,
+                                    ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color:
@@ -216,9 +247,15 @@ class _SendingWidgetState extends State<SendingWidget> {
                                     .secondaryBackground,
                                 contentPadding: EdgeInsets.all(24.0),
                               ),
-                              style: FlutterFlowTheme.of(context).bodyLarge,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyLarge
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    letterSpacing: 0.0,
+                                  ),
                               keyboardType: TextInputType.emailAddress,
-                              validator: _model.emailAddressController2Validator
+                              validator: _model
+                                  .emailAddressTextController2Validator
                                   .asValidator(context),
                             ),
                           ),
@@ -228,45 +265,110 @@ class _SendingWidgetState extends State<SendingWidget> {
                           child: Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 16.0),
-                            child: FFButtonWidget(
-                              onPressed: () async {
-                                await TransactionsTable().insert({
-                                  'sender_email': currentUserEmail,
-                                  'recipient_email':
-                                      _model.emailAddressController1.text,
-                                  'created_at': supaSerialize<DateTime>(
-                                      getCurrentTimestamp),
-                                  'amount': double.tryParse(
-                                      _model.emailAddressController2.text),
-                                  'status': 'approved',
-                                });
-
-                                context.pushNamed('MY_CardCopy');
-                              },
-                              text: FFLocalizations.of(context).getText(
-                                'hfpe2iji' /* Send */,
-                              ),
-                              options: FFButtonOptions(
-                                width: 230.0,
-                                height: 52.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                color: Color(0xFF9FDA00),
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      fontFamily: 'Lexend',
-                                      color: Colors.white,
-                                    ),
-                                elevation: 3.0,
-                                borderSide: BorderSide(
-                                  color: Colors.transparent,
-                                  width: 1.0,
+                            child: StreamBuilder<List<UserListRecord>>(
+                              stream: queryUserListRecord(
+                                queryBuilder: (userListRecord) =>
+                                    userListRecord.where(
+                                  'email',
+                                  isEqualTo:
+                                      _model.emailAddressTextController1.text,
                                 ),
-                                borderRadius: BorderRadius.circular(40.0),
+                                singleRecord: true,
                               ),
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return Center(
+                                    child: SizedBox(
+                                      width: 40.0,
+                                      height: 40.0,
+                                      child: SpinKitRing(
+                                        color: Color(0xFF88FD65),
+                                        size: 40.0,
+                                      ),
+                                    ),
+                                  );
+                                }
+                                List<UserListRecord> buttonUserListRecordList =
+                                    snapshot.data!;
+                                // Return an empty Container when the item does not exist.
+                                if (snapshot.data!.isEmpty) {
+                                  return Container();
+                                }
+                                final buttonUserListRecord =
+                                    buttonUserListRecordList.isNotEmpty
+                                        ? buttonUserListRecordList.first
+                                        : null;
+                                return FFButtonWidget(
+                                  onPressed: () async {
+                                    await TransactionsTable().insert({
+                                      'sender_email': currentUserEmail,
+                                      'recipient_email': _model
+                                          .emailAddressTextController1.text,
+                                      'created_at': supaSerialize<DateTime>(
+                                          getCurrentTimestamp),
+                                      'amount': double.tryParse(_model
+                                          .emailAddressTextController2.text),
+                                      'status': 'approved',
+                                    });
+                                    triggerPushNotification(
+                                      notificationTitle: 'Received',
+                                      notificationText:
+                                          'Hello there!  You have received ksh${_model.emailAddressTextController2.text} from ${currentUserEmail}.',
+                                      notificationSound: 'default',
+                                      userRefs: [
+                                        buttonUserListRecord!.reference
+                                      ],
+                                      initialPageName: 'transactions',
+                                      parameterData: {},
+                                    );
+                                    await showDialog(
+                                      context: context,
+                                      builder: (alertDialogContext) {
+                                        return AlertDialog(
+                                          title: Text('Sent'),
+                                          content: Text(
+                                              'Confirmed, ksh${_model.emailAddressTextController2.text} sent to ${_model.emailAddressTextController1.text}'),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () => Navigator.pop(
+                                                  alertDialogContext),
+                                              child: Text('Ok'),
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
+
+                                    context.pushNamed('MY_CardCopy');
+                                  },
+                                  text: FFLocalizations.of(context).getText(
+                                    'hfpe2iji' /* Send */,
+                                  ),
+                                  options: FFButtonOptions(
+                                    width: 230.0,
+                                    height: 52.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: Color(0xFF9FDA00),
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Lexend',
+                                          color: Colors.white,
+                                          letterSpacing: 0.0,
+                                        ),
+                                    elevation: 3.0,
+                                    borderSide: BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(40.0),
+                                  ),
+                                );
+                              },
                             ),
                           ),
                         ),

@@ -1,4 +1,6 @@
-import '/auth/supabase_auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -87,6 +89,7 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                   fontFamily: 'Outfit',
                   color: FlutterFlowTheme.of(context).primaryText,
                   fontSize: 22.0,
+                  letterSpacing: 0.0,
                   fontWeight: FontWeight.w500,
                 ),
           ),
@@ -125,6 +128,7 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                 fontFamily: 'Plus Jakarta Sans',
                                 color: Colors.white,
                                 fontSize: 18.0,
+                                letterSpacing: 0.0,
                                 fontWeight: FontWeight.normal,
                               ),
                       unselectedLabelStyle: TextStyle(),
@@ -187,6 +191,7 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                         fontSize: 24.0,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
                                       ),
                                 ),
@@ -310,7 +315,9 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                             color: Color(
                                                                 0x33000000),
                                                             offset: Offset(
-                                                                0.0, 2.0),
+                                                              0.0,
+                                                              2.0,
+                                                            ),
                                                           )
                                                         ],
                                                         borderRadius:
@@ -350,6 +357,8 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                             'Plus Jakarta Sans',
                                                                         fontSize:
                                                                             14.0,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                       ),
                                                                 ),
                                                                 Padding(
@@ -381,6 +390,8 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                               'Plus Jakarta Sans',
                                                                           fontSize:
                                                                               14.0,
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -405,6 +416,8 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                               'Plus Jakarta Sans',
                                                                           fontSize:
                                                                               14.0,
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -430,6 +443,8 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                               'Plus Jakarta Sans',
                                                                           fontSize:
                                                                               14.0,
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -464,10 +479,12 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                       .override(
                                                                         fontFamily:
                                                                             'Lexend',
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryText,
+                                                                        color: Color(
+                                                                            0xFF97D200),
                                                                         fontSize:
                                                                             14.0,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                       ),
                                                                 ),
                                                               ],
@@ -509,6 +526,7 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                         fontSize: 24.0,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
                                       ),
                                 ),
@@ -629,7 +647,9 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                             color: Color(
                                                                 0x33000000),
                                                             offset: Offset(
-                                                                0.0, 2.0),
+                                                              0.0,
+                                                              2.0,
+                                                            ),
                                                           )
                                                         ],
                                                         borderRadius:
@@ -661,7 +681,7 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
+                                                                          5.0,
                                                                           0.0,
                                                                           5.0,
                                                                           0.0),
@@ -687,6 +707,8 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                               'Plus Jakarta Sans',
                                                                           fontSize:
                                                                               14.0,
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -711,6 +733,8 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                               'Plus Jakarta Sans',
                                                                           fontSize:
                                                                               14.0,
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -742,6 +766,8 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                                 'Plus Jakarta Sans',
                                                                             fontSize:
                                                                                 14.0,
+                                                                            letterSpacing:
+                                                                                0.0,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -773,6 +799,8 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                                 'Plus Jakarta Sans',
                                                                             fontSize:
                                                                                 14.0,
+                                                                            letterSpacing:
+                                                                                0.0,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -809,6 +837,8 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                             'Plus Jakarta Sans',
                                                                         color: Color(
                                                                             0xFF97D200),
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                       ),
                                                                 ),
                                                               ],
@@ -850,6 +880,7 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                         fontSize: 24.0,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
                                       ),
                                 ),
@@ -927,7 +958,10 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                     BoxShadow(
                                                       blurRadius: 4.0,
                                                       color: Color(0x33000000),
-                                                      offset: Offset(0.0, 2.0),
+                                                      offset: Offset(
+                                                        0.0,
+                                                        2.0,
+                                                      ),
                                                     )
                                                   ],
                                                   borderRadius:
@@ -974,6 +1008,8 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                         'Plus Jakarta Sans',
                                                                     fontSize:
                                                                         14.0,
+                                                                    letterSpacing:
+                                                                        0.0,
                                                                   ),
                                                             ),
                                                           ),
@@ -999,6 +1035,8 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                         'Plus Jakarta Sans',
                                                                     fontSize:
                                                                         14.0,
+                                                                    letterSpacing:
+                                                                        0.0,
                                                                   ),
                                                             ),
                                                           ),
@@ -1029,6 +1067,8 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                         'Plus Jakarta Sans',
                                                                     fontSize:
                                                                         14.0,
+                                                                    letterSpacing:
+                                                                        0.0,
                                                                   ),
                                                             ),
                                                           ),
@@ -1046,6 +1086,8 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                       'Plus Jakarta Sans',
                                                                   fontSize:
                                                                       14.0,
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                 ),
                                                           ),
                                                         ],
@@ -1086,6 +1128,8 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                         'Plus Jakarta Sans',
                                                                     fontSize:
                                                                         14.0,
+                                                                    letterSpacing:
+                                                                        0.0,
                                                                   ),
                                                             ),
                                                           ),
@@ -1111,6 +1155,8 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                         'Plus Jakarta Sans',
                                                                     fontSize:
                                                                         14.0,
+                                                                    letterSpacing:
+                                                                        0.0,
                                                                   ),
                                                             ),
                                                           ),
@@ -1128,6 +1174,8 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                       'Plus Jakarta Sans',
                                                                   fontSize:
                                                                       14.0,
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                 ),
                                                           ),
                                                         ],
@@ -1162,6 +1210,8 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                       'Plus Jakarta Sans',
                                                                   color: Color(
                                                                       0xFF97D200),
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                 ),
                                                           ),
                                                           Padding(
@@ -1185,75 +1235,152 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                 visible: columnTransactionsRow
                                                                         .status ==
                                                                     'pending',
-                                                                child:
-                                                                    FFButtonWidget(
-                                                                  onPressed:
-                                                                      () async {
-                                                                    await TransactionsTable()
-                                                                        .update(
-                                                                      data: {
-                                                                        'status':
-                                                                            'approved',
-                                                                      },
-                                                                      matchingRows:
-                                                                          (rows) =>
+                                                                child: StreamBuilder<
+                                                                    List<
+                                                                        UserListRecord>>(
+                                                                  stream:
+                                                                      queryUserListRecord(
+                                                                    queryBuilder:
+                                                                        (userListRecord) =>
+                                                                            userListRecord.where(
+                                                                      'email',
+                                                                      isEqualTo:
+                                                                          columnTransactionsRow
+                                                                              .grantedEmail,
+                                                                    ),
+                                                                    singleRecord:
+                                                                        true,
+                                                                  ),
+                                                                  builder: (context,
+                                                                      snapshot) {
+                                                                    // Customize what your widget looks like when it's loading.
+                                                                    if (!snapshot
+                                                                        .hasData) {
+                                                                      return Center(
+                                                                        child:
+                                                                            SizedBox(
+                                                                          width:
+                                                                              40.0,
+                                                                          height:
+                                                                              40.0,
+                                                                          child:
+                                                                              SpinKitRing(
+                                                                            color:
+                                                                                Color(0xFF88FD65),
+                                                                            size:
+                                                                                40.0,
+                                                                          ),
+                                                                        ),
+                                                                      );
+                                                                    }
+                                                                    List<UserListRecord>
+                                                                        buttonUserListRecordList =
+                                                                        snapshot
+                                                                            .data!;
+                                                                    // Return an empty Container when the item does not exist.
+                                                                    if (snapshot
+                                                                        .data!
+                                                                        .isEmpty) {
+                                                                      return Container();
+                                                                    }
+                                                                    final buttonUserListRecord = buttonUserListRecordList
+                                                                            .isNotEmpty
+                                                                        ? buttonUserListRecordList
+                                                                            .first
+                                                                        : null;
+                                                                    return FFButtonWidget(
+                                                                      onPressed:
+                                                                          () async {
+                                                                        await TransactionsTable()
+                                                                            .update(
+                                                                          data: {
+                                                                            'status':
+                                                                                'approved',
+                                                                          },
+                                                                          matchingRows: (rows) =>
                                                                               rows.eq(
-                                                                        'id',
-                                                                        columnTransactionsRow
-                                                                            .id,
+                                                                            'id',
+                                                                            columnTransactionsRow.id,
+                                                                          ),
+                                                                        );
+                                                                        triggerPushNotification(
+                                                                          notificationTitle:
+                                                                              'Approved',
+                                                                          notificationText:
+                                                                              '${currentUserEmail} has approved usage of ksh${columnTransactionsRow.amount?.toString()}',
+                                                                          notificationSound:
+                                                                              'default',
+                                                                          userRefs: [
+                                                                            buttonUserListRecord!.reference
+                                                                          ],
+                                                                          initialPageName:
+                                                                              'selectwallet',
+                                                                          parameterData: {},
+                                                                        );
+                                                                        await showDialog(
+                                                                          context:
+                                                                              context,
+                                                                          builder:
+                                                                              (alertDialogContext) {
+                                                                            return AlertDialog(
+                                                                              title: Text('Approved'),
+                                                                              content: Text('Confirmed, you have approved usage of ksh${columnTransactionsRow.amount?.toString()} by ${columnTransactionsRow.grantedEmail}'),
+                                                                              actions: [
+                                                                                TextButton(
+                                                                                  onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                  child: Text('Ok'),
+                                                                                ),
+                                                                              ],
+                                                                            );
+                                                                          },
+                                                                        );
+
+                                                                        context.pushNamed(
+                                                                            'MY_CardCopy');
+                                                                      },
+                                                                      text: FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        'zjibghg4' /* Approve */,
+                                                                      ),
+                                                                      options:
+                                                                          FFButtonOptions(
+                                                                        height:
+                                                                            28.0,
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            2.0,
+                                                                            0.0,
+                                                                            2.0,
+                                                                            0.0),
+                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                        color: Color(
+                                                                            0xFF97D200),
+                                                                        textStyle: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .override(
+                                                                              fontFamily: 'Lexend',
+                                                                              color: Colors.white,
+                                                                              fontSize: 14.0,
+                                                                              letterSpacing: 0.0,
+                                                                            ),
+                                                                        elevation:
+                                                                            3.0,
+                                                                        borderSide:
+                                                                            BorderSide(
+                                                                          color:
+                                                                              Colors.transparent,
+                                                                          width:
+                                                                              1.0,
+                                                                        ),
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(8.0),
                                                                       ),
                                                                     );
-
-                                                                    context.pushNamed(
-                                                                        'MY_CardCopy');
                                                                   },
-                                                                  text: FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'zjibghg4' /* Approve */,
-                                                                  ),
-                                                                  options:
-                                                                      FFButtonOptions(
-                                                                    height:
-                                                                        28.0,
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            2.0,
-                                                                            0.0,
-                                                                            2.0,
-                                                                            0.0),
-                                                                    iconPadding:
-                                                                        EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                    color: Color(
-                                                                        0xFF97D200),
-                                                                    textStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Lexend',
-                                                                          color:
-                                                                              Colors.white,
-                                                                          fontSize:
-                                                                              14.0,
-                                                                        ),
-                                                                    elevation:
-                                                                        3.0,
-                                                                    borderSide:
-                                                                        BorderSide(
-                                                                      color: Colors
-                                                                          .transparent,
-                                                                      width:
-                                                                          1.0,
-                                                                    ),
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            8.0),
-                                                                  ),
                                                                 ),
                                                               ),
                                                             ),
@@ -1279,75 +1406,152 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                 visible: columnTransactionsRow
                                                                         .status ==
                                                                     'pending',
-                                                                child:
-                                                                    FFButtonWidget(
-                                                                  onPressed:
-                                                                      () async {
-                                                                    await TransactionsTable()
-                                                                        .update(
-                                                                      data: {
-                                                                        'status':
-                                                                            'rejected',
-                                                                      },
-                                                                      matchingRows:
-                                                                          (rows) =>
+                                                                child: StreamBuilder<
+                                                                    List<
+                                                                        UserListRecord>>(
+                                                                  stream:
+                                                                      queryUserListRecord(
+                                                                    queryBuilder:
+                                                                        (userListRecord) =>
+                                                                            userListRecord.where(
+                                                                      'email',
+                                                                      isEqualTo:
+                                                                          columnTransactionsRow
+                                                                              .grantedEmail,
+                                                                    ),
+                                                                    singleRecord:
+                                                                        true,
+                                                                  ),
+                                                                  builder: (context,
+                                                                      snapshot) {
+                                                                    // Customize what your widget looks like when it's loading.
+                                                                    if (!snapshot
+                                                                        .hasData) {
+                                                                      return Center(
+                                                                        child:
+                                                                            SizedBox(
+                                                                          width:
+                                                                              40.0,
+                                                                          height:
+                                                                              40.0,
+                                                                          child:
+                                                                              SpinKitRing(
+                                                                            color:
+                                                                                Color(0xFF88FD65),
+                                                                            size:
+                                                                                40.0,
+                                                                          ),
+                                                                        ),
+                                                                      );
+                                                                    }
+                                                                    List<UserListRecord>
+                                                                        buttonUserListRecordList =
+                                                                        snapshot
+                                                                            .data!;
+                                                                    // Return an empty Container when the item does not exist.
+                                                                    if (snapshot
+                                                                        .data!
+                                                                        .isEmpty) {
+                                                                      return Container();
+                                                                    }
+                                                                    final buttonUserListRecord = buttonUserListRecordList
+                                                                            .isNotEmpty
+                                                                        ? buttonUserListRecordList
+                                                                            .first
+                                                                        : null;
+                                                                    return FFButtonWidget(
+                                                                      onPressed:
+                                                                          () async {
+                                                                        await TransactionsTable()
+                                                                            .update(
+                                                                          data: {
+                                                                            'status':
+                                                                                'rejected',
+                                                                          },
+                                                                          matchingRows: (rows) =>
                                                                               rows.eq(
-                                                                        'id',
-                                                                        columnTransactionsRow
-                                                                            .id,
+                                                                            'id',
+                                                                            columnTransactionsRow.id,
+                                                                          ),
+                                                                        );
+                                                                        triggerPushNotification(
+                                                                          notificationTitle:
+                                                                              'Denied',
+                                                                          notificationText:
+                                                                              '${currentUserEmail} has denied usage of ksh${columnTransactionsRow.amount?.toString()}',
+                                                                          notificationSound:
+                                                                              'default',
+                                                                          userRefs: [
+                                                                            buttonUserListRecord!.reference
+                                                                          ],
+                                                                          initialPageName:
+                                                                              'MY_CardCopy',
+                                                                          parameterData: {},
+                                                                        );
+                                                                        await showDialog(
+                                                                          context:
+                                                                              context,
+                                                                          builder:
+                                                                              (alertDialogContext) {
+                                                                            return AlertDialog(
+                                                                              title: Text('Denied'),
+                                                                              content: Text('Confirmed, you have denied usage of ksh${columnTransactionsRow.amount?.toString()} by ${columnTransactionsRow.grantedEmail}'),
+                                                                              actions: [
+                                                                                TextButton(
+                                                                                  onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                  child: Text('Ok'),
+                                                                                ),
+                                                                              ],
+                                                                            );
+                                                                          },
+                                                                        );
+
+                                                                        context.pushNamed(
+                                                                            'MY_CardCopy');
+                                                                      },
+                                                                      text: FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        'zy28ivdr' /* Reject */,
+                                                                      ),
+                                                                      options:
+                                                                          FFButtonOptions(
+                                                                        height:
+                                                                            28.0,
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            2.0,
+                                                                            0.0,
+                                                                            2.0,
+                                                                            0.0),
+                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                        color: Color(
+                                                                            0xFF8F8F8F),
+                                                                        textStyle: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .override(
+                                                                              fontFamily: 'Lexend',
+                                                                              color: Colors.white,
+                                                                              fontSize: 14.0,
+                                                                              letterSpacing: 0.0,
+                                                                            ),
+                                                                        elevation:
+                                                                            3.0,
+                                                                        borderSide:
+                                                                            BorderSide(
+                                                                          color:
+                                                                              Colors.transparent,
+                                                                          width:
+                                                                              1.0,
+                                                                        ),
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(8.0),
                                                                       ),
                                                                     );
-
-                                                                    context.pushNamed(
-                                                                        'MY_CardCopy');
                                                                   },
-                                                                  text: FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'zy28ivdr' /* Reject */,
-                                                                  ),
-                                                                  options:
-                                                                      FFButtonOptions(
-                                                                    height:
-                                                                        28.0,
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            2.0,
-                                                                            0.0,
-                                                                            2.0,
-                                                                            0.0),
-                                                                    iconPadding:
-                                                                        EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                    color: Color(
-                                                                        0xFF8F8F8F),
-                                                                    textStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Lexend',
-                                                                          color:
-                                                                              Colors.white,
-                                                                          fontSize:
-                                                                              14.0,
-                                                                        ),
-                                                                    elevation:
-                                                                        3.0,
-                                                                    borderSide:
-                                                                        BorderSide(
-                                                                      color: Colors
-                                                                          .transparent,
-                                                                      width:
-                                                                          1.0,
-                                                                    ),
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            8.0),
-                                                                  ),
                                                                 ),
                                                               ),
                                                             ),
@@ -1388,6 +1592,7 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                         fontSize: 24.0,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
                                       ),
                                 ),
@@ -1512,7 +1717,9 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                             color: Color(
                                                                 0x33000000),
                                                             offset: Offset(
-                                                                0.0, 2.0),
+                                                              0.0,
+                                                              2.0,
+                                                            ),
                                                           )
                                                         ],
                                                         borderRadius:
@@ -1560,6 +1767,8 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                               'Plus Jakarta Sans',
                                                                           fontSize:
                                                                               14.0,
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -1584,6 +1793,8 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                               'Plus Jakarta Sans',
                                                                           fontSize:
                                                                               14.0,
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -1616,6 +1827,8 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                               'Plus Jakarta Sans',
                                                                           fontSize:
                                                                               14.0,
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -1633,6 +1846,8 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                             'Plus Jakarta Sans',
                                                                         fontSize:
                                                                             14.0,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                       ),
                                                                 ),
                                                               ],
@@ -1673,6 +1888,8 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                               'Plus Jakarta Sans',
                                                                           fontSize:
                                                                               14.0,
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -1697,6 +1914,8 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                               'Plus Jakarta Sans',
                                                                           fontSize:
                                                                               14.0,
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -1714,6 +1933,8 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                             'Plus Jakarta Sans',
                                                                         fontSize:
                                                                             14.0,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                       ),
                                                                 ),
                                                               ],
@@ -1749,6 +1970,8 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                             'Plus Jakarta Sans',
                                                                         color: Color(
                                                                             0xFF97D200),
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                       ),
                                                                 ),
                                                                 Padding(
@@ -1794,6 +2017,8 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                                 'Lexend',
                                                                             color:
                                                                                 Colors.white,
+                                                                            letterSpacing:
+                                                                                0.0,
                                                                           ),
                                                                       elevation:
                                                                           3.0,

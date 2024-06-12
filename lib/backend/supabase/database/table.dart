@@ -75,7 +75,8 @@ class PostgresTime {
 
   static PostgresTime? tryParse(String formattedString) {
     final datePrefix = DateTime.now().toIso8601String().split('T').first;
-    return PostgresTime(DateTime.tryParse('${datePrefix}T$formattedString'));
+    return PostgresTime(
+        DateTime.tryParse('${datePrefix}T$formattedString')?.toLocal());
   }
 
   String? toIso8601String() {

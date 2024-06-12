@@ -27,7 +27,7 @@ class FFAppState extends ChangeNotifier {
 
   bool _paying = false;
   bool get paying => _paying;
-  set paying(bool _value) {
-    _paying = _value;
+  set paying(bool value) {
+    _paying = value;
   }
 }

@@ -70,7 +70,7 @@ T? _supaDeserialize<T>(dynamic value) {
     case double:
       return (value as num).toDouble() as T?;
     case DateTime:
-      return DateTime.tryParse(value as String) as T?;
+      return DateTime.tryParse(value as String)?.toLocal() as T?;
     case PostgresTime:
       return PostgresTime.tryParse(value as String) as T?;
     case LatLng:

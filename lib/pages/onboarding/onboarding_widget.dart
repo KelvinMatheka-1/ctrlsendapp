@@ -141,7 +141,11 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                               textAlign: TextAlign.center,
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .displaySmall,
+                                                      .displaySmall
+                                                      .override(
+                                                        fontFamily: 'Lexend',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                           ),
                                         ],
@@ -162,7 +166,11 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                               textAlign: TextAlign.center,
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodySmall,
+                                                      .bodySmall
+                                                      .override(
+                                                        fontFamily: 'Lexend',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                           ),
                                         ],
@@ -219,7 +227,11 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                               textAlign: TextAlign.center,
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .displaySmall,
+                                                      .displaySmall
+                                                      .override(
+                                                        fontFamily: 'Lexend',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                           ),
                                         ],
@@ -240,7 +252,11 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                               textAlign: TextAlign.center,
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodySmall,
+                                                      .bodySmall
+                                                      .override(
+                                                        fontFamily: 'Lexend',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                           ),
                                         ],
@@ -293,7 +309,11 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                               textAlign: TextAlign.center,
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .displaySmall,
+                                                      .displaySmall
+                                                      .override(
+                                                        fontFamily: 'Lexend',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                           ),
                                         ],
@@ -309,12 +329,16 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'q30ina4f' /* Now you are able to see what o... */,
+                                                'q30ina4f' /* Ability to see what or who you... */,
                                               ),
                                               textAlign: TextAlign.center,
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodySmall,
+                                                      .bodySmall
+                                                      .override(
+                                                        fontFamily: 'Lexend',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                           ),
                                         ],
@@ -342,6 +366,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                   duration: Duration(milliseconds: 500),
                                   curve: Curves.ease,
                                 );
+                                setState(() {});
                               },
                               effect: smooth_page_indicator.ExpandingDotsEffect(
                                 expansionFactor: 2.0,
@@ -391,6 +416,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                             FlutterFlowTheme.of(context).titleSmall.override(
                                   fontFamily: 'Lexend',
                                   color: Color(0xFF15DC4F),
+                                  letterSpacing: 0.0,
                                 ),
                         elevation: 2.0,
                         borderSide: BorderSide(

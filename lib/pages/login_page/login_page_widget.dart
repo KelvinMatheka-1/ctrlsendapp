@@ -1,7 +1,9 @@
-import '/auth/supabase_auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -26,10 +28,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
     super.initState();
     _model = createModel(context, () => LoginPageModel());
 
-    _model.emailAddressLoginController ??= TextEditingController();
+    _model.emailAddressLoginTextController ??= TextEditingController();
     _model.emailAddressLoginFocusNode ??= FocusNode();
 
-    _model.passwordLoginController ??= TextEditingController();
+    _model.passwordLoginTextController ??= TextEditingController();
     _model.passwordLoginFocusNode ??= FocusNode();
   }
 
@@ -120,6 +122,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                             .override(
                                               fontFamily: 'Lexend',
                                               fontSize: 30.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -146,6 +149,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                               .override(
                                                 fontFamily: 'Lexend',
                                                 fontSize: 15.0,
+                                                letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w300,
                                               ),
                                         ),
@@ -159,7 +163,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                     0.0, 20.0, 0.0, 0.0),
                                 child: TextFormField(
                                   controller:
-                                      _model.emailAddressLoginController,
+                                      _model.emailAddressLoginTextController,
                                   focusNode: _model.emailAddressLoginFocusNode,
                                   obscureText: false,
                                   decoration: InputDecoration(
@@ -167,14 +171,22 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         FFLocalizations.of(context).getText(
                                       'a9j78va9' /* Email Address */,
                                     ),
-                                    labelStyle:
-                                        FlutterFlowTheme.of(context).bodySmall,
+                                    labelStyle: FlutterFlowTheme.of(context)
+                                        .bodySmall
+                                        .override(
+                                          fontFamily: 'Lexend',
+                                          letterSpacing: 0.0,
+                                        ),
                                     hintText:
                                         FFLocalizations.of(context).getText(
                                       'i7f18cve' /* Enter your email... */,
                                     ),
-                                    hintStyle:
-                                        FlutterFlowTheme.of(context).bodySmall,
+                                    hintStyle: FlutterFlowTheme.of(context)
+                                        .bodySmall
+                                        .override(
+                                          fontFamily: 'Lexend',
+                                          letterSpacing: 0.0,
+                                        ),
                                     enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
@@ -210,10 +222,14 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         EdgeInsetsDirectional.fromSTEB(
                                             20.0, 24.0, 20.0, 24.0),
                                   ),
-                                  style:
-                                      FlutterFlowTheme.of(context).bodyMedium,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Lexend',
+                                        letterSpacing: 0.0,
+                                      ),
                                   validator: _model
-                                      .emailAddressLoginControllerValidator
+                                      .emailAddressLoginTextControllerValidator
                                       .asValidator(context),
                                 ),
                               ),
@@ -221,7 +237,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 12.0, 0.0, 0.0),
                                 child: TextFormField(
-                                  controller: _model.passwordLoginController,
+                                  controller:
+                                      _model.passwordLoginTextController,
                                   focusNode: _model.passwordLoginFocusNode,
                                   obscureText: !_model.passwordLoginVisibility,
                                   decoration: InputDecoration(
@@ -229,14 +246,22 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         FFLocalizations.of(context).getText(
                                       'wztjmbn8' /* Password */,
                                     ),
-                                    labelStyle:
-                                        FlutterFlowTheme.of(context).bodySmall,
+                                    labelStyle: FlutterFlowTheme.of(context)
+                                        .bodySmall
+                                        .override(
+                                          fontFamily: 'Lexend',
+                                          letterSpacing: 0.0,
+                                        ),
                                     hintText:
                                         FFLocalizations.of(context).getText(
                                       'lw1jpm1f' /* Enter your password... */,
                                     ),
-                                    hintStyle:
-                                        FlutterFlowTheme.of(context).bodySmall,
+                                    hintStyle: FlutterFlowTheme.of(context)
+                                        .bodySmall
+                                        .override(
+                                          fontFamily: 'Lexend',
+                                          letterSpacing: 0.0,
+                                        ),
                                     enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
@@ -286,10 +311,14 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       ),
                                     ),
                                   ),
-                                  style:
-                                      FlutterFlowTheme.of(context).bodyMedium,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Lexend',
+                                        letterSpacing: 0.0,
+                                      ),
                                   validator: _model
-                                      .passwordLoginControllerValidator
+                                      .passwordLoginTextControllerValidator
                                       .asValidator(context),
                                 ),
                               ),
@@ -318,7 +347,11 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: Color(0x001A1F24),
                                         textStyle: FlutterFlowTheme.of(context)
-                                            .bodySmall,
+                                            .bodySmall
+                                            .override(
+                                              fontFamily: 'Lexend',
+                                              letterSpacing: 0.0,
+                                            ),
                                         elevation: 0.0,
                                         borderSide: BorderSide(
                                           color: Colors.transparent,
@@ -336,15 +369,28 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       final user =
                                           await authManager.signInWithEmail(
                                         context,
-                                        _model.emailAddressLoginController.text,
-                                        _model.passwordLoginController.text,
+                                        _model.emailAddressLoginTextController
+                                            .text,
+                                        _model.passwordLoginTextController.text,
                                       );
                                       if (user == null) {
                                         return;
                                       }
 
+                                      _model.tokens =
+                                          await actions.queryFCMTokens(
+                                        currentUserUid,
+                                      );
+                                      await ProfilesTable().insert({
+                                        'fcm_token': _model.tokens,
+                                        'id': currentUserUid,
+                                        'emails': currentUserEmail,
+                                      });
+
                                       context.goNamedAuth(
                                           'MY_CardCopy', context.mounted);
+
+                                      setState(() {});
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'qbmoi1av' /* Login */,
@@ -359,7 +405,11 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                               0.0, 0.0, 0.0, 0.0),
                                       color: Color(0xFF15DC4F),
                                       textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall,
+                                          .titleSmall
+                                          .override(
+                                            fontFamily: 'Lexend',
+                                            letterSpacing: 0.0,
+                                          ),
                                       elevation: 3.0,
                                       borderSide: BorderSide(
                                         color: Colors.transparent,
@@ -402,7 +452,11 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                               'cjqb8ial' /* Don't have an account? */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyMedium,
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Lexend',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                           Padding(
                                             padding:
@@ -420,6 +474,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                         fontFamily: 'Lexend',
                                                         color:
                                                             Color(0xFF15DC4F),
+                                                        letterSpacing: 0.0,
                                                       ),
                                             ),
                                           ),

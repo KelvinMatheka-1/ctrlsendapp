@@ -1,4 +1,4 @@
-import '/auth/supabase_auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -26,7 +26,7 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
     super.initState();
     _model = createModel(context, () => ChangePasswordModel());
 
-    _model.emailAddressController ??=
+    _model.emailAddressTextController ??=
         TextEditingController(text: currentUserEmail);
     _model.emailAddressFocusNode ??= FocusNode();
   }
@@ -64,7 +64,10 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
           FFLocalizations.of(context).getText(
             'l5iggwaz' /* Change Password */,
           ),
-          style: FlutterFlowTheme.of(context).headlineSmall,
+          style: FlutterFlowTheme.of(context).headlineSmall.override(
+                fontFamily: 'Lexend',
+                letterSpacing: 0.0,
+              ),
         ),
         actions: [],
         centerTitle: false,
@@ -87,7 +90,10 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                       FFLocalizations.of(context).getText(
                         '2b97u8y5' /* Enter the email associated wit... */,
                       ),
-                      style: FlutterFlowTheme.of(context).bodySmall,
+                      style: FlutterFlowTheme.of(context).bodySmall.override(
+                            fontFamily: 'Lexend',
+                            letterSpacing: 0.0,
+                          ),
                     ),
                   ),
                 ],
@@ -96,18 +102,24 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
               child: TextFormField(
-                controller: _model.emailAddressController,
+                controller: _model.emailAddressTextController,
                 focusNode: _model.emailAddressFocusNode,
                 obscureText: false,
                 decoration: InputDecoration(
                   labelText: FFLocalizations.of(context).getText(
                     'ajy1c3r9' /* Email Address */,
                   ),
-                  labelStyle: FlutterFlowTheme.of(context).bodySmall,
+                  labelStyle: FlutterFlowTheme.of(context).bodySmall.override(
+                        fontFamily: 'Lexend',
+                        letterSpacing: 0.0,
+                      ),
                   hintText: FFLocalizations.of(context).getText(
                     'hsqfoxya' /* Enter your email... */,
                   ),
-                  hintStyle: FlutterFlowTheme.of(context).bodySmall,
+                  hintStyle: FlutterFlowTheme.of(context).bodySmall.override(
+                        fontFamily: 'Lexend',
+                        letterSpacing: 0.0,
+                      ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
                       color: FlutterFlowTheme.of(context).alternate,
@@ -141,16 +153,19 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                   contentPadding:
                       EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
                 ),
-                style: FlutterFlowTheme.of(context).bodyMedium,
-                validator:
-                    _model.emailAddressControllerValidator.asValidator(context),
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Lexend',
+                      letterSpacing: 0.0,
+                    ),
+                validator: _model.emailAddressTextControllerValidator
+                    .asValidator(context),
               ),
             ),
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
               child: FFButtonWidget(
                 onPressed: () async {
-                  if (_model.emailAddressController.text.isEmpty) {
+                  if (_model.emailAddressTextController.text.isEmpty) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
                         content: Text(
@@ -161,7 +176,7 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                     return;
                   }
                   await authManager.resetPassword(
-                    email: _model.emailAddressController.text,
+                    email: _model.emailAddressTextController.text,
                     context: context,
                   );
                 },
@@ -178,6 +193,7 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Lexend',
                         color: FlutterFlowTheme.of(context).textColor,
+                        letterSpacing: 0.0,
                       ),
                   elevation: 3.0,
                   borderSide: BorderSide(

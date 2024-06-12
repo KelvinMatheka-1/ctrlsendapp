@@ -1,9 +1,14 @@
-import '/auth/supabase_auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/permissions_util.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -27,16 +32,21 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
     super.initState();
     _model = createModel(context, () => RegisterAccountModel());
 
-    _model.fullnameController ??= TextEditingController();
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      await requestPermission(notificationsPermission);
+    });
+
+    _model.fullnameTextController ??= TextEditingController();
     _model.fullnameFocusNode ??= FocusNode();
 
-    _model.emailAddressController ??= TextEditingController();
+    _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
 
-    _model.passwordCreateController ??= TextEditingController();
+    _model.passwordCreateTextController ??= TextEditingController();
     _model.passwordCreateFocusNode ??= FocusNode();
 
-    _model.passwordConfirmController ??= TextEditingController();
+    _model.passwordConfirmTextController ??= TextEditingController();
     _model.passwordConfirmFocusNode ??= FocusNode();
   }
 
@@ -128,6 +138,7 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                             .override(
                                               fontFamily: 'Lexend',
                                               fontSize: 30.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -150,7 +161,11 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                             'oitrrwgg' /* Create your account below. */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
-                                              .titleMedium,
+                                              .titleMedium
+                                              .override(
+                                                fontFamily: 'Lexend',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                     ),
@@ -161,7 +176,7 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 0.0),
                                 child: TextFormField(
-                                  controller: _model.fullnameController,
+                                  controller: _model.fullnameTextController,
                                   focusNode: _model.fullnameFocusNode,
                                   obscureText: false,
                                   decoration: InputDecoration(
@@ -169,14 +184,22 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                         FFLocalizations.of(context).getText(
                                       'gcwdqm4g' /* full names */,
                                     ),
-                                    labelStyle:
-                                        FlutterFlowTheme.of(context).bodySmall,
+                                    labelStyle: FlutterFlowTheme.of(context)
+                                        .bodySmall
+                                        .override(
+                                          fontFamily: 'Lexend',
+                                          letterSpacing: 0.0,
+                                        ),
                                     hintText:
                                         FFLocalizations.of(context).getText(
                                       'iam0xgwx' /* Enter your name... */,
                                     ),
-                                    hintStyle:
-                                        FlutterFlowTheme.of(context).bodySmall,
+                                    hintStyle: FlutterFlowTheme.of(context)
+                                        .bodySmall
+                                        .override(
+                                          fontFamily: 'Lexend',
+                                          letterSpacing: 0.0,
+                                        ),
                                     enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
@@ -212,9 +235,14 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                         EdgeInsetsDirectional.fromSTEB(
                                             20.0, 24.0, 20.0, 24.0),
                                   ),
-                                  style:
-                                      FlutterFlowTheme.of(context).bodyMedium,
-                                  validator: _model.fullnameControllerValidator
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Lexend',
+                                        letterSpacing: 0.0,
+                                      ),
+                                  validator: _model
+                                      .fullnameTextControllerValidator
                                       .asValidator(context),
                                 ),
                               ),
@@ -222,7 +250,7 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 0.0),
                                 child: TextFormField(
-                                  controller: _model.emailAddressController,
+                                  controller: _model.emailAddressTextController,
                                   focusNode: _model.emailAddressFocusNode,
                                   obscureText: false,
                                   decoration: InputDecoration(
@@ -230,14 +258,22 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                         FFLocalizations.of(context).getText(
                                       '97klqr4f' /* Email Address */,
                                     ),
-                                    labelStyle:
-                                        FlutterFlowTheme.of(context).bodySmall,
+                                    labelStyle: FlutterFlowTheme.of(context)
+                                        .bodySmall
+                                        .override(
+                                          fontFamily: 'Lexend',
+                                          letterSpacing: 0.0,
+                                        ),
                                     hintText:
                                         FFLocalizations.of(context).getText(
                                       'jvjqwpho' /* Enter your email... */,
                                     ),
-                                    hintStyle:
-                                        FlutterFlowTheme.of(context).bodySmall,
+                                    hintStyle: FlutterFlowTheme.of(context)
+                                        .bodySmall
+                                        .override(
+                                          fontFamily: 'Lexend',
+                                          letterSpacing: 0.0,
+                                        ),
                                     enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
@@ -273,10 +309,14 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                         EdgeInsetsDirectional.fromSTEB(
                                             20.0, 24.0, 20.0, 24.0),
                                   ),
-                                  style:
-                                      FlutterFlowTheme.of(context).bodyMedium,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Lexend',
+                                        letterSpacing: 0.0,
+                                      ),
                                   validator: _model
-                                      .emailAddressControllerValidator
+                                      .emailAddressTextControllerValidator
                                       .asValidator(context),
                                 ),
                               ),
@@ -284,7 +324,8 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 12.0, 0.0, 0.0),
                                 child: TextFormField(
-                                  controller: _model.passwordCreateController,
+                                  controller:
+                                      _model.passwordCreateTextController,
                                   focusNode: _model.passwordCreateFocusNode,
                                   obscureText: !_model.passwordCreateVisibility,
                                   decoration: InputDecoration(
@@ -292,14 +333,22 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                         FFLocalizations.of(context).getText(
                                       'bqv15dcf' /* Password */,
                                     ),
-                                    labelStyle:
-                                        FlutterFlowTheme.of(context).bodySmall,
+                                    labelStyle: FlutterFlowTheme.of(context)
+                                        .bodySmall
+                                        .override(
+                                          fontFamily: 'Lexend',
+                                          letterSpacing: 0.0,
+                                        ),
                                     hintText:
                                         FFLocalizations.of(context).getText(
                                       'joih97mn' /* Enter your password... */,
                                     ),
-                                    hintStyle:
-                                        FlutterFlowTheme.of(context).bodySmall,
+                                    hintStyle: FlutterFlowTheme.of(context)
+                                        .bodySmall
+                                        .override(
+                                          fontFamily: 'Lexend',
+                                          letterSpacing: 0.0,
+                                        ),
                                     enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
@@ -350,10 +399,14 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                       ),
                                     ),
                                   ),
-                                  style:
-                                      FlutterFlowTheme.of(context).bodyMedium,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Lexend',
+                                        letterSpacing: 0.0,
+                                      ),
                                   validator: _model
-                                      .passwordCreateControllerValidator
+                                      .passwordCreateTextControllerValidator
                                       .asValidator(context),
                                 ),
                               ),
@@ -361,7 +414,8 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 12.0, 0.0, 0.0),
                                 child: TextFormField(
-                                  controller: _model.passwordConfirmController,
+                                  controller:
+                                      _model.passwordConfirmTextController,
                                   focusNode: _model.passwordConfirmFocusNode,
                                   obscureText:
                                       !_model.passwordConfirmVisibility,
@@ -370,14 +424,22 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                         FFLocalizations.of(context).getText(
                                       'rzpiwq9p' /* Confirm Password */,
                                     ),
-                                    labelStyle:
-                                        FlutterFlowTheme.of(context).bodySmall,
+                                    labelStyle: FlutterFlowTheme.of(context)
+                                        .bodySmall
+                                        .override(
+                                          fontFamily: 'Lexend',
+                                          letterSpacing: 0.0,
+                                        ),
                                     hintText:
                                         FFLocalizations.of(context).getText(
                                       'eyfkffka' /* Enter your password... */,
                                     ),
-                                    hintStyle:
-                                        FlutterFlowTheme.of(context).bodySmall,
+                                    hintStyle: FlutterFlowTheme.of(context)
+                                        .bodySmall
+                                        .override(
+                                          fontFamily: 'Lexend',
+                                          letterSpacing: 0.0,
+                                        ),
                                     enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
@@ -428,10 +490,14 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                       ),
                                     ),
                                   ),
-                                  style:
-                                      FlutterFlowTheme.of(context).bodyMedium,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Lexend',
+                                        letterSpacing: 0.0,
+                                      ),
                                   validator: _model
-                                      .passwordConfirmControllerValidator
+                                      .passwordConfirmTextControllerValidator
                                       .asValidator(context),
                                 ),
                               ),
@@ -441,8 +507,10 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                 child: FFButtonWidget(
                                   onPressed: () async {
                                     GoRouter.of(context).prepareAuthEvent();
-                                    if (_model.passwordCreateController.text !=
-                                        _model.passwordConfirmController.text) {
+                                    if (_model.passwordCreateTextController
+                                            .text !=
+                                        _model.passwordConfirmTextController
+                                            .text) {
                                       ScaffoldMessenger.of(context)
                                           .showSnackBar(
                                         SnackBar(
@@ -457,25 +525,47 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                     final user = await authManager
                                         .createAccountWithEmail(
                                       context,
-                                      _model.emailAddressController.text,
-                                      _model.passwordCreateController.text,
+                                      _model.emailAddressTextController.text,
+                                      _model.passwordCreateTextController.text,
                                     );
                                     if (user == null) {
                                       return;
                                     }
 
+                                    await UsersRecord.collection
+                                        .doc()
+                                        .set(createUsersRecordData(
+                                          displayName: _model
+                                              .fullnameTextController.text,
+                                          email: currentUserEmail,
+                                          password: _model
+                                              .passwordCreateTextController
+                                              .text,
+                                          uid: currentUserUid,
+                                        ));
                                     await UsersTable().insert({
                                       'created_at': supaSerialize<DateTime>(
                                           getCurrentTimestamp),
                                       'user_name':
-                                          _model.fullnameController.text,
-                                      'user_email':
-                                          _model.emailAddressController.text,
+                                          _model.fullnameTextController.text,
                                       'id': currentUserUid,
+                                      'user_email': _model
+                                          .emailAddressTextController.text,
+                                    });
+                                    _model.tokens =
+                                        await actions.queryFCMTokens(
+                                      currentUserUid,
+                                    );
+                                    await ProfilesTable().insert({
+                                      'id': currentUserUid,
+                                      'fcm_token': _model.tokens,
+                                      'emails': currentUserEmail,
                                     });
 
                                     context.pushNamedAuth(
                                         'onboarding', context.mounted);
+
+                                    setState(() {});
                                   },
                                   text: FFLocalizations.of(context).getText(
                                     '5kmjfwsk' /* Create Account */,
@@ -488,8 +578,12 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                     iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: Color(0xFF15DC4F),
-                                    textStyle:
-                                        FlutterFlowTheme.of(context).titleSmall,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Lexend',
+                                          letterSpacing: 0.0,
+                                        ),
                                     elevation: 3.0,
                                     borderSide: BorderSide(
                                       color: Colors.transparent,
@@ -557,6 +651,7 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                                         fontFamily: 'Lexend',
                                                         color:
                                                             Color(0xFF15DC4F),
+                                                        letterSpacing: 0.0,
                                                       ),
                                             ),
                                           ),
@@ -565,7 +660,11 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                               '9ssznj0g' /* Already have an account? */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyMedium,
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Lexend',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                         ],
                                       ),

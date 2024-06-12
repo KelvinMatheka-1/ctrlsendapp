@@ -1,4 +1,4 @@
-import '/auth/supabase_auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/giveaccess_widget.dart';
 import '/components/makepayment_widget.dart';
@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -31,59 +32,60 @@ class _MYCardCopyWidgetState extends State<MYCardCopyWidget>
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
-  final animationsMap = {
-    'rowOnPageLoadAnimation': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 600.ms,
-          begin: Offset(0.0, 30.0),
-          end: Offset(0.0, 0.0),
-        ),
-        ScaleEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 600.ms,
-          begin: Offset(0.4, 0.0),
-          end: Offset(1.0, 1.0),
-        ),
-      ],
-    ),
-    'containerOnPageLoadAnimation': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 800.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 800.ms,
-          begin: Offset(50.0, 0.0),
-          end: Offset(0.0, 0.0),
-        ),
-      ],
-    ),
-  };
+  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void initState() {
     super.initState();
     _model = createModel(context, () => MYCardCopyModel());
 
+    animationsMap.addAll({
+      'rowOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: Offset(0.0, 30.0),
+            end: Offset(0.0, 0.0),
+          ),
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: Offset(0.4, 0.0),
+            end: Offset(1.0, 1.0),
+          ),
+        ],
+      ),
+      'containerOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 800.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 800.0.ms,
+            begin: Offset(50.0, 0.0),
+            end: Offset(0.0, 0.0),
+          ),
+        ],
+      ),
+    });
     setupAnimations(
       animationsMap.values.where((anim) =>
           anim.trigger == AnimationTrigger.onActionTrigger ||
@@ -143,7 +145,10 @@ class _MYCardCopyWidgetState extends State<MYCardCopyWidget>
                                     BoxShadow(
                                       blurRadius: 4.0,
                                       color: Color(0x230E151B),
-                                      offset: Offset(0.0, 2.0),
+                                      offset: Offset(
+                                        0.0,
+                                        2.0,
+                                      ),
                                     )
                                   ],
                                   borderRadius: BorderRadius.circular(12.0),
@@ -210,6 +215,7 @@ class _MYCardCopyWidgetState extends State<MYCardCopyWidget>
                                                                   context)
                                                               .primaryText,
                                                       fontSize: 16.0,
+                                                      letterSpacing: 0.0,
                                                       fontWeight:
                                                           FontWeight.w500,
                                                     ),
@@ -264,6 +270,7 @@ class _MYCardCopyWidgetState extends State<MYCardCopyWidget>
                                                                 'Poppins',
                                                             color: Color(
                                                                 0xFF88FD65),
+                                                            letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.w500,
                                                           ),
@@ -299,7 +306,10 @@ class _MYCardCopyWidgetState extends State<MYCardCopyWidget>
                           BoxShadow(
                             blurRadius: 4.0,
                             color: Color(0x33000000),
-                            offset: Offset(0.0, 2.0),
+                            offset: Offset(
+                              0.0,
+                              2.0,
+                            ),
                           )
                         ],
                         borderRadius: BorderRadius.only(
@@ -349,6 +359,7 @@ class _MYCardCopyWidgetState extends State<MYCardCopyWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
+                                              letterSpacing: 0.0,
                                             ),
                                       ),
                                     ),
@@ -400,6 +411,7 @@ class _MYCardCopyWidgetState extends State<MYCardCopyWidget>
                                                     fontFamily: 'Roboto',
                                                     color: Color(0xFF88FD65),
                                                     fontSize: 35.0,
+                                                    letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w600,
                                                   ),
                                             );
@@ -477,7 +489,10 @@ class _MYCardCopyWidgetState extends State<MYCardCopyWidget>
                                     BoxShadow(
                                       blurRadius: 4.0,
                                       color: Color(0x33000000),
-                                      offset: Offset(0.0, 2.0),
+                                      offset: Offset(
+                                        0.0,
+                                        2.0,
+                                      ),
                                     )
                                   ],
                                   borderRadius: BorderRadius.only(
@@ -526,6 +541,7 @@ class _MYCardCopyWidgetState extends State<MYCardCopyWidget>
                                                         .override(
                                                           fontFamily: 'Lexend',
                                                           fontSize: 13.0,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                   ),
                                                 ),
@@ -574,7 +590,10 @@ class _MYCardCopyWidgetState extends State<MYCardCopyWidget>
                                     BoxShadow(
                                       blurRadius: 4.0,
                                       color: Color(0x33000000),
-                                      offset: Offset(0.0, 2.0),
+                                      offset: Offset(
+                                        0.0,
+                                        2.0,
+                                      ),
                                     )
                                   ],
                                   borderRadius: BorderRadius.only(
@@ -623,6 +642,7 @@ class _MYCardCopyWidgetState extends State<MYCardCopyWidget>
                                                         .override(
                                                           fontFamily: 'Lexend',
                                                           fontSize: 13.0,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                   ),
                                                 ),
@@ -670,7 +690,10 @@ class _MYCardCopyWidgetState extends State<MYCardCopyWidget>
                                     BoxShadow(
                                       blurRadius: 4.0,
                                       color: Color(0x33000000),
-                                      offset: Offset(0.0, 2.0),
+                                      offset: Offset(
+                                        0.0,
+                                        2.0,
+                                      ),
                                     )
                                   ],
                                   borderRadius: BorderRadius.only(
@@ -719,6 +742,7 @@ class _MYCardCopyWidgetState extends State<MYCardCopyWidget>
                                                         .override(
                                                           fontFamily: 'Lexend',
                                                           fontSize: 13.0,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                   ),
                                                 ),
@@ -767,7 +791,10 @@ class _MYCardCopyWidgetState extends State<MYCardCopyWidget>
                                     BoxShadow(
                                       blurRadius: 4.0,
                                       color: Color(0x33000000),
-                                      offset: Offset(0.0, 2.0),
+                                      offset: Offset(
+                                        0.0,
+                                        2.0,
+                                      ),
                                     )
                                   ],
                                   borderRadius: BorderRadius.only(
@@ -818,15 +845,15 @@ class _MYCardCopyWidgetState extends State<MYCardCopyWidget>
                                                           .getText(
                                                         'ek53o9dn' /* Send Money */,
                                                       ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Lexend',
-                                                                fontSize: 13.0,
-                                                              ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Lexend',
+                                                            fontSize: 13.0,
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                     ),
                                                   ),
                                                 ],
@@ -874,7 +901,10 @@ class _MYCardCopyWidgetState extends State<MYCardCopyWidget>
                                     BoxShadow(
                                       blurRadius: 4.0,
                                       color: Color(0x33000000),
-                                      offset: Offset(0.0, 2.0),
+                                      offset: Offset(
+                                        0.0,
+                                        2.0,
+                                      ),
                                     )
                                   ],
                                   borderRadius: BorderRadius.only(
@@ -924,15 +954,15 @@ class _MYCardCopyWidgetState extends State<MYCardCopyWidget>
                                                           .getText(
                                                         'sim4ect5' /* Transactions */,
                                                       ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Lexend',
-                                                                fontSize: 13.0,
-                                                              ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Lexend',
+                                                            fontSize: 13.0,
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                     ),
                                                   ),
                                                 ],
@@ -960,7 +990,10 @@ class _MYCardCopyWidgetState extends State<MYCardCopyWidget>
                                   BoxShadow(
                                     blurRadius: 4.0,
                                     color: Color(0x33000000),
-                                    offset: Offset(0.0, 2.0),
+                                    offset: Offset(
+                                      0.0,
+                                      2.0,
+                                    ),
                                   )
                                 ],
                                 borderRadius: BorderRadius.only(
@@ -1009,6 +1042,7 @@ class _MYCardCopyWidgetState extends State<MYCardCopyWidget>
                                                       .override(
                                                         fontFamily: 'Lexend',
                                                         fontSize: 13.0,
+                                                        letterSpacing: 0.0,
                                                       ),
                                                 ),
                                               ),

@@ -35,7 +35,7 @@
             <string>Editor</string>
             <key>CFBundleURLSchemes</key>
             <array>
-                <string>com.googleusercontent.apps.51742710343-873852qsvpaqefhvbrqgjp3mbf3cu930</string>
+                <!--FF_REVERSED_CLIENT_ID-->
                 
             </array>
         </dict>
@@ -61,7 +61,13 @@
 	<true/>
 
 
-
+	<key>PermissionGroupNotification</key>
+    <string>Allow Notifications</string>
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>fetch</string>
+        <string>remote-notification</string>
+    </array>
 
 
 	<key>UILaunchStoryboardName</key>
