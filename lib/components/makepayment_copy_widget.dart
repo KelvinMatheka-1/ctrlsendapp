@@ -682,7 +682,7 @@ class _MakepaymentCopyWidgetState extends State<MakepaymentCopyWidget> {
                                               triggerPushNotification(
                                                 notificationTitle: 'Usage',
                                                 notificationText:
-                                                    '${currentUserEmail}wants to use ksh${_model.emailAddressTextController4.text} from your wallet.',
+                                                    '${currentUserEmail} wants to use ksh${_model.emailAddressTextController4.text} from your wallet.',
                                                 notificationSound: 'default',
                                                 userRefs: [
                                                   buttonUserListRecord!
