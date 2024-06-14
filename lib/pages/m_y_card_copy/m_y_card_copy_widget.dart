@@ -471,6 +471,7 @@ class _MYCardCopyWidgetState extends State<MYCardCopyWidget>
                                       icon: Icon(
                                         Icons.key_off,
                                         color: Color(0xFF88FD65),
+                                        size: 25.0,
                                       ),
                                       onPressed: () {
                                         print('IconButton pressed ...');
@@ -487,7 +488,7 @@ class _MYCardCopyWidgetState extends State<MYCardCopyWidget>
                         alignment: AlignmentDirectional(-1.0, 0.0),
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              2.0, 15.0, 0.0, 10.0),
+                              0.0, 15.0, 2.0, 10.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -727,7 +728,7 @@ class _MYCardCopyWidgetState extends State<MYCardCopyWidget>
                         alignment: AlignmentDirectional(-1.0, 0.0),
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              2.0, 10.0, 0.0, 10.0),
+                              0.0, 10.0, 2.0, 10.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -958,7 +959,7 @@ class _MYCardCopyWidgetState extends State<MYCardCopyWidget>
                         alignment: AlignmentDirectional(-1.0, 0.0),
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              2.0, 10.0, 0.0, 15.0),
+                              0.0, 10.0, 2.0, 15.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
