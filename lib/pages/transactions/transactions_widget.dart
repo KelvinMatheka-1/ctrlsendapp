@@ -635,7 +635,7 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                       );
                                                     },
                                                     child: Container(
-                                                      width: 337.0,
+                                                      width: 389.0,
                                                       height: 72.0,
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
@@ -661,6 +661,9 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .center,
                                                         children: [
                                                           Padding(
                                                             padding:
@@ -889,7 +892,7 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     5.0, 0.0, 5.0, 0.0),
                                 child: Container(
-                                  width: 350.0,
+                                  width: 408.0,
                                   height: 653.0,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
@@ -948,7 +951,7 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                   .fromSTEB(
                                                       3.0, 10.0, 1.0, 0.0),
                                               child: Container(
-                                                width: 324.0,
+                                                width: 387.0,
                                                 height: 123.0,
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
@@ -1705,7 +1708,7 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                       );
                                                     },
                                                     child: Container(
-                                                      width: 337.0,
+                                                      width: 392.0,
                                                       height: 114.0,
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme

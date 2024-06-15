@@ -137,15 +137,24 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                 ),
           ),
           actions: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(24.0),
-              child: Image.asset(
-                Theme.of(context).brightness == Brightness.dark
-                    ? 'assets/images/ctrlsendlogo-aidark.png'
-                    : 'assets/images/ctrlsendlogo-ai2.png',
-                width: 73.0,
-                height: 50.0,
-                fit: BoxFit.cover,
+            InkWell(
+              splashColor: Colors.transparent,
+              focusColor: Colors.transparent,
+              hoverColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+              onTap: () async {
+                context.pushNamed('List08ProductList');
+              },
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(24.0),
+                child: Image.asset(
+                  Theme.of(context).brightness == Brightness.dark
+                      ? 'assets/images/ctrlsendlogo-aidark.png'
+                      : 'assets/images/ctrlsendlogo-ai2.png',
+                  width: 73.0,
+                  height: 50.0,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ],
@@ -377,7 +386,7 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                                               child: Text(
                                                 formatNumber(
                                                   carouselAllowancesRow
-                                                      .amountLimit!,
+                                                      .amountLimit,
                                                   formatType: FormatType.custom,
                                                   currency: 'ksh',
                                                   format: '',
@@ -443,7 +452,13 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                             enlargeFactor: 0.25,
                             enableInfiniteScroll: false,
                             scrollDirection: Axis.horizontal,
-                            autoPlay: false,
+                            autoPlay: true,
+                            autoPlayAnimationDuration:
+                                Duration(milliseconds: 800),
+                            autoPlayInterval:
+                                Duration(milliseconds: (800 + 2500)),
+                            autoPlayCurve: Curves.linear,
+                            pauseAutoPlayInFiniteScroll: false,
                             onPageChanged: (index, _) =>
                                 _model.carouselCurrentIndex = index,
                           ),
@@ -467,316 +482,6 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                                 ),
                       ).animateOnPageLoad(
                           animationsMap['textOnPageLoadAnimation3']!),
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 12.0),
-                    child: Container(
-                      width: double.infinity,
-                      height: 270.0,
-                      decoration: BoxDecoration(
-                        color: Color(0xFF4B39EF),
-                        borderRadius: BorderRadius.circular(0.0),
-                      ),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                16.0, 12.0, 0.0, 0.0),
-                            child: Text(
-                              FFLocalizations.of(context).getText(
-                                'b0dfam2p' /* You shared wallets */,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .headlineMedium
-                                  .override(
-                                    fontFamily: 'Outfit',
-                                    color: Colors.white,
-                                    fontSize: 24.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                16.0, 4.0, 0.0, 12.0),
-                            child: Text(
-                              FFLocalizations.of(context).getText(
-                                'tdpivleq' /* You will find your quote optio... */,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Plus Jakarta Sans',
-                                    color: Colors.white,
-                                    fontSize: 14.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                            ),
-                          ),
-                          Expanded(
-                            child: FutureBuilder<List<AllowancesRow>>(
-                              future: AllowancesTable().queryRows(
-                                queryFn: (q) => q
-                                    .eq(
-                                      'granted_email',
-                                      currentUserEmail,
-                                    )
-                                    .order('created_at'),
-                              ),
-                              builder: (context, snapshot) {
-                                // Customize what your widget looks like when it's loading.
-                                if (!snapshot.hasData) {
-                                  return Center(
-                                    child: SizedBox(
-                                      width: 40.0,
-                                      height: 40.0,
-                                      child: SpinKitRing(
-                                        color: Color(0xFF88FD65),
-                                        size: 40.0,
-                                      ),
-                                    ),
-                                  );
-                                }
-                                List<AllowancesRow> listViewAllowancesRowList =
-                                    snapshot.data!;
-                                return ListView.builder(
-                                  padding: EdgeInsets.zero,
-                                  primary: false,
-                                  shrinkWrap: true,
-                                  scrollDirection: Axis.horizontal,
-                                  itemCount: listViewAllowancesRowList.length,
-                                  itemBuilder: (context, listViewIndex) {
-                                    final listViewAllowancesRow =
-                                        listViewAllowancesRowList[
-                                            listViewIndex];
-                                    return Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          12.0, 12.0, 0.0, 12.0),
-                                      child: InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          await showModalBottomSheet(
-                                            isScrollControlled: true,
-                                            backgroundColor: Colors.transparent,
-                                            context: context,
-                                            builder: (context) {
-                                              return GestureDetector(
-                                                onTap: () => _model.unfocusNode
-                                                        .canRequestFocus
-                                                    ? FocusScope.of(context)
-                                                        .requestFocus(
-                                                            _model.unfocusNode)
-                                                    : FocusScope.of(context)
-                                                        .unfocus(),
-                                                child: Padding(
-                                                  padding:
-                                                      MediaQuery.viewInsetsOf(
-                                                          context),
-                                                  child: Container(
-                                                    height: 550.0,
-                                                    child:
-                                                        MakepaymentCopyWidget(),
-                                                  ),
-                                                ),
-                                              );
-                                            },
-                                          ).then(
-                                              (value) => safeSetState(() {}));
-                                        },
-                                        child: Container(
-                                          width: 270.0,
-                                          height: 100.0,
-                                          decoration: BoxDecoration(
-                                            color: Colors.white,
-                                            boxShadow: [
-                                              BoxShadow(
-                                                blurRadius: 4.0,
-                                                color: Color(0x2B202529),
-                                                offset: Offset(
-                                                  0.0,
-                                                  2.0,
-                                                ),
-                                              )
-                                            ],
-                                            borderRadius:
-                                                BorderRadius.circular(12.0),
-                                          ),
-                                          child: Padding(
-                                            padding: EdgeInsets.all(12.0),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              children: [
-                                                Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Expanded(
-                                                      child: Text(
-                                                        valueOrDefault<String>(
-                                                          listViewAllowancesRow
-                                                              .ownerEmail,
-                                                          'owner',
-                                                        ),
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyLarge
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Plus Jakarta Sans',
-                                                              color: Color(
-                                                                  0xFF14181B),
-                                                              fontSize: 16.0,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w500,
-                                                            ),
-                                                      ),
-                                                    ),
-                                                    Icon(
-                                                      Icons.star_rounded,
-                                                      color: Color(0xFF4B39EF),
-                                                      size: 24.0,
-                                                    ),
-                                                    Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        '3awgbjww' /* 4.5 */,
-                                                      ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Plus Jakarta Sans',
-                                                            color: Color(
-                                                                0xFF14181B),
-                                                            fontSize: 14.0,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight.w500,
-                                                          ),
-                                                    ),
-                                                    Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'rs5y3rr1' /* (242) */,
-                                                      ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodySmall
-                                                          .override(
-                                                            fontFamily:
-                                                                'Plus Jakarta Sans',
-                                                            color: Color(
-                                                                0xFF14181B),
-                                                            fontSize: 12.0,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight.w500,
-                                                          ),
-                                                    ),
-                                                  ],
-                                                ),
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 50.0, 0.0, 0.0),
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment.end,
-                                                    children: [
-                                                      Text(
-                                                        valueOrDefault<String>(
-                                                          listViewAllowancesRow
-                                                              .amountLimit
-                                                              ?.toString(),
-                                                          '1500',
-                                                        ),
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .displaySmall
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Outfit',
-                                                              color: Color(
-                                                                  0xFF14181B),
-                                                              fontSize: 36.0,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                            ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                                Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Icon(
-                                                      Icons
-                                                          .local_fire_department_sharp,
-                                                      color: Color(0xFFFF5963),
-                                                      size: 24.0,
-                                                    ),
-                                                    Text(
-                                                      '${formatNumber(
-                                                        listViewAllowancesRow
-                                                            .amountUsed,
-                                                        formatType:
-                                                            FormatType.custom,
-                                                        currency: 'ksh',
-                                                        format: '',
-                                                        locale: '',
-                                                      )} used so far.',
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Plus Jakarta Sans',
-                                                            color: Color(
-                                                                0xFF14181B),
-                                                            fontSize: 14.0,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight.w500,
-                                                          ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    );
-                                  },
-                                );
-                              },
-                            ),
-                          ),
-                        ],
-                      ),
                     ),
                   ),
                   ListView(
@@ -835,6 +540,7 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                               return SingleChildScrollView(
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   children: List.generate(
                                       columnTransactionsRowList.length,
                                       (columnIndex) {

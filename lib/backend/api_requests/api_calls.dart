@@ -174,6 +174,96 @@ class TransactionwithdrawalCall {
   }
 }
 
+class GetAllowancesCall {
+  static Future<ApiCallResponse> call({
+    List<String>? allowancesList,
+  }) async {
+    final allowances = _serializeList(allowancesList);
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'getAllowances',
+      apiUrl: 'https://idqlxgwuwjwygnazayin.supabase.co/rest/v1/allowances',
+      callType: ApiCallType.GET,
+      headers: {
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlkcWx4Z3d1d2p3eWduYXpheWluIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk1NzgxMDEsImV4cCI6MjAyNTE1NDEwMX0.X-tdtGHUefPc7_7ryE9an8PkGfDzi5QAmdjqDE8bPj4',
+        'Authorization':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlkcWx4Z3d1d2p3eWduYXpheWluIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk1NzgxMDEsImV4cCI6MjAyNTE1NDEwMX0.X-tdtGHUefPc7_7ryE9an8PkGfDzi5QAmdjqDE8bPj4',
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static List<String>? time(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].created_at''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<int>? amountallowed(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].amount_limit''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? owneremail(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].owner_email''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? ownerwalletid(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].owner_wallet_id''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? recipientemail(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].granted_email''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<int>? amountused(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].amount_used''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? walletid(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].id''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+}
+
 class ApiPagingParams {
   int nextPageNumber = 0;
   int numItems = 0;

@@ -125,6 +125,7 @@ final parametersBuilderMap =
   'MY_CardCopy': ParameterData.none(),
   'selectwallet': ParameterData.none(),
   'transactions': ParameterData.none(),
+  'List08ProductList': ParameterData.none(),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {

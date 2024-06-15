@@ -183,8 +183,9 @@ class _MakepaymentCopyWidgetState extends State<MakepaymentCopyWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 12.0, 0.0, 24.0),
                                   child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'be4a72a0' /* Enter details */,
+                                    valueOrDefault<String>(
+                                      containerAllowancesRow?.ownerEmail,
+                                      'owner',
                                     ),
                                     textAlign: TextAlign.start,
                                     style: FlutterFlowTheme.of(context)
