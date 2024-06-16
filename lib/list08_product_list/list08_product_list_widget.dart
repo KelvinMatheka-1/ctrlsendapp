@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -383,10 +384,10 @@ class _List08ProductListWidgetState extends State<List08ProductListWidget> {
                                   ),
                                 ),
                               ),
-                              if (FFAppState()
-                                      .selectWalletId
-                                      .contains(listViewAllowancesRow.id) ==
-                                  (listViewAllowancesRow.id != null))
+                              if (functions.checkContain(
+                                      FFAppState().selectWalletId.toList(),
+                                      FFAppState().selectWalletId.toList()) ??
+                                  true)
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
