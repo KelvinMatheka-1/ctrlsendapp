@@ -253,13 +253,13 @@ class GetAllowancesCall {
           .map((x) => castToType<int>(x))
           .withoutNulls
           .toList();
-  static List<String>? walletid(dynamic response) => (getJsonField(
+  static List<int>? walletid(dynamic response) => (getJsonField(
         response,
         r'''$[:].id''',
         true,
       ) as List?)
           ?.withoutNulls
-          .map((x) => castToType<String>(x))
+          .map((x) => castToType<int>(x))
           .withoutNulls
           .toList();
 }

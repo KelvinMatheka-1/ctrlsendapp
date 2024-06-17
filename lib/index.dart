@@ -20,3 +20,5 @@ export '/pages/selectwallet/selectwallet_widget.dart' show SelectwalletWidget;
 export '/pages/transactions/transactions_widget.dart' show TransactionsWidget;
 export '/list08_product_list/list08_product_list_widget.dart'
     show List08ProductListWidget;
+export '/success01_payment/success01_payment_widget.dart'
+    show Success01PaymentWidget;

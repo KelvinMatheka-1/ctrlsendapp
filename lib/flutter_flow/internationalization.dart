@@ -700,7 +700,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
     'np83u3bs': {
-      'en': 'Allowed:',
+      'en': 'Owner: ',
+      'ar': '',
+      'de': '',
+      'es': '',
+    },
+    '3j3zf6lz': {
+      'en': 'Allowed: ',
+      'ar': '',
+      'de': '',
+      'es': '',
+    },
+    'laid0ggo': {
+      'en': 'Used: ',
       'ar': '',
       'de': '',
       'es': '',
@@ -946,6 +958,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
     'agwg3qj1': {
+      'en': 'Home',
+      'ar': '',
+      'de': '',
+      'es': '',
+    },
+  },
+  // Success01Payment
+  {
+    'hkvrzf0n': {
+      'en': 'Spend',
+      'ar': '',
+      'de': '',
+      'es': '',
+    },
+    '8mxuzoih': {
       'en': 'Home',
       'ar': '',
       'de': '',

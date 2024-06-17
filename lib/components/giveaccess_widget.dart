@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -471,6 +472,22 @@ class _GiveaccessWidgetState extends State<GiveaccessWidget> {
                                         );
 
                                         context.pushNamed('MY_CardCopy');
+
+                                        await AllowancesRecord.collection
+                                            .doc(functions
+                                                .generateId()!
+                                                .toString())
+                                            .set(createAllowancesRecordData(
+                                              ownerEmail: currentUserEmail,
+                                              ownerWalletId: _model
+                                                  .walletidTextController.text,
+                                              grantedEmail: _model
+                                                  .recipientemailTextController
+                                                  .text,
+                                              amountUsed: 0,
+                                              amountAllowed: int.tryParse(_model
+                                                  .amountTextController.text),
+                                            ));
                                       },
                                       text: FFLocalizations.of(context).getText(
                                         'r7d0js1s' /* Grant access */,

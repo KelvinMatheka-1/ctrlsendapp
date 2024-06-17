@@ -170,6 +170,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'List08ProductList',
           path: '/list08ProductList',
           builder: (context, params) => List08ProductListWidget(),
+        ),
+        FFRoute(
+          name: 'Success01Payment',
+          path: '/success01Payment',
+          builder: (context, params) => Success01PaymentWidget(
+            walletdetails: params.getParam<AllowancesRow>(
+              'walletdetails',
+              ParamType.SupabaseRow,
+              isList: true,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

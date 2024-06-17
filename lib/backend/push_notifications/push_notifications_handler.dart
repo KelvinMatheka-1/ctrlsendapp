@@ -126,6 +126,9 @@ final parametersBuilderMap =
   'selectwallet': ParameterData.none(),
   'transactions': ParameterData.none(),
   'List08ProductList': ParameterData.none(),
+  'Success01Payment': (data) async => ParameterData(
+        allParams: {},
+      ),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {

@@ -8,42 +8,7 @@ service cloud.firestore {
       allow delete: if request.auth.uid == document;
     }
 
-    match /appointments/{document} {
-      allow create: if true;
-      allow read: if true;
-      allow write: if false;
-      allow delete: if false;
-    }
-
-    match /transactions/{document} {
-      allow create: if true;
-      allow read: if true;
-      allow write: if false;
-      allow delete: if false;
-    }
-
-    match /transactionCategories/{document} {
-      allow create: if true;
-      allow read: if true;
-      allow write: if false;
-      allow delete: if false;
-    }
-
-    match /budgets/{document} {
-      allow create: if true;
-      allow read: if true;
-      allow write: if false;
-      allow delete: if false;
-    }
-
     match /userList/{document} {
-      allow create: if true;
-      allow read: if true;
-      allow write: if false;
-      allow delete: if false;
-    }
-
-    match /budgetList/{document} {
       allow create: if true;
       allow read: if true;
       allow write: if false;
@@ -55,6 +20,13 @@ service cloud.firestore {
       allow read: if true;
       allow write: if false;
       allow delete: if false;
+    }
+
+    match /allowances/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
     }
 
     match /ff_user_push_notifications/{id} {

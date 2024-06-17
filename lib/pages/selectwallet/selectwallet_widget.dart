@@ -137,24 +137,15 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                 ),
           ),
           actions: [
-            InkWell(
-              splashColor: Colors.transparent,
-              focusColor: Colors.transparent,
-              hoverColor: Colors.transparent,
-              highlightColor: Colors.transparent,
-              onTap: () async {
-                context.pushNamed('List08ProductList');
-              },
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(24.0),
-                child: Image.asset(
-                  Theme.of(context).brightness == Brightness.dark
-                      ? 'assets/images/ctrlsendlogo-aidark.png'
-                      : 'assets/images/ctrlsendlogo-ai2.png',
-                  width: 73.0,
-                  height: 50.0,
-                  fit: BoxFit.cover,
-                ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(24.0),
+              child: Image.asset(
+                Theme.of(context).brightness == Brightness.dark
+                    ? 'assets/images/ctrlsendlogo-aidark.png'
+                    : 'assets/images/ctrlsendlogo-ai2.png',
+                width: 73.0,
+                height: 50.0,
+                fit: BoxFit.cover,
               ),
             ),
           ],
@@ -291,11 +282,20 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      blurRadius: 4.0,
+                                      color: Color(0x33000000),
+                                      offset: Offset(
+                                        0.0,
+                                        2.0,
+                                      ),
+                                    )
+                                  ],
                                   borderRadius: BorderRadius.circular(12.0),
                                   border: Border.all(
                                     color:
                                         FlutterFlowTheme.of(context).alternate,
-                                    width: 2.0,
                                   ),
                                 ),
                                 child: Padding(
@@ -337,31 +337,10 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 2.0),
-                                          child: FlutterFlowIconButton(
-                                            borderColor: Colors.transparent,
-                                            borderRadius: 20.0,
-                                            borderWidth: 1.0,
-                                            buttonSize: 30.0,
-                                            icon: FaIcon(
-                                              FontAwesomeIcons.moneyCheckAlt,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                              size: 24.0,
-                                            ),
-                                            onPressed: () {
-                                              print('IconButton pressed ...');
-                                            },
-                                          ),
-                                        ),
                                         Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
-                                              MainAxisAlignment.center,
+                                              MainAxisAlignment.start,
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
@@ -369,7 +348,7 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'np83u3bs' /* Allowed: */,
+                                                  'np83u3bs' /* Owner:  */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -377,6 +356,51 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                                                         .override(
                                                           fontFamily: 'Lexend',
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                        ),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 8.0, 0.0, 2.0),
+                                              child: Text(
+                                                carouselAllowancesRow
+                                                    .ownerEmail,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Lexend',
+                                                          color:
+                                                              Color(0xFF88FD65),
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 8.0, 0.0, 2.0),
+                                              child: Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '3j3zf6lz' /* Allowed:  */,
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Lexend',
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.normal,
                                                         ),
                                               ),
                                             ),
@@ -397,42 +421,101 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Lexend',
+                                                          color:
+                                                              Color(0xFF88FD65),
                                                           letterSpacing: 0.0,
                                                         ),
                                               ),
                                             ),
                                           ],
                                         ),
-                                        Text(
-                                          formatNumber(
-                                            carouselAllowancesRow.amountUsed!,
-                                            formatType: FormatType.custom,
-                                            currency: 'used:ksh',
-                                            format: '',
-                                            locale: '',
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Lexend',
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 8.0, 0.0, 2.0),
+                                              child: Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'laid0ggo' /* Used:  */,
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Lexend',
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                        ),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 8.0, 0.0, 2.0),
+                                              child: Text(
+                                                formatNumber(
+                                                  carouselAllowancesRow
+                                                      .amountUsed!,
+                                                  formatType: FormatType.custom,
+                                                  currency: 'ksh',
+                                                  format: '',
+                                                  locale: '',
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Lexend',
+                                                          color:
+                                                              Color(0xFF88FD65),
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 15.0, 0.0, 0.0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              FaIcon(
+                                                FontAwesomeIcons.usps,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
-                                                letterSpacing: 0.0,
+                                                size: 20.0,
                                               ),
-                                        ),
-                                        Text(
-                                          valueOrDefault<String>(
-                                            carouselAllowancesRow.ownerEmail,
-                                            'owner',
+                                              Text(
+                                                dateTimeFormat(
+                                                  'd/M h:mm a',
+                                                  carouselAllowancesRow
+                                                      .createdAt,
+                                                  locale: FFLocalizations.of(
+                                                          context)
+                                                      .languageCode,
+                                                ),
+                                                textAlign: TextAlign.start,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Lexend',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          fontSize: 10.0,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ].divide(SizedBox(width: 5.0)),
                                           ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Lexend',
-                                                color: Color(0xFF88FD65),
-                                                letterSpacing: 0.0,
-                                              ),
                                         ),
                                       ],
                                     ),
@@ -454,9 +537,9 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                             scrollDirection: Axis.horizontal,
                             autoPlay: true,
                             autoPlayAnimationDuration:
-                                Duration(milliseconds: 800),
+                                Duration(milliseconds: 1000),
                             autoPlayInterval:
-                                Duration(milliseconds: (800 + 2500)),
+                                Duration(milliseconds: (1000 + 2500)),
                             autoPlayCurve: Curves.linear,
                             pauseAutoPlayInFiniteScroll: false,
                             onPageChanged: (index, _) =>
@@ -494,10 +577,20 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                             EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                         child: Container(
                           width: 100.0,
-                          height: 441.0,
+                          height: 459.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
+                            boxShadow: [
+                              BoxShadow(
+                                blurRadius: 4.0,
+                                color: Color(0x33000000),
+                                offset: Offset(
+                                  0.0,
+                                  2.0,
+                                ),
+                              )
+                            ],
                             borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(15.0),
                               bottomRight: Radius.circular(15.0),
