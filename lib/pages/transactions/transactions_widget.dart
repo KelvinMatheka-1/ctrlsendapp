@@ -251,6 +251,7 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                           List<TransactionsRow>
                                               columnTransactionsRowList =
                                               snapshot.data!;
+
                                           return SingleChildScrollView(
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -582,6 +583,7 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                           List<TransactionsRow>
                                               columnTransactionsRowList =
                                               snapshot.data!;
+
                                           return SingleChildScrollView(
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -937,6 +939,7 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                       List<TransactionsRow>
                                           columnTransactionsRowList =
                                           snapshot.data!;
+
                                       return SingleChildScrollView(
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -1280,6 +1283,7 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                         buttonUserListRecordList =
                                                                         snapshot
                                                                             .data!;
+
                                                                     // Return an empty Container when the item does not exist.
                                                                     if (snapshot
                                                                         .data!
@@ -1451,6 +1455,7 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                                                         buttonUserListRecordList =
                                                                         snapshot
                                                                             .data!;
+
                                                                     // Return an empty Container when the item does not exist.
                                                                     if (snapshot
                                                                         .data!
@@ -1655,6 +1660,7 @@ class _TransactionsWidgetState extends State<TransactionsWidget>
                                           List<TransactionsRow>
                                               columnTransactionsRowList =
                                               snapshot.data!;
+
                                           return SingleChildScrollView(
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,

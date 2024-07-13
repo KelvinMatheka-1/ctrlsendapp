@@ -250,6 +250,7 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
           );
         }
         List<AllowancesRow> containerAllowancesRowList = snapshot.data!;
+
         final containerAllowancesRow = containerAllowancesRowList.isNotEmpty
             ? containerAllowancesRowList.first
             : null;

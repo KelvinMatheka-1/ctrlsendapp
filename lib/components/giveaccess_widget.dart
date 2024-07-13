@@ -87,6 +87,7 @@ class _GiveaccessWidgetState extends State<GiveaccessWidget> {
                     );
                   }
                   List<WalletsRow> containerWalletsRowList = snapshot.data!;
+
                   final containerWalletsRow = containerWalletsRowList.isNotEmpty
                       ? containerWalletsRowList.first
                       : null;
@@ -419,6 +420,7 @@ class _GiveaccessWidgetState extends State<GiveaccessWidget> {
                                     List<UserListRecord>
                                         buttonUserListRecordList =
                                         snapshot.data!;
+
                                     // Return an empty Container when the item does not exist.
                                     if (snapshot.data!.isEmpty) {
                                       return Container();

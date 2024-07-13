@@ -190,6 +190,7 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                                 }
                                 List<UsersRow> textUsersRowList =
                                     snapshot.data!;
+
                                 final textUsersRow = textUsersRowList.isNotEmpty
                                     ? textUsersRowList.first
                                     : null;

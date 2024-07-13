@@ -1,6 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
-import '/components/makepayment_copy_widget.dart';
+import '/components/makepayment_copy_copy_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -265,6 +265,7 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                       }
                       List<AllowancesRow> carouselAllowancesRowList =
                           snapshot.data!;
+
                       return Container(
                         width: double.infinity,
                         height: 150.0,
@@ -325,7 +326,11 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                                                   context),
                                               child: Container(
                                                 height: 550.0,
-                                                child: MakepaymentCopyWidget(),
+                                                child:
+                                                    MakepaymentCopyCopyWidget(
+                                                  allowancedetails:
+                                                      carouselAllowancesRow,
+                                                ),
                                               ),
                                             ),
                                           );
@@ -630,6 +635,7 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                               }
                               List<TransactionsRow> columnTransactionsRowList =
                                   snapshot.data!;
+
                               return SingleChildScrollView(
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,

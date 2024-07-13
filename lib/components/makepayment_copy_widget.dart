@@ -38,6 +38,9 @@ class _MakepaymentCopyWidgetState extends State<MakepaymentCopyWidget> {
     _model.emailAddressTextController1 ??= TextEditingController();
     _model.emailAddressFocusNode1 ??= FocusNode();
 
+    _model.tillTextController ??= TextEditingController();
+    _model.tillFocusNode ??= FocusNode();
+
     _model.emailAddressTextController2 ??= TextEditingController();
     _model.emailAddressFocusNode2 ??= FocusNode();
 
@@ -89,6 +92,7 @@ class _MakepaymentCopyWidgetState extends State<MakepaymentCopyWidget> {
                   }
                   List<AllowancesRow> containerAllowancesRowList =
                       snapshot.data!;
+
                   final containerAllowancesRow =
                       containerAllowancesRowList.isNotEmpty
                           ? containerAllowancesRowList.first
@@ -143,6 +147,7 @@ class _MakepaymentCopyWidgetState extends State<MakepaymentCopyWidget> {
                             }
                             List<TransactionsRow> columnTransactionsRowList =
                                 snapshot.data!;
+
                             final columnTransactionsRow =
                                 columnTransactionsRowList.isNotEmpty
                                     ? columnTransactionsRowList.first
@@ -205,15 +210,18 @@ class _MakepaymentCopyWidgetState extends State<MakepaymentCopyWidget> {
                                             FormFieldController<String>(
                                       _model.dropDownValue ??=
                                           FFLocalizations.of(context).getText(
-                                        'q80hfqkf' /* paying */,
+                                        'q80hfqkf' /* paybill */,
                                       ),
                                     ),
                                     options: [
                                       FFLocalizations.of(context).getText(
-                                        '9odop570' /* paying */,
+                                        '9odop570' /* paybill */,
                                       ),
                                       FFLocalizations.of(context).getText(
                                         'admba7xq' /* sending */,
+                                      ),
+                                      FFLocalizations.of(context).getText(
+                                        'h2oftenr' /* Till */,
                                       )
                                     ],
                                     onChanged: (val) => setState(
@@ -251,7 +259,7 @@ class _MakepaymentCopyWidgetState extends State<MakepaymentCopyWidget> {
                                     isMultiSelect: false,
                                   ),
                                 ),
-                                if (_model.dropDownValue == 'paying')
+                                if (_model.dropDownValue == 'paybill')
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 16.0),
@@ -335,7 +343,89 @@ class _MakepaymentCopyWidgetState extends State<MakepaymentCopyWidget> {
                                       ),
                                     ),
                                   ),
-                                if (_model.dropDownValue == 'paying')
+                                if (_model.dropDownValue == 'Till')
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 16.0),
+                                    child: Container(
+                                      width: double.infinity,
+                                      child: TextFormField(
+                                        controller: _model.tillTextController,
+                                        focusNode: _model.tillFocusNode,
+                                        autofocus: true,
+                                        autofillHints: [AutofillHints.email],
+                                        obscureText: false,
+                                        decoration: InputDecoration(
+                                          labelText: FFLocalizations.of(context)
+                                              .getText(
+                                            'l084zpcw' /* Till Number */,
+                                          ),
+                                          labelStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelLarge
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(40.0),
+                                          ),
+                                          focusedBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color: Color(0xFF97D200),
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(40.0),
+                                          ),
+                                          errorBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(40.0),
+                                          ),
+                                          focusedErrorBorder:
+                                              OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(40.0),
+                                          ),
+                                          filled: true,
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
+                                          contentPadding: EdgeInsets.all(24.0),
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyLarge
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
+                                            ),
+                                        keyboardType: TextInputType.number,
+                                        validator: _model
+                                            .tillTextControllerValidator
+                                            .asValidator(context),
+                                      ),
+                                    ),
+                                  ),
+                                if (_model.dropDownValue == 'paybill')
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 16.0),
@@ -651,6 +741,7 @@ class _MakepaymentCopyWidgetState extends State<MakepaymentCopyWidget> {
                                           List<UserListRecord>
                                               buttonUserListRecordList =
                                               snapshot.data!;
+
                                           // Return an empty Container when the item does not exist.
                                           if (snapshot.data!.isEmpty) {
                                             return Container();

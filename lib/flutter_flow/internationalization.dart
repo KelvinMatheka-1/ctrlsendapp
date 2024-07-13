@@ -648,12 +648,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Transfer',
       'es': 'Transferir',
     },
-    'x97svci5': {
-      'en': 'Making Payments',
-      'ar': 'تحويل',
-      'de': 'Transfer',
-      'es': 'Transferir',
-    },
     'c2jxsc5i': {
       'en': 'Wallets Accessable',
       'ar': 'تحويل',
@@ -672,8 +666,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Transfer',
       'es': 'Transferir',
     },
+    'x97svci5': {
+      'en': 'Making Payments',
+      'ar': 'تحويل',
+      'de': 'Transfer',
+      'es': 'Transferir',
+    },
     'v1qdli2a': {
-      'en': 'Beta Feature',
+      'en': 'Onboarding',
       'ar': 'تحويل',
       'de': 'Transfer',
       'es': 'Transferir',
@@ -919,66 +919,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
   },
-  // List08ProductList
-  {
-    '75yxfqts': {
-      'en': 'Order Now',
-      'ar': '',
-      'de': '',
-      'es': '',
-    },
-    'g7v5z3re': {
-      'en': 'Our menu is below',
-      'ar': '',
-      'de': '',
-      'es': '',
-    },
-    'bm5n0qmj': {
-      'en': 'Amount Allowed',
-      'ar': '',
-      'de': '',
-      'es': '',
-    },
-    'n1qacs0m': {
-      'en': 'Amount Used',
-      'ar': '',
-      'de': '',
-      'es': '',
-    },
-    'ks8nf2mu': {
-      'en': 'Amount Allowed',
-      'ar': '',
-      'de': '',
-      'es': '',
-    },
-    'cg8pzd5m': {
-      'en': 'Amount Used',
-      'ar': '',
-      'de': '',
-      'es': '',
-    },
-    'agwg3qj1': {
-      'en': 'Home',
-      'ar': '',
-      'de': '',
-      'es': '',
-    },
-  },
-  // Success01Payment
-  {
-    'hkvrzf0n': {
-      'en': 'Spend',
-      'ar': '',
-      'de': '',
-      'es': '',
-    },
-    '8mxuzoih': {
-      'en': 'Home',
-      'ar': '',
-      'de': '',
-      'es': '',
-    },
-  },
   // accessCopy
   {
     '3dz75ewl': {
@@ -1180,19 +1120,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
     'q80hfqkf': {
-      'en': 'paying',
+      'en': 'paybill',
       'ar': '',
       'de': '',
       'es': '',
     },
     '9odop570': {
-      'en': 'paying',
+      'en': 'paybill',
       'ar': '',
       'de': '',
       'es': '',
     },
     'admba7xq': {
       'en': 'sending',
+      'ar': '',
+      'de': '',
+      'es': '',
+    },
+    'h2oftenr': {
+      'en': 'Till',
       'ar': '',
       'de': '',
       'es': '',
@@ -1211,6 +1157,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'o34k3gds': {
       'en': 'Paybill',
+      'ar': '',
+      'de': '',
+      'es': '',
+    },
+    'l084zpcw': {
+      'en': 'Till Number',
       'ar': '',
       'de': '',
       'es': '',
@@ -1240,6 +1192,99 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
     't7yhj95z': {
+      'en': 'send',
+      'ar': '',
+      'de': '',
+      'es': '',
+    },
+  },
+  // makepaymentCopyCopy
+  {
+    '4lguydei': {
+      'en': 'Send',
+      'ar': '',
+      'de': '',
+      'es': '',
+    },
+    'f8fxs6qz': {
+      'en': 'Pay',
+      'ar': '',
+      'de': '',
+      'es': '',
+    },
+    'bljocfe8': {
+      'en': 'paybill',
+      'ar': '',
+      'de': '',
+      'es': '',
+    },
+    'uum0j7xp': {
+      'en': 'paybill',
+      'ar': '',
+      'de': '',
+      'es': '',
+    },
+    '3nxrm6fq': {
+      'en': 'sending',
+      'ar': '',
+      'de': '',
+      'es': '',
+    },
+    'fbokizi1': {
+      'en': 'till no.',
+      'ar': '',
+      'de': '',
+      'es': '',
+    },
+    'yvdkm99b': {
+      'en': 'Please select...',
+      'ar': '',
+      'de': '',
+      'es': '',
+    },
+    'y86n271h': {
+      'en': 'Search for an item...',
+      'ar': '',
+      'de': '',
+      'es': '',
+    },
+    'qnq3z5vo': {
+      'en': 'Paybill',
+      'ar': '',
+      'de': '',
+      'es': '',
+    },
+    'pd7l8lv9': {
+      'en': 'Till No.',
+      'ar': '',
+      'de': '',
+      'es': '',
+    },
+    'xhsftcu3': {
+      'en': 'Acc No.',
+      'ar': '',
+      'de': '',
+      'es': '',
+    },
+    'f7g90p2q': {
+      'en': 'Email',
+      'ar': '',
+      'de': '',
+      'es': '',
+    },
+    'w0o3ghg1': {
+      'en': 'Amount',
+      'ar': '',
+      'de': '',
+      'es': '',
+    },
+    'lm1jmb68': {
+      'en': 'Pay',
+      'ar': '',
+      'de': '',
+      'es': '',
+    },
+    'wlzjm056': {
       'en': 'send',
       'ar': '',
       'de': '',

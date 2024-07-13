@@ -291,6 +291,7 @@ class _SendingWidgetState extends State<SendingWidget> {
                                 }
                                 List<UserListRecord> buttonUserListRecordList =
                                     snapshot.data!;
+
                                 // Return an empty Container when the item does not exist.
                                 if (snapshot.data!.isEmpty) {
                                   return Container();
