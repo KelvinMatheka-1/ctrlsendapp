@@ -72,6 +72,7 @@ dependencies:
   smooth_page_indicator: 1.1.0
   sqflite: 2.2.6
   stream_transform: 2.1.0
+  supabase_flutter: ^1.10.24
   timeago: 3.6.1
   url_launcher: 6.3.0
   url_launcher_android: 6.3.4
