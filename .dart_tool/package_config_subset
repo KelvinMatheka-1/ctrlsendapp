@@ -574,6 +574,10 @@ flutter
 3.3
 file:///home/kelvin/snap/flutter/common/flutter/packages/flutter/
 file:///home/kelvin/snap/flutter/common/flutter/packages/flutter/lib/
+flutter_localizations
+3.2
+file:///home/kelvin/snap/flutter/common/flutter/packages/flutter_localizations/
+file:///home/kelvin/snap/flutter/common/flutter/packages/flutter_localizations/lib/
 flutter_test
 3.3
 file:///home/kelvin/snap/flutter/common/flutter/packages/flutter_test/
