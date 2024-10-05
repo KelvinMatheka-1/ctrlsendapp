@@ -194,6 +194,24 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "firebase_messaging",
+      "rootUri": "file:///home/kelvin/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "firebase_messaging_platform_interface",
+      "rootUri": "file:///home/kelvin/.pub-cache/hosted/pub.dev/firebase_messaging_platform_interface-4.5.18",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "firebase_messaging_web",
+      "rootUri": "file:///home/kelvin/.pub-cache/hosted/pub.dev/firebase_messaging_web-3.5.18",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
       "name": "firebase_performance",
       "rootUri": "file:///home/kelvin/.pub-cache/hosted/pub.dev/firebase_performance-0.9.3+8",
       "packageUri": "lib/",
@@ -866,7 +884,7 @@
       "languageVersion": "3.4"
     }
   ],
-  "generated": "2024-10-05T11:37:23.048179Z",
+  "generated": "2024-10-05T11:48:21.009238Z",
   "generator": "pub",
   "generatorVersion": "3.5.3",
   "flutterRoot": "file:///home/kelvin/snap/flutter/common/flutter",
