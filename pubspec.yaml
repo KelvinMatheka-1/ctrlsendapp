@@ -16,7 +16,7 @@ dependencies:
   app_links: 3.4.1
   auto_size_text: 3.0.0
   cached_network_image: 3.2.1
-  carousel_slider:
+  carousel_slider: 4.2.0
   cloud_firestore: 4.13.1
   cloud_firestore_platform_interface: 6.0.5
   cloud_firestore_web: 3.8.5

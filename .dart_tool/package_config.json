@@ -69,7 +69,7 @@
     },
     {
       "name": "carousel_slider",
-      "rootUri": "file:///home/kelvin/.pub-cache/hosted/pub.dev/carousel_slider-5.0.0",
+      "rootUri": "file:///home/kelvin/.pub-cache/hosted/pub.dev/carousel_slider-4.2.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -998,7 +998,7 @@
       "languageVersion": "3.4"
     }
   ],
-  "generated": "2024-10-05T13:40:12.225216Z",
+  "generated": "2024-10-05T13:50:23.808339Z",
   "generator": "pub",
   "generatorVersion": "3.5.3",
   "flutterRoot": "file:///home/kelvin/snap/flutter/common/flutter",
