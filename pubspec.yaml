@@ -19,6 +19,7 @@ dependencies:
   cloud_firestore: 4.13.1
   cloud_firestore_platform_interface: 6.0.5
   cloud_firestore_web: 3.8.5
+  cloud_functions: 4.6.0
   collection: ^1.18.0
   dropdown_button2: 2.3.9
   equatable: 2.0.5
