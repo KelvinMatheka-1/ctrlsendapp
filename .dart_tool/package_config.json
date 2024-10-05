@@ -122,12 +122,6 @@
       "languageVersion": "3.4"
     },
     {
-      "name": "cupertino_icons",
-      "rootUri": "file:///home/kelvin/.pub-cache/hosted/pub.dev/cupertino_icons-1.0.8",
-      "packageUri": "lib/",
-      "languageVersion": "3.1"
-    },
-    {
       "name": "dropdown_button2",
       "rootUri": "file:///home/kelvin/.pub-cache/hosted/pub.dev/dropdown_button2-2.3.9",
       "packageUri": "lib/",
@@ -890,7 +884,7 @@
       "languageVersion": "3.4"
     }
   ],
-  "generated": "2024-10-05T12:12:21.026337Z",
+  "generated": "2024-10-05T12:30:28.074878Z",
   "generator": "pub",
   "generatorVersion": "3.5.3",
   "flutterRoot": "file:///home/kelvin/snap/flutter/common/flutter",
