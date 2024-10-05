@@ -158,6 +158,24 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "firebase_auth",
+      "rootUri": "file:///home/kelvin/.pub-cache/hosted/pub.dev/firebase_auth-4.16.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "firebase_auth_platform_interface",
+      "rootUri": "file:///home/kelvin/.pub-cache/hosted/pub.dev/firebase_auth_platform_interface-7.0.9",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "firebase_auth_web",
+      "rootUri": "file:///home/kelvin/.pub-cache/hosted/pub.dev/firebase_auth_web-5.8.13",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
       "name": "firebase_core",
       "rootUri": "file:///home/kelvin/.pub-cache/hosted/pub.dev/firebase_core-2.24.2",
       "packageUri": "lib/",
@@ -848,7 +866,7 @@
       "languageVersion": "3.4"
     }
   ],
-  "generated": "2024-10-05T11:18:38.216581Z",
+  "generated": "2024-10-05T11:37:23.048179Z",
   "generator": "pub",
   "generatorVersion": "3.5.3",
   "flutterRoot": "file:///home/kelvin/snap/flutter/common/flutter",
