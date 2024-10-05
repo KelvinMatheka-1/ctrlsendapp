@@ -7,7 +7,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:math';
-import 'package:carousel_slider/carousel_slider.dart'  as carousel_slider_pkg;
+import 'package:carousel_slider/carousel_slider.dart' as carousel_slider;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -531,9 +531,10 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                             );
                           },
                           carouselController: _model.carouselController ??=
-                              carousel_slider_pkg.CarouselController(),
-                          options: carousel_slider_pkg.CarouselOptions(
-                            initialPage: max(0, min(1, carouselAllowancesRowList.length - 1)),
+                              CarouselController(),
+                          options: CarouselOptions(
+                            initialPage: max(0,
+                                min(1, carouselAllowancesRowList.length - 1)),
                             viewportFraction: 0.5,
                             disableCenter: true,
                             enlargeCenterPage: true,
@@ -541,11 +542,14 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                             enableInfiniteScroll: false,
                             scrollDirection: Axis.horizontal,
                             autoPlay: true,
-                            autoPlayAnimationDuration: Duration(milliseconds: 1000),
-                            autoPlayInterval: Duration(milliseconds: 1000 + 2500),
+                            autoPlayAnimationDuration:
+                                Duration(milliseconds: 1000),
+                            autoPlayInterval:
+                                Duration(milliseconds: (1000 + 2500)),
                             autoPlayCurve: Curves.linear,
                             pauseAutoPlayInFiniteScroll: false,
-                            onPageChanged: (index, _) => _model.carouselCurrentIndex = index,
+                            onPageChanged: (index, _) =>
+                                _model.carouselCurrentIndex = index,
                           ),
                         ),
                       );
