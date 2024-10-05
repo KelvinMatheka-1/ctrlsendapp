@@ -476,6 +476,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "onesignal_flutter",
+      "rootUri": "file:///home/kelvin/.pub-cache/hosted/pub.dev/onesignal_flutter-5.2.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "page_transition",
       "rootUri": "file:///home/kelvin/.pub-cache/hosted/pub.dev/page_transition-2.1.0",
       "packageUri": "lib/",
@@ -884,7 +890,7 @@
       "languageVersion": "3.4"
     }
   ],
-  "generated": "2024-10-05T11:59:27.919478Z",
+  "generated": "2024-10-05T12:12:21.026337Z",
   "generator": "pub",
   "generatorVersion": "3.5.3",
   "flutterRoot": "file:///home/kelvin/snap/flutter/common/flutter",

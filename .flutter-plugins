@@ -10,6 +10,7 @@ firebase_messaging=/home/kelvin/.pub-cache/hosted/pub.dev/firebase_messaging-14.
 firebase_messaging_web=/home/kelvin/.pub-cache/hosted/pub.dev/firebase_messaging_web-3.5.18/
 firebase_performance=/home/kelvin/.pub-cache/hosted/pub.dev/firebase_performance-0.9.3+8/
 firebase_performance_web=/home/kelvin/.pub-cache/hosted/pub.dev/firebase_performance_web-0.1.4+16/
+onesignal_flutter=/home/kelvin/.pub-cache/hosted/pub.dev/onesignal_flutter-5.2.6/
 path_provider=/home/kelvin/.pub-cache/hosted/pub.dev/path_provider-2.0.14/
 path_provider_android=/home/kelvin/.pub-cache/hosted/pub.dev/path_provider_android-2.0.25/
 path_provider_foundation=/home/kelvin/.pub-cache/hosted/pub.dev/path_provider_foundation-2.2.2/
