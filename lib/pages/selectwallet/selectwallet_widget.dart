@@ -17,6 +17,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'selectwallet_model.dart';
 export 'selectwallet_model.dart';
+import 'package:carousel_slider/carousel_slider.dart' as carousel_slider_pkg;
+
 
 class SelectwalletWidget extends StatefulWidget {
   const SelectwalletWidget({super.key});
