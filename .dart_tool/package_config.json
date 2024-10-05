@@ -344,6 +344,12 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "go_router",
+      "rootUri": "file:///home/kelvin/.pub-cache/hosted/pub.dev/go_router-14.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
       "name": "google_fonts",
       "rootUri": "file:///home/kelvin/.pub-cache/hosted/pub.dev/google_fonts-4.0.3",
       "packageUri": "lib/",
@@ -480,6 +486,12 @@
       "rootUri": "file:///home/kelvin/.pub-cache/hosted/pub.dev/lints-3.0.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
+    },
+    {
+      "name": "logging",
+      "rootUri": "file:///home/kelvin/.pub-cache/hosted/pub.dev/logging-1.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
     },
     {
       "name": "matcher",
@@ -986,7 +998,7 @@
       "languageVersion": "3.4"
     }
   ],
-  "generated": "2024-10-05T13:29:39.091989Z",
+  "generated": "2024-10-05T13:40:12.225216Z",
   "generator": "pub",
   "generatorVersion": "3.5.3",
   "flutterRoot": "file:///home/kelvin/snap/flutter/common/flutter",

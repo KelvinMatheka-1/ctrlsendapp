@@ -210,6 +210,10 @@ functions_client
 2.17
 file:///home/kelvin/.pub-cache/hosted/pub.dev/functions_client-1.3.2/
 file:///home/kelvin/.pub-cache/hosted/pub.dev/functions_client-1.3.2/lib/
+go_router
+3.3
+file:///home/kelvin/.pub-cache/hosted/pub.dev/go_router-14.3.0/
+file:///home/kelvin/.pub-cache/hosted/pub.dev/go_router-14.3.0/lib/
 google_fonts
 2.12
 file:///home/kelvin/.pub-cache/hosted/pub.dev/google_fonts-4.0.3/
@@ -302,6 +306,10 @@ lints
 3.0
 file:///home/kelvin/.pub-cache/hosted/pub.dev/lints-3.0.0/
 file:///home/kelvin/.pub-cache/hosted/pub.dev/lints-3.0.0/lib/
+logging
+2.19
+file:///home/kelvin/.pub-cache/hosted/pub.dev/logging-1.2.0/
+file:///home/kelvin/.pub-cache/hosted/pub.dev/logging-1.2.0/lib/
 matcher
 3.0
 file:///home/kelvin/.pub-cache/hosted/pub.dev/matcher-0.12.16+1/
