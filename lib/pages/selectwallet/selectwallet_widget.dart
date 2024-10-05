@@ -531,10 +531,9 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                             );
                           },
                           carouselController: _model.carouselController ??=
-                              CarouselController(),
-                          options: CarouselOptions(
-                            initialPage: max(0,
-                                min(1, carouselAllowancesRowList.length - 1)),
+                              carousel_slider_pkg.CarouselController(),
+                          options: carousel_slider_pkg.CarouselOptions(
+                            initialPage: max(0, min(1, carouselAllowancesRowList.length - 1)),
                             viewportFraction: 0.5,
                             disableCenter: true,
                             enlargeCenterPage: true,
@@ -542,14 +541,11 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                             enableInfiniteScroll: false,
                             scrollDirection: Axis.horizontal,
                             autoPlay: true,
-                            autoPlayAnimationDuration:
-                                Duration(milliseconds: 1000),
-                            autoPlayInterval:
-                                Duration(milliseconds: (1000 + 2500)),
+                            autoPlayAnimationDuration: Duration(milliseconds: 1000),
+                            autoPlayInterval: Duration(milliseconds: 1000 + 2500),
                             autoPlayCurve: Curves.linear,
                             pauseAutoPlayInFiniteScroll: false,
-                            onPageChanged: (index, _) =>
-                                _model.carouselCurrentIndex = index,
+                            onPageChanged: (index, _) => _model.carouselCurrentIndex = index,
                           ),
                         ),
                       );

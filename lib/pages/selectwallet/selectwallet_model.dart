@@ -23,7 +23,7 @@ class SelectwalletModel extends FlutterFlowModel<SelectwalletWidget> {
 
   final unfocusNode = FocusNode();
   // State field(s) for Carousel widget.
-  CarouselController? carouselController;
+  carousel_slider_pkg.CarouselController? carouselController;
   int carouselCurrentIndex = 1;
 
   @override
