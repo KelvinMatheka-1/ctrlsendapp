@@ -7,7 +7,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:math';
-import 'package:carousel_slider/carousel_slider.dart';
+import 'package:carousel_slider/carousel_slider.dart'  as carousel_slider_pkg;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -17,7 +17,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'selectwallet_model.dart';
 export 'selectwallet_model.dart';
-import 'package:carousel_slider/carousel_slider.dart' as carousel_slider_pkg;
 
 
 class SelectwalletWidget extends StatefulWidget {
