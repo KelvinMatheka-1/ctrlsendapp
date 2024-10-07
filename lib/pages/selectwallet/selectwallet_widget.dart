@@ -269,7 +269,7 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                       return Container(
                         width: double.infinity,
                         height: 150.0,
-                        child: CarouselSlider.builder(
+                        child: carousel_slider.CarouselSlider.builder(
                           itemCount: carouselAllowancesRowList.length,
                           itemBuilder: (context, carouselIndex, _) {
                             final carouselAllowancesRow =
