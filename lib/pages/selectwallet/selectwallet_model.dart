@@ -17,7 +17,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-
 class SelectwalletModel extends FlutterFlowModel<SelectwalletWidget> {
   ///  State fields for stateful widgets in this page.
 
