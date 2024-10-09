@@ -9,7 +9,7 @@ const kPermissionStateToBool = {
   PermissionStatus.permanentlyDenied: false,
 };
 
-final notificationsPermission = Permission.notification;
+const notificationsPermission = Permission.notification;
 
 Future<bool> getPermissionStatus(Permission setting) async {
   final status = await setting.status;

@@ -58,20 +58,20 @@ class _TransferCompleteWidgetState extends State<TransferCompleteWidget> {
               ],
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
               child: Text(
                 FFLocalizations.of(context).getText(
                   'xf8d4sm8' /* Transfer Complete */,
                 ),
                 style: FlutterFlowTheme.of(context).displaySmall.override(
                       fontFamily: 'Lexend',
-                      color: Color(0xFF15DC4F),
+                      color: const Color(0xFF15DC4F),
                       letterSpacing: 0.0,
                     ),
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 24.0, 16.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 24.0, 16.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -84,7 +84,7 @@ class _TransferCompleteWidgetState extends State<TransferCompleteWidget> {
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodySmall.override(
                             fontFamily: 'Lexend',
-                            color: Color(0xB3FFFFFF),
+                            color: const Color(0xB3FFFFFF),
                             fontSize: 17.0,
                             letterSpacing: 0.0,
                           ),
@@ -94,13 +94,13 @@ class _TransferCompleteWidgetState extends State<TransferCompleteWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 70.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 70.0),
               child: FFButtonWidget(
                 onPressed: () async {
                   context.pushNamed(
                     'MY_CardCopy',
                     extra: <String, dynamic>{
-                      kTransitionInfoKey: TransitionInfo(
+                      kTransitionInfoKey: const TransitionInfo(
                         hasTransition: true,
                         transitionType: PageTransitionType.leftToRight,
                         duration: Duration(milliseconds: 200),
@@ -114,17 +114,17 @@ class _TransferCompleteWidgetState extends State<TransferCompleteWidget> {
                 options: FFButtonOptions(
                   width: 130.0,
                   height: 50.0,
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   iconPadding:
-                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: Color(0xFF15DC4F),
+                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  color: const Color(0xFF15DC4F),
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Lexend',
                         color: Colors.white,
                         letterSpacing: 0.0,
                       ),
                   elevation: 2.0,
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Colors.transparent,
                     width: 1.0,
                   ),

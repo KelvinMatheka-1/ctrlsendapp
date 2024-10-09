@@ -66,7 +66,7 @@ class _TutorialPROFILEWidgetState extends State<TutorialPROFILEWidget> {
                 letterSpacing: 0.0,
               ),
         ),
-        actions: [],
+        actions: const [],
         centerTitle: false,
         elevation: 0.0,
       ),
@@ -77,7 +77,7 @@ class _TutorialPROFILEWidgetState extends State<TutorialPROFILEWidget> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 20.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 20.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -103,13 +103,13 @@ class _TutorialPROFILEWidgetState extends State<TutorialPROFILEWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Expanded(
-                  child: Container(
+                  child: SizedBox(
                     width: double.infinity,
                     height: MediaQuery.sizeOf(context).height * 0.6,
                     child: Stack(
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 30.0),
                           child: PageView(
                             controller: _model.pageViewController ??=
@@ -119,7 +119,7 @@ class _TutorialPROFILEWidgetState extends State<TutorialPROFILEWidget> {
                               Container(
                                 width: 100.0,
                                 height: 100.0,
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -131,7 +131,7 @@ class _TutorialPROFILEWidgetState extends State<TutorialPROFILEWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 20.0),
                                           child: Image.asset(
                                             'assets/images/fin_onboarding_1@2x.png',
@@ -145,7 +145,7 @@ class _TutorialPROFILEWidgetState extends State<TutorialPROFILEWidget> {
                                       ],
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 20.0, 8.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -170,7 +170,7 @@ class _TutorialPROFILEWidgetState extends State<TutorialPROFILEWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 20.0, 8.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -200,7 +200,7 @@ class _TutorialPROFILEWidgetState extends State<TutorialPROFILEWidget> {
                               Container(
                                 width: 100.0,
                                 height: 100.0,
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -212,7 +212,7 @@ class _TutorialPROFILEWidgetState extends State<TutorialPROFILEWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 20.0),
                                           child: Image.asset(
                                             'assets/images/fin_onboarding_2@2x.png',
@@ -224,7 +224,7 @@ class _TutorialPROFILEWidgetState extends State<TutorialPROFILEWidget> {
                                       ],
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 20.0, 8.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -249,7 +249,7 @@ class _TutorialPROFILEWidgetState extends State<TutorialPROFILEWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 20.0, 8.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -279,7 +279,7 @@ class _TutorialPROFILEWidgetState extends State<TutorialPROFILEWidget> {
                               Container(
                                 width: 100.0,
                                 height: 100.0,
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -291,7 +291,7 @@ class _TutorialPROFILEWidgetState extends State<TutorialPROFILEWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 30.0, 0.0, 30.0),
                                           child: Image.asset(
                                             'assets/images/fin_onboarding_3@2x.png',
@@ -303,7 +303,7 @@ class _TutorialPROFILEWidgetState extends State<TutorialPROFILEWidget> {
                                       ],
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 20.0, 8.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -328,7 +328,7 @@ class _TutorialPROFILEWidgetState extends State<TutorialPROFILEWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 20.0, 8.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -359,9 +359,9 @@ class _TutorialPROFILEWidgetState extends State<TutorialPROFILEWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, 1.0),
+                          alignment: const AlignmentDirectional(0.0, 1.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 10.0),
                             child: smooth_page_indicator.SmoothPageIndicator(
                               controller: _model.pageViewController ??=
@@ -371,7 +371,7 @@ class _TutorialPROFILEWidgetState extends State<TutorialPROFILEWidget> {
                               onDotClicked: (i) async {
                                 await _model.pageViewController!.animateToPage(
                                   i,
-                                  duration: Duration(milliseconds: 500),
+                                  duration: const Duration(milliseconds: 500),
                                   curve: Curves.ease,
                                 );
                                 setState(() {});
@@ -382,7 +382,7 @@ class _TutorialPROFILEWidgetState extends State<TutorialPROFILEWidget> {
                                 radius: 16.0,
                                 dotWidth: 16.0,
                                 dotHeight: 4.0,
-                                dotColor: Color(0x8AC6CAD4),
+                                dotColor: const Color(0x8AC6CAD4),
                                 activeDotColor:
                                     FlutterFlowTheme.of(context).primaryText,
                                 paintStyle: PaintingStyle.fill,

@@ -1,0 +1,15 @@
+# Query: CarouselController
+# ContextLines: 1
+
+5 results - 2 files
+
+lib/pages/selectwallet/selectwallet_model.dart:
+  24    // State field(s) for Carousel widget.
+  25:   carousel_slider.CarouselController? carouselController;
+  26    int carouselCurrentIndex = 1;
+
+lib/pages/selectwallet/selectwallet_widget.dart:
+  531                            },
+  532:                           carouselController: _model.carouselController ??=
+  533:                               carousel_slider.CarouselController(),
+  534                            options: carousel_slider.CarouselOptions(

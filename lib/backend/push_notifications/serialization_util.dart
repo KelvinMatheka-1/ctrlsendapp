@@ -69,7 +69,7 @@ String serializeParameterData(Map<String, dynamic> parameterData) => jsonEncode(
           key,
           serializeParameter(value),
         ),
-      )..removeWhere((k, v) => k == null || v == null),
+      )..removeWhere((k, v) => v == null),
     );
 
 /// END SERIALIZATION HELPERS

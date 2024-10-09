@@ -15,8 +15,7 @@ import '../../main.dart';
 final _handledMessageIds = <String?>{};
 
 class PushNotificationsHandler extends StatefulWidget {
-  const PushNotificationsHandler({Key? key, required this.child})
-      : super(key: key);
+  const PushNotificationsHandler({super.key, required this.child});
 
   final Widget child;
 
@@ -104,7 +103,7 @@ class ParameterData {
       );
 
   static Future<ParameterData> Function(Map<String, dynamic>) none() =>
-      (data) async => ParameterData();
+      (data) async => const ParameterData();
 }
 
 final parametersBuilderMap =

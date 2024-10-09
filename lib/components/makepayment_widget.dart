@@ -49,22 +49,22 @@ class _MakepaymentWidgetState extends State<MakepaymentWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0.0, -1.0),
+      alignment: const AlignmentDirectional(0.0, -1.0),
       child: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: EdgeInsets.all(12.0),
+              padding: const EdgeInsets.all(12.0),
               child: Container(
                 width: double.infinity,
-                constraints: BoxConstraints(
+                constraints: const BoxConstraints(
                   maxWidth: 570.0,
                 ),
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       blurRadius: 4.0,
                       color: Color(0x33000000),
@@ -81,9 +81,9 @@ class _MakepaymentWidgetState extends State<MakepaymentWidget> {
                   ),
                 ),
                 child: Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Padding(
-                    padding: EdgeInsets.all(24.0),
+                    padding: const EdgeInsets.all(24.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -102,7 +102,7 @@ class _MakepaymentWidgetState extends State<MakepaymentWidget> {
                               ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 0.0, 24.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
@@ -118,15 +118,15 @@ class _MakepaymentWidgetState extends State<MakepaymentWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 16.0),
-                          child: Container(
+                          child: SizedBox(
                             width: double.infinity,
                             child: TextFormField(
                               controller: _model.emailAddressTextController1,
                               focusNode: _model.emailAddressFocusNode1,
                               autofocus: true,
-                              autofillHints: [AutofillHints.email],
+                              autofillHints: const [AutofillHints.email],
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelText: FFLocalizations.of(context).getText(
@@ -147,7 +147,7 @@ class _MakepaymentWidgetState extends State<MakepaymentWidget> {
                                   borderRadius: BorderRadius.circular(40.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Color(0xFF97D200),
                                     width: 2.0,
                                   ),
@@ -170,7 +170,7 @@ class _MakepaymentWidgetState extends State<MakepaymentWidget> {
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                contentPadding: EdgeInsets.all(24.0),
+                                contentPadding: const EdgeInsets.all(24.0),
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyLarge
@@ -186,15 +186,15 @@ class _MakepaymentWidgetState extends State<MakepaymentWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 16.0),
-                          child: Container(
+                          child: SizedBox(
                             width: double.infinity,
                             child: TextFormField(
                               controller: _model.emailAddressTextController2,
                               focusNode: _model.emailAddressFocusNode2,
                               autofocus: true,
-                              autofillHints: [AutofillHints.email],
+                              autofillHints: const [AutofillHints.email],
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelText: FFLocalizations.of(context).getText(
@@ -215,7 +215,7 @@ class _MakepaymentWidgetState extends State<MakepaymentWidget> {
                                   borderRadius: BorderRadius.circular(40.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Color(0xFF97D200),
                                     width: 2.0,
                                   ),
@@ -238,7 +238,7 @@ class _MakepaymentWidgetState extends State<MakepaymentWidget> {
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                contentPadding: EdgeInsets.all(24.0),
+                                contentPadding: const EdgeInsets.all(24.0),
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyLarge
@@ -254,15 +254,15 @@ class _MakepaymentWidgetState extends State<MakepaymentWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 16.0),
-                          child: Container(
+                          child: SizedBox(
                             width: double.infinity,
                             child: TextFormField(
                               controller: _model.emailAddressTextController3,
                               focusNode: _model.emailAddressFocusNode3,
                               autofocus: true,
-                              autofillHints: [AutofillHints.email],
+                              autofillHints: const [AutofillHints.email],
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelText: FFLocalizations.of(context).getText(
@@ -283,7 +283,7 @@ class _MakepaymentWidgetState extends State<MakepaymentWidget> {
                                   borderRadius: BorderRadius.circular(40.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Color(0xFF97D200),
                                     width: 2.0,
                                   ),
@@ -306,7 +306,7 @@ class _MakepaymentWidgetState extends State<MakepaymentWidget> {
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                contentPadding: EdgeInsets.all(24.0),
+                                contentPadding: const EdgeInsets.all(24.0),
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyLarge
@@ -322,9 +322,9 @@ class _MakepaymentWidgetState extends State<MakepaymentWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 16.0),
                             child: FFButtonWidget(
                               onPressed: () {
@@ -336,11 +336,11 @@ class _MakepaymentWidgetState extends State<MakepaymentWidget> {
                               options: FFButtonOptions(
                                 width: 230.0,
                                 height: 52.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: Color(0xFF9FDA00),
+                                color: const Color(0xFF9FDA00),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -349,7 +349,7 @@ class _MakepaymentWidgetState extends State<MakepaymentWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),

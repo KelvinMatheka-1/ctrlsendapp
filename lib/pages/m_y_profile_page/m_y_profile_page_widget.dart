@@ -52,13 +52,13 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
               child: Container(
                 width: MediaQuery.sizeOf(context).width * 1.0,
                 height: 167.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).primaryBackground,
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       blurRadius: 4.0,
                       color: Color(0x33000000),
@@ -71,13 +71,13 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                   borderRadius: BorderRadius.circular(0.0),
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -98,19 +98,19 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 16.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 0.0, 0.0),
                                     child: Container(
                                       width: 44.0,
                                       height: 44.0,
                                       decoration: BoxDecoration(
-                                        color: Color(0x40000000),
+                                        color: const Color(0x40000000),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                       ),
@@ -147,7 +147,7 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 8.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -165,7 +165,7 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 4.0, 8.0, 0.0, 0.0),
                             child: FutureBuilder<List<UsersRow>>(
                               future: UsersTable().querySingleRow(
@@ -177,7 +177,7 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                               builder: (context, snapshot) {
                                 // Customize what your widget looks like when it's loading.
                                 if (!snapshot.hasData) {
-                                  return Center(
+                                  return const Center(
                                     child: SizedBox(
                                       width: 40.0,
                                       height: 40.0,
@@ -203,7 +203,7 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Lexend',
-                                        color: Color(0xFF88FD65),
+                                        color: const Color(0xFF88FD65),
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
                                       ),
@@ -215,7 +215,7 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -241,7 +241,7 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -272,7 +272,7 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 4.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -293,7 +293,7 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                                 borderColor: Colors.transparent,
                                 borderRadius: 30.0,
                                 buttonSize: 46.0,
-                                icon: Icon(
+                                icon: const Icon(
                                   Icons.chevron_right_rounded,
                                   color: Color(0xFF95A1AC),
                                   size: 25.0,
@@ -312,7 +312,7 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -343,7 +343,7 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 4.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -364,7 +364,7 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                                 borderColor: Colors.transparent,
                                 borderRadius: 30.0,
                                 buttonSize: 46.0,
-                                icon: Icon(
+                                icon: const Icon(
                                   Icons.chevron_right_rounded,
                                   color: Color(0xFF95A1AC),
                                   size: 25.0,
@@ -383,7 +383,7 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -414,7 +414,7 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 4.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -435,7 +435,7 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                                 borderColor: Colors.transparent,
                                 borderRadius: 30.0,
                                 buttonSize: 46.0,
-                                icon: Icon(
+                                icon: const Icon(
                                   Icons.chevron_right_rounded,
                                   color: Color(0xFF95A1AC),
                                   size: 25.0,
@@ -455,7 +455,7 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
             ),
             if (!(Theme.of(context).brightness == Brightness.dark))
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     setDarkModeSetting(context, ThemeMode.dark);
@@ -466,17 +466,17 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                   options: FFButtonOptions(
                     width: 130.0,
                     height: 40.0,
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: Color(0xFF88FD65),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    color: const Color(0xFF88FD65),
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Lexend',
                           color: Colors.white,
                           letterSpacing: 0.0,
                         ),
                     elevation: 2.0,
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       color: Colors.transparent,
                       width: 1.0,
                     ),
@@ -486,7 +486,7 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
               ),
             if (Theme.of(context).brightness == Brightness.dark)
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     setDarkModeSetting(context, ThemeMode.light);
@@ -497,9 +497,9 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                   options: FFButtonOptions(
                     width: 130.0,
                     height: 40.0,
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).accent3,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Lexend',
@@ -507,7 +507,7 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                           letterSpacing: 0.0,
                         ),
                     elevation: 2.0,
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       color: Colors.transparent,
                       width: 1.0,
                     ),

@@ -56,22 +56,22 @@ class _SendingWidgetState extends State<SendingWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0.0, -1.0),
+      alignment: const AlignmentDirectional(0.0, -1.0),
       child: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: EdgeInsets.all(12.0),
+              padding: const EdgeInsets.all(12.0),
               child: Container(
                 width: double.infinity,
-                constraints: BoxConstraints(
+                constraints: const BoxConstraints(
                   maxWidth: 570.0,
                 ),
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       blurRadius: 4.0,
                       color: Color(0x33000000),
@@ -88,9 +88,9 @@ class _SendingWidgetState extends State<SendingWidget> {
                   ),
                 ),
                 child: Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Padding(
-                    padding: EdgeInsets.all(24.0),
+                    padding: const EdgeInsets.all(24.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -109,7 +109,7 @@ class _SendingWidgetState extends State<SendingWidget> {
                               ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 0.0, 24.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
@@ -125,15 +125,15 @@ class _SendingWidgetState extends State<SendingWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 16.0),
-                          child: Container(
+                          child: SizedBox(
                             width: double.infinity,
                             child: TextFormField(
                               controller: _model.emailAddressTextController1,
                               focusNode: _model.emailAddressFocusNode1,
                               autofocus: true,
-                              autofillHints: [AutofillHints.email],
+                              autofillHints: const [AutofillHints.email],
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelText: FFLocalizations.of(context).getText(
@@ -154,7 +154,7 @@ class _SendingWidgetState extends State<SendingWidget> {
                                   borderRadius: BorderRadius.circular(40.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Color(0xFF97D200),
                                     width: 2.0,
                                   ),
@@ -177,7 +177,7 @@ class _SendingWidgetState extends State<SendingWidget> {
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                contentPadding: EdgeInsets.all(24.0),
+                                contentPadding: const EdgeInsets.all(24.0),
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyLarge
@@ -193,15 +193,15 @@ class _SendingWidgetState extends State<SendingWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 16.0),
-                          child: Container(
+                          child: SizedBox(
                             width: double.infinity,
                             child: TextFormField(
                               controller: _model.emailAddressTextController2,
                               focusNode: _model.emailAddressFocusNode2,
                               autofocus: true,
-                              autofillHints: [AutofillHints.email],
+                              autofillHints: const [AutofillHints.email],
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelText: FFLocalizations.of(context).getText(
@@ -222,7 +222,7 @@ class _SendingWidgetState extends State<SendingWidget> {
                                   borderRadius: BorderRadius.circular(40.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Color(0xFF97D200),
                                     width: 2.0,
                                   ),
@@ -245,7 +245,7 @@ class _SendingWidgetState extends State<SendingWidget> {
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                contentPadding: EdgeInsets.all(24.0),
+                                contentPadding: const EdgeInsets.all(24.0),
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyLarge
@@ -261,9 +261,9 @@ class _SendingWidgetState extends State<SendingWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 16.0),
                             child: StreamBuilder<List<UserListRecord>>(
                               stream: queryUserListRecord(
@@ -278,7 +278,7 @@ class _SendingWidgetState extends State<SendingWidget> {
                               builder: (context, snapshot) {
                                 // Customize what your widget looks like when it's loading.
                                 if (!snapshot.hasData) {
-                                  return Center(
+                                  return const Center(
                                     child: SizedBox(
                                       width: 40.0,
                                       height: 40.0,
@@ -315,7 +315,7 @@ class _SendingWidgetState extends State<SendingWidget> {
                                     triggerPushNotification(
                                       notificationTitle: 'Received',
                                       notificationText:
-                                          'Hello there!  You have received ksh${_model.emailAddressTextController2.text} from ${currentUserEmail}.',
+                                          'Hello there!  You have received ksh${_model.emailAddressTextController2.text} from $currentUserEmail.',
                                       notificationSound: 'default',
                                       userRefs: [
                                         buttonUserListRecord!.reference
@@ -327,14 +327,14 @@ class _SendingWidgetState extends State<SendingWidget> {
                                       context: context,
                                       builder: (alertDialogContext) {
                                         return AlertDialog(
-                                          title: Text('Sent'),
+                                          title: const Text('Sent'),
                                           content: Text(
                                               'Confirmed, ksh${_model.emailAddressTextController2.text} sent to ${_model.emailAddressTextController1.text}'),
                                           actions: [
                                             TextButton(
                                               onPressed: () => Navigator.pop(
                                                   alertDialogContext),
-                                              child: Text('Ok'),
+                                              child: const Text('Ok'),
                                             ),
                                           ],
                                         );
@@ -349,11 +349,11 @@ class _SendingWidgetState extends State<SendingWidget> {
                                   options: FFButtonOptions(
                                     width: 230.0,
                                     height: 52.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    color: Color(0xFF9FDA00),
+                                    color: const Color(0xFF9FDA00),
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
@@ -362,7 +362,7 @@ class _SendingWidgetState extends State<SendingWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),

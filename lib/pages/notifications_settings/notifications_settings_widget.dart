@@ -66,19 +66,19 @@ class _NotificationsSettingsWidgetState
                 letterSpacing: 0.0,
               ),
         ),
-        actions: [],
+        actions: const [],
         centerTitle: false,
         elevation: 0.0,
       ),
       body: Container(
         width: MediaQuery.sizeOf(context).width * 1.0,
         height: MediaQuery.sizeOf(context).height * 1.0,
-        decoration: BoxDecoration(),
+        decoration: const BoxDecoration(),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
@@ -97,11 +97,11 @@ class _NotificationsSettingsWidgetState
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
               child: SwitchListTile.adaptive(
                 value: _model.switchListTileValue1 ??= true,
                 onChanged: (newValue) async {
-                  setState(() => _model.switchListTileValue1 = newValue!);
+                  setState(() => _model.switchListTileValue1 = newValue);
                 },
                 title: Text(
                   FFLocalizations.of(context).getText(
@@ -122,18 +122,18 @@ class _NotificationsSettingsWidgetState
                       ),
                 ),
                 tileColor: FlutterFlowTheme.of(context).secondaryBackground,
-                activeColor: Color(0xFF15DC4F),
-                activeTrackColor: Color(0xFFC2C2C2),
+                activeColor: const Color(0xFF15DC4F),
+                activeTrackColor: const Color(0xFFC2C2C2),
                 dense: false,
                 controlAffinity: ListTileControlAffinity.trailing,
                 contentPadding:
-                    EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 24.0, 12.0),
+                    const EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 24.0, 12.0),
               ),
             ),
             SwitchListTile.adaptive(
               value: _model.switchListTileValue2 ??= true,
               onChanged: (newValue) async {
-                setState(() => _model.switchListTileValue2 = newValue!);
+                setState(() => _model.switchListTileValue2 = newValue);
               },
               title: Text(
                 FFLocalizations.of(context).getText(
@@ -154,17 +154,17 @@ class _NotificationsSettingsWidgetState
                     ),
               ),
               tileColor: FlutterFlowTheme.of(context).secondaryBackground,
-              activeColor: Color(0xFF15DC4F),
-              activeTrackColor: Color(0xFFC2C2C2),
+              activeColor: const Color(0xFF15DC4F),
+              activeTrackColor: const Color(0xFFC2C2C2),
               dense: false,
               controlAffinity: ListTileControlAffinity.trailing,
               contentPadding:
-                  EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 24.0, 12.0),
+                  const EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 24.0, 12.0),
             ),
             SwitchListTile.adaptive(
               value: _model.switchListTileValue3 ??= true,
               onChanged: (newValue) async {
-                setState(() => _model.switchListTileValue3 = newValue!);
+                setState(() => _model.switchListTileValue3 = newValue);
               },
               title: Text(
                 FFLocalizations.of(context).getText(
@@ -185,15 +185,15 @@ class _NotificationsSettingsWidgetState
                     ),
               ),
               tileColor: FlutterFlowTheme.of(context).secondaryBackground,
-              activeColor: Color(0xFF15DC4F),
-              activeTrackColor: Color(0xFFC2C2C2),
+              activeColor: const Color(0xFF15DC4F),
+              activeTrackColor: const Color(0xFFC2C2C2),
               dense: false,
               controlAffinity: ListTileControlAffinity.trailing,
               contentPadding:
-                  EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 24.0, 12.0),
+                  const EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 24.0, 12.0),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
               child: FFButtonWidget(
                 onPressed: () async {
                   context.pop();
@@ -204,17 +204,17 @@ class _NotificationsSettingsWidgetState
                 options: FFButtonOptions(
                   width: 190.0,
                   height: 50.0,
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   iconPadding:
-                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: Color(0xFF88FD65),
+                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  color: const Color(0xFF88FD65),
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Lexend',
                         color: FlutterFlowTheme.of(context).textColor,
                         letterSpacing: 0.0,
                       ),
                   elevation: 3.0,
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Colors.transparent,
                     width: 1.0,
                   ),

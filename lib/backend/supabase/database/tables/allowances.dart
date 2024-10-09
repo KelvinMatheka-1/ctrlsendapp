@@ -9,7 +9,7 @@ class AllowancesTable extends SupabaseTable<AllowancesRow> {
 }
 
 class AllowancesRow extends SupabaseDataRow {
-  AllowancesRow(Map<String, dynamic> data) : super(data);
+  AllowancesRow(super.data);
 
   @override
   SupabaseTable get table => AllowancesTable();

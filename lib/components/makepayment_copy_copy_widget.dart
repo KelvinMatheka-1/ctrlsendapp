@@ -67,22 +67,22 @@ class _MakepaymentCopyCopyWidgetState extends State<MakepaymentCopyCopyWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0.0, -1.0),
+      alignment: const AlignmentDirectional(0.0, -1.0),
       child: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: EdgeInsets.all(12.0),
+              padding: const EdgeInsets.all(12.0),
               child: Container(
                 width: double.infinity,
-                constraints: BoxConstraints(
+                constraints: const BoxConstraints(
                   maxWidth: 570.0,
                 ),
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       blurRadius: 4.0,
                       color: Color(0x33000000),
@@ -99,9 +99,9 @@ class _MakepaymentCopyCopyWidgetState extends State<MakepaymentCopyCopyWidget> {
                   ),
                 ),
                 child: Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Padding(
-                    padding: EdgeInsets.all(24.0),
+                    padding: const EdgeInsets.all(24.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -135,7 +135,7 @@ class _MakepaymentCopyCopyWidgetState extends State<MakepaymentCopyCopyWidget> {
                                 ),
                           ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 16.0),
                           child: FlutterFlowDropDown<String>(
                             controller: _model.dropDownValueController ??=
@@ -180,7 +180,7 @@ class _MakepaymentCopyCopyWidgetState extends State<MakepaymentCopyCopyWidget> {
                             borderColor: FlutterFlowTheme.of(context).alternate,
                             borderWidth: 2.0,
                             borderRadius: 30.0,
-                            margin: EdgeInsetsDirectional.fromSTEB(
+                            margin: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 4.0, 16.0, 4.0),
                             hidesUnderline: true,
                             isOverButton: true,
@@ -190,15 +190,15 @@ class _MakepaymentCopyCopyWidgetState extends State<MakepaymentCopyCopyWidget> {
                         ),
                         if (_model.dropDownValue == 'paybill')
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 16.0),
-                            child: Container(
+                            child: SizedBox(
                               width: double.infinity,
                               child: TextFormField(
                                 controller: _model.emailAddressTextController1,
                                 focusNode: _model.emailAddressFocusNode1,
                                 autofocus: true,
-                                autofillHints: [AutofillHints.email],
+                                autofillHints: const [AutofillHints.email],
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   labelText:
@@ -220,7 +220,7 @@ class _MakepaymentCopyCopyWidgetState extends State<MakepaymentCopyCopyWidget> {
                                     borderRadius: BorderRadius.circular(40.0),
                                   ),
                                   focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Color(0xFF97D200),
                                       width: 2.0,
                                     ),
@@ -243,7 +243,7 @@ class _MakepaymentCopyCopyWidgetState extends State<MakepaymentCopyCopyWidget> {
                                   filled: true,
                                   fillColor: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  contentPadding: EdgeInsets.all(24.0),
+                                  contentPadding: const EdgeInsets.all(24.0),
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyLarge
@@ -260,15 +260,15 @@ class _MakepaymentCopyCopyWidgetState extends State<MakepaymentCopyCopyWidget> {
                           ),
                         if (_model.dropDownValue == 'till no.')
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 16.0),
-                            child: Container(
+                            child: SizedBox(
                               width: double.infinity,
                               child: TextFormField(
                                 controller: _model.tillTextController,
                                 focusNode: _model.tillFocusNode,
                                 autofocus: true,
-                                autofillHints: [AutofillHints.email],
+                                autofillHints: const [AutofillHints.email],
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   labelText:
@@ -290,7 +290,7 @@ class _MakepaymentCopyCopyWidgetState extends State<MakepaymentCopyCopyWidget> {
                                     borderRadius: BorderRadius.circular(40.0),
                                   ),
                                   focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Color(0xFF97D200),
                                       width: 2.0,
                                     ),
@@ -313,7 +313,7 @@ class _MakepaymentCopyCopyWidgetState extends State<MakepaymentCopyCopyWidget> {
                                   filled: true,
                                   fillColor: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  contentPadding: EdgeInsets.all(24.0),
+                                  contentPadding: const EdgeInsets.all(24.0),
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyLarge
@@ -329,9 +329,9 @@ class _MakepaymentCopyCopyWidgetState extends State<MakepaymentCopyCopyWidget> {
                           ),
                         if (_model.dropDownValue == 'paybill')
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 16.0),
-                            child: Container(
+                            child: SizedBox(
                               width: double.infinity,
                               child: TextFormField(
                                 controller: _model.emailAddressTextController2,
@@ -358,7 +358,7 @@ class _MakepaymentCopyCopyWidgetState extends State<MakepaymentCopyCopyWidget> {
                                     borderRadius: BorderRadius.circular(40.0),
                                   ),
                                   focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Color(0xFF97D200),
                                       width: 2.0,
                                     ),
@@ -381,7 +381,7 @@ class _MakepaymentCopyCopyWidgetState extends State<MakepaymentCopyCopyWidget> {
                                   filled: true,
                                   fillColor: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  contentPadding: EdgeInsets.all(24.0),
+                                  contentPadding: const EdgeInsets.all(24.0),
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyLarge
@@ -398,15 +398,15 @@ class _MakepaymentCopyCopyWidgetState extends State<MakepaymentCopyCopyWidget> {
                           ),
                         if (_model.dropDownValue == 'sending')
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 16.0),
-                            child: Container(
+                            child: SizedBox(
                               width: double.infinity,
                               child: TextFormField(
                                 controller: _model.emailAddressTextController3,
                                 focusNode: _model.emailAddressFocusNode3,
                                 autofocus: true,
-                                autofillHints: [AutofillHints.email],
+                                autofillHints: const [AutofillHints.email],
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   labelText:
@@ -428,7 +428,7 @@ class _MakepaymentCopyCopyWidgetState extends State<MakepaymentCopyCopyWidget> {
                                     borderRadius: BorderRadius.circular(40.0),
                                   ),
                                   focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Color(0xFF97D200),
                                       width: 2.0,
                                     ),
@@ -451,7 +451,7 @@ class _MakepaymentCopyCopyWidgetState extends State<MakepaymentCopyCopyWidget> {
                                   filled: true,
                                   fillColor: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  contentPadding: EdgeInsets.all(24.0),
+                                  contentPadding: const EdgeInsets.all(24.0),
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyLarge
@@ -467,15 +467,15 @@ class _MakepaymentCopyCopyWidgetState extends State<MakepaymentCopyCopyWidget> {
                             ),
                           ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 16.0),
-                          child: Container(
+                          child: SizedBox(
                             width: double.infinity,
                             child: TextFormField(
                               controller: _model.emailAddressTextController4,
                               focusNode: _model.emailAddressFocusNode4,
                               autofocus: true,
-                              autofillHints: [AutofillHints.email],
+                              autofillHints: const [AutofillHints.email],
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelText: FFLocalizations.of(context).getText(
@@ -496,7 +496,7 @@ class _MakepaymentCopyCopyWidgetState extends State<MakepaymentCopyCopyWidget> {
                                   borderRadius: BorderRadius.circular(40.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Color(0xFF97D200),
                                     width: 2.0,
                                   ),
@@ -519,7 +519,7 @@ class _MakepaymentCopyCopyWidgetState extends State<MakepaymentCopyCopyWidget> {
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                contentPadding: EdgeInsets.all(24.0),
+                                contentPadding: const EdgeInsets.all(24.0),
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyLarge
@@ -536,7 +536,7 @@ class _MakepaymentCopyCopyWidgetState extends State<MakepaymentCopyCopyWidget> {
                         ),
                         if (_model.dropDownValue == 'paying')
                           Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () {
                                 print('Button pressed ...');
@@ -547,11 +547,11 @@ class _MakepaymentCopyCopyWidgetState extends State<MakepaymentCopyCopyWidget> {
                               options: FFButtonOptions(
                                 width: 230.0,
                                 height: 52.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: Color(0xFF9FDA00),
+                                color: const Color(0xFF9FDA00),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -560,7 +560,7 @@ class _MakepaymentCopyCopyWidgetState extends State<MakepaymentCopyCopyWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -570,9 +570,9 @@ class _MakepaymentCopyCopyWidgetState extends State<MakepaymentCopyCopyWidget> {
                           ),
                         if (_model.dropDownValue == 'sending')
                           Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 16.0),
                               child: StreamBuilder<List<UserListRecord>>(
                                 stream: queryUserListRecord(
@@ -580,14 +580,14 @@ class _MakepaymentCopyCopyWidgetState extends State<MakepaymentCopyCopyWidget> {
                                       userListRecord.where(
                                     'email',
                                     isEqualTo:
-                                        widget!.allowancedetails?.ownerEmail,
+                                        widget.allowancedetails?.ownerEmail,
                                   ),
                                   singleRecord: true,
                                 ),
                                 builder: (context, snapshot) {
                                   // Customize what your widget looks like when it's loading.
                                   if (!snapshot.hasData) {
-                                    return Center(
+                                    return const Center(
                                       child: SizedBox(
                                         width: 40.0,
                                         height: 40.0,
@@ -608,7 +608,7 @@ class _MakepaymentCopyCopyWidgetState extends State<MakepaymentCopyCopyWidget> {
                                   return FFButtonWidget(
                                     onPressed: () async {
                                       await TransactionsTable().insert({
-                                        'sender_email': widget!
+                                        'sender_email': widget
                                             .allowancedetails?.ownerEmail,
                                         'recipient_email': _model
                                             .emailAddressTextController3.text,
@@ -622,7 +622,7 @@ class _MakepaymentCopyCopyWidgetState extends State<MakepaymentCopyCopyWidget> {
                                       triggerPushNotification(
                                         notificationTitle: 'Usage',
                                         notificationText:
-                                            '${currentUserEmail} wants to use ksh${_model.emailAddressTextController4.text} from your wallet.',
+                                            '$currentUserEmail wants to use ksh${_model.emailAddressTextController4.text} from your wallet.',
                                         notificationSound: 'default',
                                         userRefs: [
                                           buttonUserListRecord!.reference
@@ -634,14 +634,14 @@ class _MakepaymentCopyCopyWidgetState extends State<MakepaymentCopyCopyWidget> {
                                         context: context,
                                         builder: (alertDialogContext) {
                                           return AlertDialog(
-                                            title: Text('Request sent'),
-                                            content: Text(
+                                            title: const Text('Request sent'),
+                                            content: const Text(
                                                 'An approval request has been sent to the wallet owner.'),
                                             actions: [
                                               TextButton(
                                                 onPressed: () => Navigator.pop(
                                                     alertDialogContext),
-                                                child: Text('Ok'),
+                                                child: const Text('Ok'),
                                               ),
                                             ],
                                           );
@@ -656,12 +656,12 @@ class _MakepaymentCopyCopyWidgetState extends State<MakepaymentCopyCopyWidget> {
                                     options: FFButtonOptions(
                                       width: 230.0,
                                       height: 52.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 0.0),
                                       iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
+                                          const EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
-                                      color: Color(0xFF9FDA00),
+                                      color: const Color(0xFF9FDA00),
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
@@ -670,7 +670,7 @@ class _MakepaymentCopyCopyWidgetState extends State<MakepaymentCopyCopyWidget> {
                                             letterSpacing: 0.0,
                                           ),
                                       elevation: 3.0,
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),

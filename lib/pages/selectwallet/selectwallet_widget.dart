@@ -7,7 +7,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:math';
-import 'package:carousel_slider/carousel_slider.dart' as carousel_slider;
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -15,6 +15,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+
 import 'selectwallet_model.dart';
 export 'selectwallet_model.dart';
 
@@ -117,9 +118,7 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -132,61 +131,59 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
             ),
             style: FlutterFlowTheme.of(context).headlineLarge.override(
                   fontFamily: 'Poppins',
-                  fontSize: 27.0,
+                  fontSize: 27,
                   letterSpacing: 0.0,
                 ),
           ),
           actions: [
             ClipRRect(
-              borderRadius: BorderRadius.circular(24.0),
+              borderRadius: BorderRadius.circular(24),
               child: Image.asset(
                 Theme.of(context).brightness == Brightness.dark
                     ? 'assets/images/ctrlsendlogo-aidark.png'
                     : 'assets/images/ctrlsendlogo-ai2.png',
-                width: 73.0,
-                height: 50.0,
+                width: 73,
+                height: 50,
                 fit: BoxFit.cover,
               ),
             ),
           ],
           centerTitle: false,
-          elevation: 0.0,
+          elevation: 0,
         ),
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(1.0, 0.0, 0.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(1, 0, 0, 0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(10.0, 8.0, 10.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(10, 8, 10, 0),
                     child: Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                         boxShadow: [
                           BoxShadow(
-                            blurRadius: 4.0,
+                            blurRadius: 4,
                             color: Color(0x33000000),
                             offset: Offset(
-                              0.0,
-                              2.0,
+                              0,
+                              2,
                             ),
                           )
                         ],
-                        borderRadius: BorderRadius.circular(12.0),
+                        borderRadius: BorderRadius.circular(12),
                         border: Border.all(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
-                          width: 2.0,
+                          width: 2,
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            16.0, 12.0, 16.0, 12.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(16, 12, 16, 12),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -197,7 +194,7 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 4.0, 0.0, 0.0),
+                                      0, 4, 0, 0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
                                       'xpkiiyv8' /* Total usable from wallets */,
@@ -212,10 +209,10 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                                       'textOnPageLoadAnimation1']!),
                                 ),
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0, 0),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 5.0, 0.0, 0.0),
+                                        0, 5, 0, 0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
                                         'nouedum2' /* ksh1234 */,
@@ -225,7 +222,7 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                                           .override(
                                             fontFamily: 'Roboto',
                                             color: Color(0xFF88FD65),
-                                            fontSize: 35.0,
+                                            fontSize: 35,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                           ),
@@ -254,11 +251,11 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                       if (!snapshot.hasData) {
                         return Center(
                           child: SizedBox(
-                            width: 40.0,
-                            height: 40.0,
+                            width: 40,
+                            height: 40,
                             child: SpinKitRing(
                               color: Color(0xFF88FD65),
-                              size: 40.0,
+                              size: 40,
                             ),
                           ),
                         );
@@ -268,32 +265,32 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
 
                       return Container(
                         width: double.infinity,
-                        height: 150.0,
-                        child: carousel_slider.CarouselSlider.builder(
+                        height: 150,
+                        child: CarouselSlider.builder(
                           itemCount: carouselAllowancesRowList.length,
                           itemBuilder: (context, carouselIndex, _) {
                             final carouselAllowancesRow =
                                 carouselAllowancesRowList[carouselIndex];
                             return Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 8.0, 0.0, 8.0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 8, 0, 8),
                               child: Container(
-                                width: 159.0,
-                                height: 120.0,
+                                width: 159,
+                                height: 120,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
                                   boxShadow: [
                                     BoxShadow(
-                                      blurRadius: 4.0,
+                                      blurRadius: 4,
                                       color: Color(0x33000000),
                                       offset: Offset(
-                                        0.0,
-                                        2.0,
+                                        0,
+                                        2,
                                       ),
                                     )
                                   ],
-                                  borderRadius: BorderRadius.circular(12.0),
+                                  borderRadius: BorderRadius.circular(12),
                                   border: Border.all(
                                     color:
                                         FlutterFlowTheme.of(context).alternate,
@@ -301,7 +298,7 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                                 ),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      8.0, 0.0, 8.0, 8.0),
+                                      8, 0, 8, 8),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
                                     focusColor: Colors.transparent,
@@ -314,18 +311,13 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                                         context: context,
                                         builder: (context) {
                                           return GestureDetector(
-                                            onTap: () => _model
-                                                    .unfocusNode.canRequestFocus
-                                                ? FocusScope.of(context)
-                                                    .requestFocus(
-                                                        _model.unfocusNode)
-                                                : FocusScope.of(context)
-                                                    .unfocus(),
+                                            onTap: () => FocusScope.of(context)
+                                                .unfocus(),
                                             child: Padding(
                                               padding: MediaQuery.viewInsetsOf(
                                                   context),
                                               child: Container(
-                                                height: 550.0,
+                                                height: 550,
                                                 child:
                                                     MakepaymentCopyCopyWidget(
                                                   allowancedetails:
@@ -349,7 +341,7 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 8.0, 0.0, 2.0),
+                                                  .fromSTEB(0, 8, 0, 2),
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -368,7 +360,7 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 8.0, 0.0, 2.0),
+                                                  .fromSTEB(0, 8, 0, 2),
                                               child: Text(
                                                 carouselAllowancesRow
                                                     .ownerEmail,
@@ -392,7 +384,7 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 8.0, 0.0, 2.0),
+                                                  .fromSTEB(0, 8, 0, 2),
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -411,7 +403,7 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 8.0, 0.0, 2.0),
+                                                  .fromSTEB(0, 8, 0, 2),
                                               child: Text(
                                                 formatNumber(
                                                   carouselAllowancesRow
@@ -441,7 +433,7 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 8.0, 0.0, 2.0),
+                                                  .fromSTEB(0, 8, 0, 2),
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -460,7 +452,7 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 8.0, 0.0, 2.0),
+                                                  .fromSTEB(0, 8, 0, 2),
                                               child: Text(
                                                 formatNumber(
                                                   carouselAllowancesRow
@@ -486,7 +478,7 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 15.0, 0.0, 0.0),
+                                                  0, 15, 0, 0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -495,11 +487,11 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
-                                                size: 20.0,
+                                                size: 20,
                                               ),
                                               Text(
                                                 dateTimeFormat(
-                                                  'd/M h:mm a',
+                                                  "d/M h:mm a",
                                                   carouselAllowancesRow
                                                       .createdAt,
                                                   locale: FFLocalizations.of(
@@ -515,11 +507,11 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
-                                                          fontSize: 10.0,
+                                                          fontSize: 10,
                                                           letterSpacing: 0.0,
                                                         ),
                                               ),
-                                            ].divide(SizedBox(width: 5.0)),
+                                            ].divide(SizedBox(width: 5)),
                                           ),
                                         ),
                                       ],
@@ -530,8 +522,8 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                             );
                           },
                           carouselController: _model.carouselController ??=
-                              carousel_slider.CarouselController(),
-                          options: carousel_slider.CarouselOptions(
+                              CarouselController(),
+                          options: CarouselOptions(
                             initialPage: max(0,
                                 min(1, carouselAllowancesRowList.length - 1)),
                             viewportFraction: 0.5,
@@ -540,13 +532,7 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                             enlargeFactor: 0.25,
                             enableInfiniteScroll: false,
                             scrollDirection: Axis.horizontal,
-                            autoPlay: true,
-                            autoPlayAnimationDuration:
-                                Duration(milliseconds: 1000),
-                            autoPlayInterval:
-                                Duration(milliseconds: (1000 + 2500)),
-                            autoPlayCurve: Curves.linear,
-                            pauseAutoPlayInFiniteScroll: false,
+                            autoPlay: false,
                             onPageChanged: (index, _) =>
                                 _model.carouselCurrentIndex = index,
                           ),
@@ -555,10 +541,9 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                     },
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(-1, 0),
                     child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 8.0),
+                      padding: EdgeInsetsDirectional.fromSTEB(16, 4, 16, 8),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           'oijp92mn' /* Approved transactions */,
@@ -578,29 +563,28 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                     scrollDirection: Axis.vertical,
                     children: [
                       Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
                         child: Container(
-                          width: 100.0,
-                          height: 459.0,
+                          width: 100,
+                          height: 459,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
                             boxShadow: [
                               BoxShadow(
-                                blurRadius: 4.0,
+                                blurRadius: 4,
                                 color: Color(0x33000000),
                                 offset: Offset(
-                                  0.0,
-                                  2.0,
+                                  0,
+                                  2,
                                 ),
                               )
                             ],
                             borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(15.0),
-                              bottomRight: Radius.circular(15.0),
-                              topLeft: Radius.circular(15.0),
-                              topRight: Radius.circular(15.0),
+                              bottomLeft: Radius.circular(15),
+                              bottomRight: Radius.circular(15),
+                              topLeft: Radius.circular(15),
+                              topRight: Radius.circular(15),
                             ),
                           ),
                           child: FutureBuilder<List<TransactionsRow>>(
@@ -624,11 +608,11 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                               if (!snapshot.hasData) {
                                 return Center(
                                   child: SizedBox(
-                                    width: 40.0,
-                                    height: 40.0,
+                                    width: 40,
+                                    height: 40,
                                     child: SpinKitRing(
                                       color: Color(0xFF88FD65),
-                                      size: 40.0,
+                                      size: 40,
                                     ),
                                   ),
                                 );
@@ -647,7 +631,7 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                                         columnTransactionsRowList[columnIndex];
                                     return Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          3.0, 10.0, 1.0, 0.0),
+                                          3, 10, 1, 0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -679,35 +663,34 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                                           );
                                         },
                                         child: Container(
-                                          height: 80.0,
+                                          height: 80,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
                                             boxShadow: [
                                               BoxShadow(
-                                                blurRadius: 4.0,
+                                                blurRadius: 4,
                                                 color: Color(0x33000000),
                                                 offset: Offset(
-                                                  0.0,
-                                                  2.0,
+                                                  0,
+                                                  2,
                                                 ),
                                               )
                                             ],
                                             borderRadius:
-                                                BorderRadius.circular(10.0),
+                                                BorderRadius.circular(10),
                                             shape: BoxShape.rectangle,
                                           ),
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    5.0, 0.0, 0.0, 0.0),
+                                                    5, 0, 0, 0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          5.0, 10.0, 0.0, 5.0),
+                                                      .fromSTEB(5, 10, 0, 5),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -733,10 +716,7 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    5.0,
-                                                                    0.0),
+                                                                    0, 0, 5, 0),
                                                         child: Text(
                                                           formatNumber(
                                                             columnTransactionsRow
@@ -763,10 +743,7 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    5.0,
-                                                                    0.0),
+                                                                    0, 0, 5, 0),
                                                         child: Text(
                                                           FFLocalizations.of(
                                                                   context)
@@ -788,10 +765,7 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    5.0,
-                                                                    0.0),
+                                                                    0, 0, 5, 0),
                                                         child: Text(
                                                           valueOrDefault<
                                                               String>(
@@ -832,8 +806,7 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                                                 ),
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          5.0, 0.0, 0.0, 5.0),
+                                                      .fromSTEB(5, 0, 0, 5),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -859,10 +832,7 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    5.0,
-                                                                    0.0),
+                                                                    0, 0, 5, 0),
                                                         child: Text(
                                                           FFLocalizations.of(
                                                                   context)
@@ -884,10 +854,7 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    5.0,
-                                                                    0.0),
+                                                                    0, 0, 5, 0),
                                                         child: Text(
                                                           FFLocalizations.of(
                                                                   context)
@@ -910,15 +877,14 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                                                 ),
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          5.0, 0.0, 0.0, 0.0),
+                                                      .fromSTEB(5, 0, 0, 0),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
                                                       Text(
                                                         dateTimeFormat(
-                                                          'd/M h:mm a',
+                                                          "d/M h:mm a",
                                                           columnTransactionsRow
                                                               .createdAt,
                                                           locale:

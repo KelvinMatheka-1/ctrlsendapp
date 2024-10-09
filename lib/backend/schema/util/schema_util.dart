@@ -23,7 +23,7 @@ List<T>? getStructList<T>(
     value is! List
         ? null
         : value
-            .where((e) => e is Map<String, dynamic>)
+            .whereType<Map<String, dynamic>>()
             .map((e) => structBuilder(e as Map<String, dynamic>))
             .toList();
 

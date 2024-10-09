@@ -9,7 +9,7 @@ class TransactionsTable extends SupabaseTable<TransactionsRow> {
 }
 
 class TransactionsRow extends SupabaseDataRow {
-  TransactionsRow(Map<String, dynamic> data) : super(data);
+  TransactionsRow(super.data);
 
   @override
   SupabaseTable get table => TransactionsTable();

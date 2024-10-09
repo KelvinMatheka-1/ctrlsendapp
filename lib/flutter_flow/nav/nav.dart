@@ -84,34 +84,34 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? NavBarPage() : RegisterAccountWidget(),
+          appStateNotifier.loggedIn ? NavBarPage() : const RegisterAccountWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
               ? NavBarPage()
-              : RegisterAccountWidget(),
+              : const RegisterAccountWidget(),
         ),
         FFRoute(
           name: 'loginPage',
           path: '/loginPage',
-          builder: (context, params) => LoginPageWidget(),
+          builder: (context, params) => const LoginPageWidget(),
         ),
         FFRoute(
           name: 'registerAccount',
           path: '/registerAccount',
-          builder: (context, params) => RegisterAccountWidget(),
+          builder: (context, params) => const RegisterAccountWidget(),
         ),
         FFRoute(
           name: 'forgotPassword',
           path: '/forgotPassword',
-          builder: (context, params) => ForgotPasswordWidget(),
+          builder: (context, params) => const ForgotPasswordWidget(),
         ),
         FFRoute(
           name: 'onboarding',
           path: '/onboarding',
-          builder: (context, params) => OnboardingWidget(),
+          builder: (context, params) => const OnboardingWidget(),
         ),
         FFRoute(
           name: 'MY_profilePage',
@@ -130,41 +130,41 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'transferComplete',
           path: '/transferComplete',
-          builder: (context, params) => TransferCompleteWidget(),
+          builder: (context, params) => const TransferCompleteWidget(),
         ),
         FFRoute(
           name: 'changePassword',
           path: '/changePassword',
-          builder: (context, params) => ChangePasswordWidget(),
+          builder: (context, params) => const ChangePasswordWidget(),
         ),
         FFRoute(
           name: 'notificationsSettings',
           path: '/notificationsSettings',
-          builder: (context, params) => NotificationsSettingsWidget(),
+          builder: (context, params) => const NotificationsSettingsWidget(),
         ),
         FFRoute(
           name: 'tutorial_PROFILE',
           path: '/tutorialPROFILE',
-          builder: (context, params) => TutorialPROFILEWidget(),
+          builder: (context, params) => const TutorialPROFILEWidget(),
         ),
         FFRoute(
           name: 'MY_CardCopy',
           path: '/mYCardCopy',
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'MY_CardCopy')
-              : MYCardCopyWidget(),
+              : const MYCardCopyWidget(),
         ),
         FFRoute(
           name: 'selectwallet',
           path: '/selectwallet',
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'selectwallet')
-              : SelectwalletWidget(),
+              : const SelectwalletWidget(),
         ),
         FFRoute(
           name: 'transactions',
           path: '/transactions',
-          builder: (context, params) => TransactionsWidget(),
+          builder: (context, params) => const TransactionsWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -398,7 +398,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

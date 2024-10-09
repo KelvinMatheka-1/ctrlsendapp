@@ -68,15 +68,15 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
             curve: Curves.easeInOut,
             delay: 450.0.ms,
             duration: 1620.0.ms,
-            begin: Offset(0.0, 30.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 30.0),
+            end: const Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 450.0.ms,
             duration: 1620.0.ms,
-            begin: Offset(0.4, 0.0),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.4, 0.0),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -94,15 +94,15 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
             curve: Curves.easeInOut,
             delay: 100.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 60.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 60.0),
+            end: const Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 100.0.ms,
             duration: 600.0.ms,
-            begin: Offset(1.0, 0.0),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(1.0, 0.0),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -120,15 +120,15 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
             curve: Curves.easeInOut,
             delay: 170.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 80.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 80.0),
+            end: const Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 170.0.ms,
             duration: 600.0.ms,
-            begin: Offset(1.0, 0.0),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(1.0, 0.0),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -146,15 +146,15 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
             curve: Curves.easeInOut,
             delay: 170.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 80.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 80.0),
+            end: const Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 170.0.ms,
             duration: 600.0.ms,
-            begin: Offset(1.0, 0.0),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(1.0, 0.0),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -172,15 +172,15 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
             curve: Curves.easeInOut,
             delay: 170.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 80.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 80.0),
+            end: const Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 170.0.ms,
             duration: 600.0.ms,
-            begin: Offset(1.0, 0.0),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(1.0, 0.0),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -198,15 +198,15 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
             curve: Curves.easeInOut,
             delay: 170.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 80.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 80.0),
+            end: const Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 170.0.ms,
             duration: 600.0.ms,
-            begin: Offset(1.0, 0.0),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(1.0, 0.0),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -238,7 +238,7 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
-          return Center(
+          return const Center(
             child: SizedBox(
               width: 40.0,
               height: 40.0,
@@ -257,7 +257,7 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
         return Material(
           color: Colors.transparent,
           elevation: 3.0,
-          shape: RoundedRectangleBorder(
+          shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(0.0),
               bottomRight: Radius.circular(0.0),
@@ -273,7 +273,7 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
             ),
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 bottomLeft: Radius.circular(0.0),
                 bottomRight: Radius.circular(0.0),
                 topLeft: Radius.circular(10.0),
@@ -281,7 +281,7 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
               ),
             ),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -340,11 +340,11 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 16.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 16.0),
                     child: Container(
                       width: MediaQuery.sizeOf(context).width * 0.9,
                       decoration: BoxDecoration(
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             blurRadius: 6.0,
                             color: Color(0x4B1A1F24),
@@ -356,12 +356,12 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                         ],
                         gradient: LinearGradient(
                           colors: [
-                            Color(0xFF9FDA00),
+                            const Color(0xFF9FDA00),
                             FlutterFlowTheme.of(context).alternate
                           ],
-                          stops: [0.0, 1.0],
-                          begin: AlignmentDirectional(0.94, -1.0),
-                          end: AlignmentDirectional(-0.94, 1.0),
+                          stops: const [0.0, 1.0],
+                          begin: const AlignmentDirectional(0.94, -1.0),
+                          end: const AlignmentDirectional(-0.94, 1.0),
                         ),
                         borderRadius: BorderRadius.circular(8.0),
                       ),
@@ -370,7 +370,7 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
                       controller: _model.dropDownValueController ??=
                           FormFieldController<String>(
@@ -410,7 +410,7 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                       borderColor: FlutterFlowTheme.of(context).alternate,
                       borderWidth: 2.0,
                       borderRadius: 8.0,
-                      margin: EdgeInsetsDirectional.fromSTEB(
+                      margin: const EdgeInsetsDirectional.fromSTEB(
                           20.0, 20.0, 12.0, 20.0),
                       hidesUnderline: true,
                       isSearchable: false,
@@ -421,11 +421,11 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                   if (_model.dropDownValue == 'sending')
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: TextFormField(
                         controller: _model.emailTextController1,
                         focusNode: _model.emailFocusNode1,
-                        autofillHints: [AutofillHints.email],
+                        autofillHints: const [AutofillHints.email],
                         obscureText: false,
                         decoration: InputDecoration(
                           labelText: FFLocalizations.of(context).getText(
@@ -449,27 +449,27 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Color(0x00000000),
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           errorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Color(0x00000000),
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           focusedErrorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Color(0x00000000),
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(8.0),
                           ),
-                          contentPadding: EdgeInsetsDirectional.fromSTEB(
+                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
                               20.0, 24.0, 24.0, 24.0),
                         ),
                         style:
@@ -489,11 +489,11 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                   if (_model.dropDownValue == 'paying')
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: TextFormField(
                         controller: _model.emailTextController2,
                         focusNode: _model.emailFocusNode2,
-                        autofillHints: [AutofillHints.email],
+                        autofillHints: const [AutofillHints.email],
                         obscureText: false,
                         decoration: InputDecoration(
                           labelText: FFLocalizations.of(context).getText(
@@ -517,27 +517,27 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Color(0x00000000),
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           errorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Color(0x00000000),
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           focusedErrorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Color(0x00000000),
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(8.0),
                           ),
-                          contentPadding: EdgeInsetsDirectional.fromSTEB(
+                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
                               20.0, 24.0, 24.0, 24.0),
                         ),
                         style:
@@ -557,11 +557,11 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                   if (_model.dropDownValue == 'paying')
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: TextFormField(
                         controller: _model.emailTextController3,
                         focusNode: _model.emailFocusNode3,
-                        autofillHints: [AutofillHints.email],
+                        autofillHints: const [AutofillHints.email],
                         obscureText: false,
                         decoration: InputDecoration(
                           labelText: FFLocalizations.of(context).getText(
@@ -585,27 +585,27 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Color(0x00000000),
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           errorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Color(0x00000000),
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           focusedErrorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Color(0x00000000),
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(8.0),
                           ),
-                          contentPadding: EdgeInsetsDirectional.fromSTEB(
+                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
                               20.0, 24.0, 24.0, 24.0),
                         ),
                         style:
@@ -624,7 +624,7 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                     ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                     child: TextFormField(
                       controller: _model.textController4,
                       focusNode: _model.textFieldFocusNode,
@@ -651,27 +651,27 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Color(0x00000000),
                             width: 2.0,
                           ),
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         errorBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Color(0x00000000),
                             width: 2.0,
                           ),
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         focusedErrorBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Color(0x00000000),
                             width: 2.0,
                           ),
                           borderRadius: BorderRadius.circular(8.0),
                         ),
-                        contentPadding: EdgeInsetsDirectional.fromSTEB(
+                        contentPadding: const EdgeInsetsDirectional.fromSTEB(
                             20.0, 24.0, 24.0, 24.0),
                       ),
                       style: FlutterFlowTheme.of(context).displaySmall.override(
@@ -688,7 +688,7 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                     child: Container(
                       width: 355.0,
                       height: 131.0,
@@ -700,7 +700,7 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                         children: [
                           if (_model.dropDownValue == 'sending')
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
                                   await TransactionsTable().insert({
@@ -724,10 +724,10 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                                 options: FFButtonOptions(
                                   width: 400.0,
                                   height: 50.0,
-                                  padding: EdgeInsets.all(0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsets.all(0.0),
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  color: Color(0xFF97D200),
+                                  color: const Color(0xFF97D200),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .displaySmall
                                       .override(
@@ -738,7 +738,7 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 5.0,
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -748,7 +748,7 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                             ),
                           if (_model.dropDownValue == 'paying')
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () {
                                   print('Button pressed ...');
@@ -759,10 +759,10 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                                 options: FFButtonOptions(
                                   width: 400.0,
                                   height: 50.0,
-                                  padding: EdgeInsets.all(0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsets.all(0.0),
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  color: Color(0xFF97D200),
+                                  color: const Color(0xFF97D200),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .displaySmall
                                       .override(
@@ -773,7 +773,7 @@ class _AccessCopyWidgetState extends State<AccessCopyWidget>
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 5.0,
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
