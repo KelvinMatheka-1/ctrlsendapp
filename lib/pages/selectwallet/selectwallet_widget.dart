@@ -2,14 +2,19 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/makepayment_copy_copy_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-// import 'dart:math';
-import 'package:carousel_slider/carousel_slider.dart' as carousel;
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 import 'selectwallet_model.dart';
 export 'selectwallet_model.dart';
@@ -261,7 +266,7 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                       return Container(
                         width: double.infinity,
                         height: 150,
-                        child: carousel.CarouselSlider.builder(
+                        child: CarouselSlider.builder(
                           itemCount: carouselAllowancesRowList.length,
                           itemBuilder: (context, carouselIndex, _) {
                             final carouselAllowancesRow =
@@ -518,7 +523,7 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                           },
                           carouselController: _model.carouselController ??=
                               CarouselController(),
-                          options: carousel.CarouselOptions(
+                          options: CarouselOptions(
                             initialPage: max(0,
                                 min(1, carouselAllowancesRowList.length - 1)),
                             viewportFraction: 0.5,
