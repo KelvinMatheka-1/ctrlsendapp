@@ -8,7 +8,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:math';
 import 'selectwallet_widget.dart' show SelectwalletWidget;
-import 'package:carousel_slider/carousel_slider.dart';
+import 'package:carousel_slider/carousel_slider.dart' as carousel;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -21,7 +21,7 @@ class SelectwalletModel extends FlutterFlowModel<SelectwalletWidget> {
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for Carousel widget.
-  CarouselController? carouselController;
+  carousel.CarouselController? carouselController;
   int carouselCurrentIndex = 1;
 
   @override
