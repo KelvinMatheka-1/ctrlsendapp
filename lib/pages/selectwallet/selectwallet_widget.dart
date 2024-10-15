@@ -517,7 +517,7 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                             );
                           },
                           carouselController: _model.carouselController ??=
-                              carousel.CarouselController(),
+                              CarouselController(),
                           options: carousel.CarouselOptions(
                             initialPage: max(0,
                                 min(1, carouselAllowancesRowList.length - 1)),
