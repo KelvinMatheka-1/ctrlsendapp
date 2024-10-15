@@ -7,7 +7,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:math';
-import 'package:carousel_slider/carousel_slider.dart';
+import 'package:carousel_slider/carousel_slider.dart' as carousel;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -266,7 +266,7 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                       return Container(
                         width: double.infinity,
                         height: 150,
-                        child: CarouselSlider.builder(
+                        child: carousel.CarouselSlider.builder(
                           itemCount: carouselAllowancesRowList.length,
                           itemBuilder: (context, carouselIndex, _) {
                             final carouselAllowancesRow =
@@ -523,7 +523,7 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
                           },
                           carouselController: _model.carouselController ??=
                               CarouselController(),
-                          options: CarouselOptions(
+                          options: carousel.CarouselOptions(
                             initialPage: max(0,
                                 min(1, carouselAllowancesRowList.length - 1)),
                             viewportFraction: 0.5,
