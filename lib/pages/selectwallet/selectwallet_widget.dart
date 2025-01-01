@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:math';
 import 'package:carousel_slider/carousel_slider.dart' as carousel;
+import 'package:carousel_slider/carousel_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -39,67 +40,67 @@ class _SelectwalletWidgetState extends State<SelectwalletWidget>
     super.initState();
     _model = createModel(context, () => SelectwalletModel());
 
-animationsMap.addAll({
-  'textOnPageLoadAnimation1': AnimationInfo(
-    trigger: AnimationTrigger.onPageLoad,
-    effectsBuilder: () => [
-      VisibilityEffect(duration: 1.ms),
-      FadeEffect(
-        curve: Curves.easeInOut,
-        delay: 0.0.ms,
-        duration: 600.0.ms,
-        begin: 0.0,
-        end: 1.0,
+    animationsMap.addAll({
+      'textOnPageLoadAnimation1': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 1.ms),
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: Offset(0.0, 20.0),
+            end: Offset(0.0, 0.0),
+          ),
+        ],
       ),
-      MoveEffect(
-        curve: Curves.easeInOut,
-        delay: 0.0.ms,
-        duration: 600.0.ms,
-        begin: Offset(0.0, 20.0),
-        end: Offset(0.0, 0.0),
+      'textOnPageLoadAnimation2': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 1.ms),
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: Offset(0.0, 20.0),
+            end: Offset(0.0, 0.0),
+          ),
+        ],
+      ), // Added missing closing bracket here
+      'textOnPageLoadAnimation3': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: Offset(0.0, 80.0),
+            end: Offset(0.0, 0.0),
+          ),
+        ],
       ),
-    ],
-  ),
-  'textOnPageLoadAnimation2': AnimationInfo(
-    trigger: AnimationTrigger.onPageLoad,
-    effectsBuilder: () => [
-      VisibilityEffect(duration: 1.ms),
-      FadeEffect(
-        curve: Curves.easeInOut,
-        delay: 0.0.ms,
-        duration: 600.0.ms,
-        begin: 0.0,
-        end: 1.0,
-      ),
-      MoveEffect(
-        curve: Curves.easeInOut,
-        delay: 0.0.ms,
-        duration: 600.0.ms,
-        begin: Offset(0.0, 20.0),
-        end: Offset(0.0, 0.0),
-      ),
-    ],
-  ), // Added missing closing bracket here
-  'textOnPageLoadAnimation3': AnimationInfo(
-    trigger: AnimationTrigger.onPageLoad,
-    effectsBuilder: () => [
-      FadeEffect(
-        curve: Curves.easeInOut,
-        delay: 0.0.ms,
-        duration: 600.0.ms,
-        begin: 0.0,
-        end: 1.0,
-      ),
-      MoveEffect(
-        curve: Curves.easeInOut,
-        delay: 0.0.ms,
-        duration: 600.0.ms,
-        begin: Offset(0.0, 80.0),
-        end: Offset(0.0, 0.0),
-      ),
-    ],
-  ),
-});
+    });
 
     setupAnimations(
       animationsMap.values.where((anim) =>
@@ -531,7 +532,7 @@ animationsMap.addAll({
                             disableCenter: true,
                             enlargeCenterPage: true,
                             enlargeFactor: 0.25,
-                            enableInfiniteScroll: false, 
+                            enableInfiniteScroll: false,
                             scrollDirection: Axis.horizontal,
                             autoPlay: false,
                             onPageChanged: (index, _) =>
