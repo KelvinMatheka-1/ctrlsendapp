@@ -13,87 +13,87 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  app_links: 3.4.1
+  app_links: ^6.3.3
   auto_size_text: 3.0.0
-  cached_network_image: 3.2.1
-  carousel_slider: 4.2.1
-  cloud_firestore: 4.13.1
-  cloud_firestore_platform_interface: 6.0.5
-  cloud_firestore_web: 3.8.5
-  cloud_functions: 4.6.0
+  cached_network_image: ^3.4.1
+  carousel_slider: 5.0.0
+  cloud_firestore: ^5.6.0
+  cloud_firestore_platform_interface: ^6.6.0
+  cloud_firestore_web: ^4.4.0
+  cloud_functions: ^5.2.0
   collection: ^1.18.0
   device_info_plus:
   dropdown_button2: 2.3.9
-  equatable: 2.0.5
-  firebase_core: 2.24.2
-  firebase_core_platform_interface: 5.0.0
-  firebase_core_web: 2.10.0
-  firebase_performance: 0.9.3+8
-  firebase_performance_platform_interface: 0.1.4+16
-  firebase_performance_web: 0.1.4+16
-  flutter_animate: 4.1.1+1
-  flutter_cache_manager: 3.3.1
-  flutter_spinkit: 5.2.0
-  font_awesome_flutter: 10.6.0
+  equatable: ^2.0.7
+  firebase_core: ^3.9.0
+  firebase_core_platform_interface: ^5.4.0
+  firebase_core_web: ^2.19.0
+  firebase_performance: ^0.10.0+11
+  firebase_performance_platform_interface: ^0.1.4+47
+  firebase_performance_web: ^0.1.7+5
+  flutter_animate: ^4.5.2
+  flutter_cache_manager: ^3.4.1
+  flutter_spinkit: ^5.2.1
+  font_awesome_flutter: ^10.8.0
   from_css_color: 2.0.0
-  functions_client: 1.3.2
+  functions_client: ^2.4.0
   go_router:
-  google_fonts: 4.0.3
+  google_fonts: ^6.2.1
   google_sign_in:
   google_sign_in_android:
   google_sign_in_ios:
   google_sign_in_web: 
-  gotrue: 1.12.6
+  gotrue: ^2.11.1
   hive: 2.2.3
   intl: 0.19.0
-  json_path: 0.6.2
-  mime_type: 1.0.0
-  onesignal_flutter: 5.2.6
-  page_transition: 2.1.0
-  path_provider: 2.0.14
-  path_provider_android: 2.0.25
-  path_provider_foundation: 2.2.2
-  path_provider_platform_interface: 2.0.6
+  json_path: ^0.7.4
+  mime_type: ^1.0.1
+  onesignal_flutter: ^5.2.9
+  page_transition: ^2.2.1
+  path_provider: ^2.1.5
+  path_provider_android: ^2.2.15
+  path_provider_foundation: ^2.4.1
+  path_provider_platform_interface: ^2.1.2
   permission_handler:
-  plugin_platform_interface: 2.1.6
-  postgrest: 1.5.2
-  provider: 6.0.5
-  realtime_client: 1.4.0
+  plugin_platform_interface: ^2.1.8
+  postgrest: ^2.4.0
+  provider: ^6.1.2
+  realtime_client: ^2.4.1
   rxdart: 0.27.7
-  shared_preferences: 2.2.2
-  shared_preferences_android: 2.2.1
-  shared_preferences_foundation: 2.3.4
-  shared_preferences_platform_interface: 2.3.1
-  shared_preferences_web: 2.2.1
-  sign_in_with_apple: 4.3.0
-  sign_in_with_apple_platform_interface: 1.0.0
-  sign_in_with_apple_web: 1.0.1
-  smooth_page_indicator: 1.1.0
-  sqflite: 2.2.6
-  storage_client: 1.5.4
-  stream_transform: 2.1.0
-  supabase: 1.11.11
-  supabase_flutter: 1.10.24
-  timeago: 3.2.2
-  url_launcher: 6.1.10
-  url_launcher_android: 6.0.27
-  url_launcher_ios: 6.1.4
-  url_launcher_platform_interface: 2.1.2
-  webview_flutter: 4.0.5
-  webview_flutter_android: 3.3.1
-  webview_flutter_platform_interface: 2.0.2
-  webview_flutter_wkwebview: 3.1.1
-  firebase_auth: ^4.16.0
-  firebase_messaging: ^14.7.10
+  shared_preferences: ^2.3.4
+  shared_preferences_android: ^2.4.0
+  shared_preferences_foundation: ^2.5.4
+  shared_preferences_platform_interface: ^2.4.1
+  shared_preferences_web: ^2.4.2
+  sign_in_with_apple: ^6.1.4
+  sign_in_with_apple_platform_interface: ^1.1.0
+  sign_in_with_apple_web: ^2.1.1
+  smooth_page_indicator: ^1.2.0+3
+  sqflite: ^2.4.1
+  storage_client: ^2.3.0
+  stream_transform: ^2.1.1
+  supabase: ^2.6.1
+  supabase_flutter: ^2.8.2
+  timeago: ^3.7.0
+  url_launcher: ^6.3.1
+  url_launcher_android: ^6.3.14
+  url_launcher_ios: ^6.3.2
+  url_launcher_platform_interface: ^2.3.2
+  webview_flutter: ^4.10.0
+  webview_flutter_android: ^4.2.0
+  webview_flutter_platform_interface: ^2.10.0
+  webview_flutter_wkwebview: ^3.16.3
+  firebase_auth: ^5.3.4
+  firebase_messaging: ^15.1.6
 
 dependency_overrides:
   rxdart: 0.27.7
 
 dev_dependencies:
-  flutter_launcher_icons: 0.13.1
-  flutter_lints: 3.0.0
-  image: 4.0.17
-  lints: 3.0.0
+  flutter_launcher_icons: ^0.14.2
+  flutter_lints: ^5.0.0
+  image: ^4.5.2
+  lints: ^5.0.0
 
 flutter_launcher_icons:
   android: true

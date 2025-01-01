@@ -6,7 +6,7 @@
 // @dart = 2.13
 // ignore_for_file: type=lint
 
-import 'package:app_links/app_links_web.dart';
+import 'package:app_links_web/app_links_web.dart';
 import 'package:cloud_firestore_web/cloud_firestore_web.dart';
 import 'package:cloud_functions_web/cloud_functions_web.dart';
 import 'package:device_info_plus/src/device_info_plus_web.dart';
